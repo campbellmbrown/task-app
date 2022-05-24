@@ -1,10 +1,10 @@
-#include "qtwidgetsapplication1.h"
+#include "taskapp.h"
 #include <QtWidgets/QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    QtWidgetsApplication1 w;
+    TaskApp w;
     w.show();
     return a.exec();
 }
