@@ -10,6 +10,19 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="taskapp.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="taskapp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="taskapp.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtRcc Include="rc\taskapp.qrc" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{686C8658-8C23-4FC0-BA77-1E13BD273554}</ProjectGuid>
     <Keyword>QtVS_v304</Keyword>
@@ -85,13 +98,6 @@
       <GenerateDebugInformation>false</GenerateDebugInformation>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <QtRcc Include="taskapp.qrc" />
-    <QtUic Include="taskapp.ui" />
-    <QtMoc Include="taskapp.h" />
-    <ClCompile Include="taskapp.cpp" />
-    <ClCompile Include="main.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Condition="Exists('$(QtMsBuild)\qt.targets')">
     <Import Project="$(QtMsBuild)\qt.targets" />

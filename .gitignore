@@ -53,5 +53,6 @@ compile_commands.json
 
 # Visual Studio
 Debug
+Release
 .vs
 *.vcxproj.user
