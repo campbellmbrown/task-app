@@ -14,7 +14,7 @@
    <string>TaskApp</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <layout class="QGridLayout" name="gridLayout">
+   <layout class="QGridLayout" name="centralWidgetGridLayout">
     <item row="0" column="0">
      <widget class="QTabWidget" name="tabWidget">
       <property name="currentIndex">
@@ -26,7 +26,7 @@
        </attribute>
        <layout class="QGridLayout" name="tasksTabLayout">
         <item row="0" column="0">
-         <widget class="QSplitter" name="tasksSplitter">
+         <widget class="QSplitter" name="tasksDetailsSplitter">
           <property name="frameShadow">
            <enum>QFrame::Plain</enum>
           </property>
@@ -68,15 +68,15 @@
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
            </property>
-           <layout class="QGridLayout" name="taskListLayout">
+           <layout class="QGridLayout" name="detailsLayout">
             <item row="0" column="0">
-             <widget class="QGroupBox" name="groupBox">
+             <widget class="QGroupBox" name="detailsGroupBox">
               <property name="title">
                <string>Details</string>
               </property>
-              <layout class="QGridLayout" name="taskListLayout">
+              <layout class="QGridLayout" name="detailsGroupLayout">
                <item row="1" column="0">
-                <widget class="QLabel" name="label">
+                <widget class="QLabel" name="notesLabel">
                  <property name="text">
                   <string>Notes</string>
                  </property>
@@ -86,14 +86,14 @@
                 </widget>
                </item>
                <item row="1" column="1">
-                <widget class="QPlainTextEdit" name="plainTextEdit">
+                <widget class="QPlainTextEdit" name="notesPlainTextEdit">
                  <property name="placeholderText">
                   <string>Add notes...</string>
                  </property>
                 </widget>
                </item>
                <item row="0" column="0">
-                <widget class="QLabel" name="tempLabel">
+                <widget class="QLabel" name="titleLabel">
                  <property name="text">
                   <string>Title</string>
                  </property>
@@ -113,7 +113,7 @@
                 </spacer>
                </item>
                <item row="0" column="1">
-                <widget class="QLineEdit" name="lineEdit"/>
+                <widget class="QLineEdit" name="titleLineEdit"/>
                </item>
               </layout>
              </widget>
@@ -124,11 +124,11 @@
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="taskListTab">
+      <widget class="QWidget" name="projectsTab">
        <attribute name="title">
         <string>Projects</string>
        </attribute>
-       <layout class="QGridLayout" name="taskListLayout"/>
+       <layout class="QGridLayout" name="projectsTabLayout"/>
       </widget>
      </widget>
     </item>
