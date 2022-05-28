@@ -22,8 +22,9 @@ jobs:
 
     - name: GUI Unit Tests
       run: |
+        apt-get install -y xvfb
         mkdir -p build
         cd build
         qmake ../tests/guitests.pro
         make -j $(nproc)
-        find . -type f -executable | xargs
+        find . -type f -executable | xargs -I % sh -c '{ xvfb-run % || exit 1; sleep 1; }'
