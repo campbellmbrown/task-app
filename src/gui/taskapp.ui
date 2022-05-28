@@ -114,11 +114,13 @@
    <class>DetailsView</class>
    <extends>QWidget</extends>
    <header>detailsview.h</header>
+   <container>1</container>
   </customwidget>
   <customwidget>
    <class>TaskListView</class>
    <extends>QWidget</extends>
    <header>tasklistview.h</header>
+   <container>1</container>
   </customwidget>
  </customwidgets>
  <resources>
