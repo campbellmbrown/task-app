@@ -7,4 +7,4 @@ jobs:
     name: General
     steps:
     - name: Checkout
-    - uses: actions/checkout@v2
+      uses: actions/checkout@v2
