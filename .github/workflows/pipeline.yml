@@ -1,0 +1,25 @@
+name: Pipeline
+
+on: [pull_request]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    name: Build and Test
+
+    container:
+      image: fstlx/qt5:ubuntu18
+
+    steps:
+
+    - name: Checkout
+      uses: actions/checkout@v2
+
+    - name: GUI Unit Tests
+      run: |
+        apt-get install -y xvfb
+        mkdir -p build
+        cd build
+        qmake ../tests/guitests.pro
+        make -j $(nproc)
+        find . -type f -executable | xargs -I % sh -c '{ xvfb-run % || exit 1; sleep 1; }'
