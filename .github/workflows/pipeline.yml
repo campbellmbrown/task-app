@@ -19,7 +19,7 @@ jobs:
       run: |
         mkdir -p tmpbuild
         cd tmpbuild
-        qmake src/TaskApp.pro
+        qmake ../src/TaskApp.pro
         make -j $(nproc)
 
     - name: GUI Unit Tests
