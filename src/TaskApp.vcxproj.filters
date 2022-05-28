@@ -1,30 +1,51 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="src">
-      <UniqueIdentifier>{e522a8ec-bfcb-45bb-917e-8fb8ceef195e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\rc">
-      <UniqueIdentifier>{b7583c72-4255-4a4b-a6bf-7298a2f974aa}</UniqueIdentifier>
-    </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <QtUic Include="taskapp.ui">
-      <Filter>src</Filter>
-    </QtUic>
-  </ItemGroup>
-  <ItemGroup>
+    <ClCompile Include="gui\detailsview.cpp">
+      <Filter>src\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\taskapp.cpp">
+      <Filter>src\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\tasklistview.cpp">
+      <Filter>src\gui</Filter>
+    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="taskapp.cpp">
-      <Filter>src</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="taskapp.h">
-      <Filter>src</Filter>
+    <QtMoc Include="gui\detailsview.h">
+      <Filter>src\gui</Filter>
     </QtMoc>
+    <QtMoc Include="gui\taskapp.h">
+      <Filter>src\gui</Filter>
+    </QtMoc>
+    <QtMoc Include="gui\tasklistview.h">
+      <Filter>src\gui</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="gui\detailsview.ui">
+      <Filter>src\gui</Filter>
+    </QtUic>
+    <QtUic Include="gui\taskapp.ui">
+      <Filter>src\gui</Filter>
+    </QtUic>
+    <QtUic Include="gui\tasklistview.ui">
+      <Filter>src\gui</Filter>
+    </QtUic>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{ac62ba07-8143-4b94-97a8-4d9f3ecfd4d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\rc">
+      <UniqueIdentifier>{52a7ec32-3a8c-41d3-8145-1b8e4cde4db9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\gui">
+      <UniqueIdentifier>{8fb08a8d-a614-4ff6-a814-2a76d1c75329}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="rc\taskapp.qrc">

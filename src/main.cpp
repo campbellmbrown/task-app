@@ -1,4 +1,4 @@
-#include "taskapp.h"
+#include "gui/taskapp.h"
 #include <QtWidgets/QApplication>
 
 int main(int argc, char *argv[])

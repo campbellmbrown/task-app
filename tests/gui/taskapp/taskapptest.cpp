@@ -1,4 +1,4 @@
-#include "taskapp.h"
+#include "gui/taskapp.h"
 
 #include <QtTest/QtTest>
 

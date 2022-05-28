@@ -11,5 +11,5 @@ public:
     TaskApp(QWidget *parent = Q_NULLPTR);
 
 private:
-    Ui::TaskAppClass m_ui;
+    Ui::TaskApp m_ui;
 };

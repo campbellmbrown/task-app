@@ -19,17 +19,23 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="gui\detailsview.cpp" />
+    <ClCompile Include="gui\taskapp.cpp" />
+    <ClCompile Include="gui\tasklistview.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="taskapp.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="taskapp.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtUic Include="taskapp.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="rc\taskapp.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="gui\detailsview.ui" />
+    <QtUic Include="gui\taskapp.ui" />
+    <QtUic Include="gui\tasklistview.ui" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="gui\detailsview.h" />
+    <QtMoc Include="gui\taskapp.h" />
+    <QtMoc Include="gui\tasklistview.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{686C8658-8C23-4FC0-BA77-1E13BD273554}</ProjectGuid>
