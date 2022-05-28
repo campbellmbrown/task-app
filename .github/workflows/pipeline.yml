@@ -3,8 +3,23 @@ name: Pipeline
 on: [pull_request]
 
 jobs:
-  general:
-    name: General
+  build-and-test:
+    runs-on: windows-latest
+
+    container:
+      image:
+    name: Build and Test
     steps:
+
     - name: Checkout
       uses: actions/checkout@v2
+
+    - name: Install Qt
+      uses: jurplel/install-qt-action@v2
+      with:
+        version: "5.15.2"
+        host: "windows"
+        target: "desktop"
+        arch: "win64_msvc2019_64"
+        dir: "${{ github.workspace }}/qt"
+        install-deps: "true"
