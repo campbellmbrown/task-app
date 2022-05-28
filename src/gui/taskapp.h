@@ -11,8 +11,5 @@ public:
     TaskApp(QWidget *parent = Q_NULLPTR);
 
 private:
-    void initDetailsView();
-
-private:
     Ui::TaskApp m_ui;
 };
