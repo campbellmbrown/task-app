@@ -61,13 +61,18 @@
             </item>
            </layout>
           </widget>
-          <widget class="QFrame" name="detailsArea">
+          <widget class="QFrame" name="detailsViewArea">
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
            </property>
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
            </property>
+           <layout class="QGridLayout" name="testLayout">
+            <item row="0" column="0">
+             <widget class="DetailsView" name="detailsView" native="true"/>
+            </item>
+           </layout>
           </widget>
          </widget>
         </item>
@@ -104,6 +109,13 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
+ <customwidgets>
+  <customwidget>
+   <class>DetailsView</class>
+   <extends>QWidget</extends>
+   <header>detailsview.h</header>
+  </customwidget>
+ </customwidgets>
  <resources>
   <include location="taskapp.qrc"/>
  </resources>
