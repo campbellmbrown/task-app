@@ -24,4 +24,6 @@ jobs:
       run: |
         mkdir -p build
         cd build
+        ls .
         qmake ../tests/guitests.pro
+        ls .
