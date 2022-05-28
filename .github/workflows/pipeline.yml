@@ -15,11 +15,18 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
+    - name: Build
+      run: |
+        mkdir -p tmpbuild
+        cd tmpbuild
+        qmake ../src/TaskApp.pro
+        make -j $(nproc)
+
     - name: GUI Unit Tests
       run: |
         apt-get install -y xvfb
-        mkdir -p build
-        cd build
+        mkdir -p tmptest
+        cd tmptest
         qmake ../tests/guitests.pro
         make -j $(nproc)
         find . -type f -executable | xargs -I % sh -c '{ xvfb-run % || exit 1; sleep 1; }'
