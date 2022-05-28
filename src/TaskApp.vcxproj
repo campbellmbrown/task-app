@@ -19,17 +19,17 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="gui\taskapp.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="taskapp.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="taskapp.h" />
-  </ItemGroup>
-  <ItemGroup>
-    <QtUic Include="taskapp.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="rc\taskapp.qrc" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="gui\taskapp.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="gui\taskapp.ui" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{686C8658-8C23-4FC0-BA77-1E13BD273554}</ProjectGuid>

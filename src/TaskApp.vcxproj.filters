@@ -7,28 +7,31 @@
     <Filter Include="src\rc">
       <UniqueIdentifier>{b7583c72-4255-4a4b-a6bf-7298a2f974aa}</UniqueIdentifier>
     </Filter>
-  </ItemGroup>
-  <ItemGroup>
-    <QtUic Include="taskapp.ui">
-      <Filter>src</Filter>
-    </QtUic>
+    <Filter Include="src\gui">
+      <UniqueIdentifier>{156c2b62-6d2c-497f-b400-4e728a03390f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="taskapp.cpp">
-      <Filter>src</Filter>
+    <ClCompile Include="gui\taskapp.cpp">
+      <Filter>src\gui</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <QtMoc Include="taskapp.h">
-      <Filter>src</Filter>
-    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="rc\taskapp.qrc">
       <Filter>src\rc</Filter>
     </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtMoc Include="gui\taskapp.h">
+      <Filter>src\gui</Filter>
+    </QtMoc>
+  </ItemGroup>
+  <ItemGroup>
+    <QtUic Include="gui\taskapp.ui">
+      <Filter>src\gui</Filter>
+    </QtUic>
   </ItemGroup>
 </Project>

@@ -4,13 +4,13 @@ TEMPLATE = app
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 HEADERS += \
-    ./taskapp.h \
+    ./gui/taskapp.h \
 
 SOURCES += \
+    ./gui/taskapp.cpp \
     ./main.cpp \
-    ./taskapp.cpp \
 
 FORMS += \
-    ./taskapp.ui \
+    ./gui/taskapp.ui \
 
 RESOURCES += rc/taskapp.qrc

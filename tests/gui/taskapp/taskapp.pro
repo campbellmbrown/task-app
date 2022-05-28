@@ -10,10 +10,10 @@ SOURCES += \
     taskapptest.cpp \
 
 HEADERS += \
-    $${SRCPATH}/taskapp.h \
+    $${SRCPATH}/gui/taskapp.h \
 
 SOURCES += \
-    $${SRCPATH}/taskapp.cpp \
+    $${SRCPATH}/gui/taskapp.cpp \
 
 FORMS += \
-    $${SRCPATH}/taskapp.ui \
+    $${SRCPATH}/gui/taskapp.ui \
