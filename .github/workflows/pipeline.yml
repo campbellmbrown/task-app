@@ -2,10 +2,6 @@ name: Pipeline
 
 on: [pull_request]
 
-env:
-  QT_VERSION:   "6.2.0"
-  MSVC_VERSION: "win64_msvc2019_64"
-
 jobs:
   build-and-test:
     runs-on: ubuntu-latest
