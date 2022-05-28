@@ -15,23 +15,32 @@
     <ClCompile Include="main.cpp">
       <Filter>src</Filter>
     </ClCompile>
-    <ClCompile Include="gui\taskapp.cpp">
+    <ClCompile Include="taskapp.cpp">
+      <Filter>src\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="detailsview.cpp">
       <Filter>src\gui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="rc\taskapp.qrc">
+    <QtRcc Include="taskapp.qrc">
       <Filter>src\rc</Filter>
     </QtRcc>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="gui\taskapp.h">
+    <QtMoc Include="taskapp.h">
+      <Filter>src\gui</Filter>
+    </QtMoc>
+    <QtMoc Include="detailsview.h">
       <Filter>src\gui</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="gui\taskapp.ui">
+    <QtUic Include="taskapp.ui">
       <Filter>src\gui</Filter>
     </QtUic>
+    <QtUic Include="detailsview.ui">
+      <Filter>src\gui</Filter>
+    <QtUic>
   </ItemGroup>
 </Project>

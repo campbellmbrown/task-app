@@ -1,4 +1,5 @@
 #include "taskapp.h"
+#include "detailsview.h"
 
 TaskApp::TaskApp(QWidget* parent)
     : QMainWindow(parent)
