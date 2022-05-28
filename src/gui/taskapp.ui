@@ -48,7 +48,7 @@
           <property name="childrenCollapsible">
            <bool>false</bool>
           </property>
-          <widget class="QFrame" name="taskListArea">
+          <widget class="QFrame" name="taskListViewArea">
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
            </property>
@@ -57,7 +57,7 @@
            </property>
            <layout class="QGridLayout" name="taskListLayout">
             <item row="0" column="0">
-             <widget class="QTreeView" name="treeView"/>
+             <widget class="TaskListView" name="taskListView"/>
             </item>
            </layout>
           </widget>
@@ -68,7 +68,7 @@
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
            </property>
-           <layout class="QGridLayout" name="testLayout">
+           <layout class="QGridLayout" name="detailsLayout">
             <item row="0" column="0">
              <widget class="DetailsView" name="detailsView" native="true"/>
             </item>
@@ -114,6 +114,11 @@
    <class>DetailsView</class>
    <extends>QWidget</extends>
    <header>detailsview.h</header>
+  </customwidget>
+  <customwidget>
+   <class>TaskListView</class>
+   <extends>QWidget</extends>
+   <header>tasklistview.h</header>
   </customwidget>
  </customwidgets>
  <resources>
