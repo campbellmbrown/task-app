@@ -1,0 +1,10 @@
+name: Pipeline
+
+on: [pull_request]
+
+jobs:
+  general:
+    name: General
+    steps:
+    - name: Checkout
+    - uses: actions/checkout@v2
