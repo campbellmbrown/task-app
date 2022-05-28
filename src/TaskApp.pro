@@ -3,25 +3,20 @@ TEMPLATE = app
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-SRCPATH = .
-
-INCLUDEPATH = \
-    $${SRCPATH} \
-
 HEADERS += \
-    $${SRCPATH}/gui/detailsview.h \
-    $${SRCPATH}/gui/taskapp.h \
-    $${SRCPATH}/gui/tasklistview.h \
+    ./gui/detailsview.h \
+    ./gui/taskapp.h \
+    ./gui/tasklistview.h \
 
 SOURCES += \
-    $${SRCPATH}/gui/detailsview.cpp \
-    $${SRCPATH}/gui/taskapp.cpp \
-    $${SRCPATH}/gui/tasklistview.cpp \
-    $${SRCPATH}/main.cpp \
+    ./gui/detailsview.cpp \
+    ./gui/taskapp.cpp \
+    ./gui/tasklistview.cpp \
+    ./main.cpp \
 
 FORMS += \
-    $${SRCPATH}/gui/detailsview.ui \
-    $${SRCPATH}/gui/taskapp.ui \
-    $${SRCPATH}/gui/tasklistview.ui \
+    ./gui/detailsview.ui \
+    ./gui/taskapp.ui \
+    ./gui/tasklistview.ui \
 
 RESOURCES += rc/taskapp.qrc
