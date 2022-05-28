@@ -1,4 +1,4 @@
-#include "detailsview.h"
+#include "gui/detailsview.h"
 
 DetailsView::DetailsView(QWidget *parent)
     : QWidget(parent)
