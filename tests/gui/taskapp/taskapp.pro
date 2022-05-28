@@ -1,7 +1,7 @@
 QT += testlib widgets
 TEMPLATE = app
 
-SRCPATH = ../../src
+SRCPATH = ../../../src
 
 INCLUDEPATH = \
     $${SRCPATH} \
