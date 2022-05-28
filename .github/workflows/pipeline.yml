@@ -8,27 +8,16 @@ env:
 
 jobs:
   build-and-test:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
     name: Build and Test
+
+    container:
+      image: fstlx/qt:ubuntu18
+
     steps:
 
     - name: Checkout
       uses: actions/checkout@v2
-
-    - name: Install Qt
-      uses: jurplel/install-qt-action@v2
-      with:
-        version: ${{ env.QT_VERSION }}
-        host: "windows"
-        target: "desktop"
-        arch: ${{ env.MSVC_VERSION }}
-        dir: "${{ github.workspace }}/qt"
-        install-deps: "true"
-
-    - name: Qt Setup
-      run: |
-        echo "${{ github.workspace }}/qt/Qt/${{ env.QT_VERSION }}/${{ env.MINGW_PATH }}/bin" | Out-File -FilePath $env:GITHUB_PATH -Encoding utf8 -Append
-        refreshenv
 
     - name: GUI Unit Tests
       run: |
