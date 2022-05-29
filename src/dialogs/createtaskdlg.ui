@@ -6,18 +6,63 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>328</width>
-    <height>315</height>
+    <width>327</width>
+    <height>240</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>CreateTaskDlg</string>
+   <string>Create Task</string>
   </property>
-  <layout class="QGridLayout" name="createTaskLayout">
-   <item row="0" column="0">
-    <widget class="QPlainTextEdit" name="temp">
-     <property name="placeholderText">
-      <string>Temp...</string>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <widget class="QGroupBox" name="commonGroupBox">
+     <property name="title">
+      <string>Common</string>
+     </property>
+     <layout class="QFormLayout" name="commonFormLayout">
+      <item row="0" column="0">
+       <widget class="QLabel" name="titleLabel">
+        <property name="text">
+         <string>Title</string>
+        </property>
+       </widget>
+      </item>
+      <item row="0" column="1">
+       <widget class="QLineEdit" name="titleLineEdit"/>
+      </item>
+      <item row="1" column="0">
+       <widget class="QLabel" name="projectLabel">
+        <property name="text">
+         <string>Project</string>
+        </property>
+       </widget>
+      </item>
+      <item row="1" column="1">
+       <widget class="QComboBox" name="projectComboBox"/>
+      </item>
+     </layout>
+    </widget>
+   </item>
+   <item>
+    <spacer name="verticalSpacer">
+     <property name="orientation">
+      <enum>Qt::Vertical</enum>
+     </property>
+     <property name="sizeHint" stdset="0">
+      <size>
+       <width>20</width>
+       <height>40</height>
+      </size>
+     </property>
+    </spacer>
+   </item>
+   <item>
+    <widget class="QDialogButtonBox" name="buttonBox">
+     <property name="standardButtons">
+      <set>QDialogButtonBox::Cancel|QDialogButtonBox::Ok</set>
+     </property>
+     <property name="centerButtons">
+      <bool>false</bool>
      </property>
     </widget>
    </item>
