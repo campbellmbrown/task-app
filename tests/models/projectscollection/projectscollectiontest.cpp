@@ -17,7 +17,7 @@ private:
 
 void ProjectsCollectionTest::init()
 {
-    m_projectsCollection->reset(new ProjectsCollection());
+    m_projectsCollection.reset(new ProjectsCollection());
 }
 
 void ProjectsCollectionTest::check_addProject()
