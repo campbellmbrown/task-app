@@ -16,6 +16,9 @@
     <ClCompile Include="dialogs\createtaskdlg.cpp">
       <Filter>src\dialogs</Filter>
     </ClCompile>
+    <ClCompile Include="models\projectscollection.cpp">
+      <Filter>src\models</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="gui\detailsview.h">
@@ -58,10 +61,18 @@
     <Filter Include="src\dialogs">
       <UniqueIdentifier>{aee64032-c86a-48b3-a488-f27d46efceb6}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\models">
+      <UniqueIdentifier>{fa25c1ff-2666-44c9-b26e-37a13d5d1c07}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="rc\taskapp.qrc">
       <Filter>src\rc</Filter>
     </QtRcc>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="models\projectscollection.h">
+      <Filter>src\models</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

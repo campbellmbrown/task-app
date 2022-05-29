@@ -3,12 +3,13 @@
 #include "ui_createtaskdlg.h"
 #include <QDialog>
 
+class ProjectsCollection;
 class CreateTaskDlg : public QDialog
 {
     Q_OBJECT
 
 public:
-    CreateTaskDlg(QWidget *parent = nullptr);
+    CreateTaskDlg(ProjectsCollection& projectsCollection, QWidget *parent = nullptr);
 
 private:
     Ui::CreateTaskDlg m_ui;

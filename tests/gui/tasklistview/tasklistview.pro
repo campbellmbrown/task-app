@@ -12,10 +12,12 @@ SOURCES += \
 HEADERS += \
     $${SRCPATH}/dialogs/createtaskdlg.h \
     $${SRCPATH}/gui/tasklistview.h \
+    $${SRCPATH}/models/projectscollection.h \
 
 SOURCES += \
     $${SRCPATH}/dialogs/createtaskdlg.cpp \
     $${SRCPATH}/gui/tasklistview.cpp \
+    $${SRCPATH}/models/projectscollection.cpp \
 
 FORMS += \
     $${SRCPATH}/dialogs/createtaskdlg.ui \

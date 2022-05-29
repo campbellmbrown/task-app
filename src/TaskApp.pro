@@ -8,6 +8,7 @@ HEADERS += \
     ./gui/detailsview.h \
     ./gui/taskapp.h \
     ./gui/tasklistview.h \
+    ./models/projectscollection.h \
 
 SOURCES += \
     ./dialogs/createtaskdlg.cpp \
@@ -15,6 +16,7 @@ SOURCES += \
     ./gui/taskapp.cpp \
     ./gui/tasklistview.cpp \
     ./main.cpp \
+    ./models/projectscollection.cpp \
 
 FORMS += \
     ./dialogs/createtaskdlg.ui \

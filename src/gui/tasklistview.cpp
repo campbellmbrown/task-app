@@ -1,5 +1,6 @@
 #include "tasklistview.h"
 #include "dialogs/createtaskdlg.h"
+#include "models/projectscollection.h"
 #include <QAbstractButton>
 
 TaskListView::TaskListView(QWidget *parent)
@@ -17,6 +18,12 @@ void TaskListView::initButtons()
 
 void TaskListView::onNewBtnClicked()
 {
-    CreateTaskDlg createTaskDlg(this);
+    // Temporary - TODO: remove
+    ProjectsCollection projectsCollection;
+    projectsCollection.addProject("Hi!");
+    projectsCollection.addProject("Hello!");
+    projectsCollection.addProject("Howdy!");
+
+    CreateTaskDlg createTaskDlg(projectsCollection, this);
     createTaskDlg.exec();
 }

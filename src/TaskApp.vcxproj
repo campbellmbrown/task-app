@@ -24,6 +24,7 @@
     <ClCompile Include="gui\taskapp.cpp" />
     <ClCompile Include="gui\tasklistview.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="models\projectscollection.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="rc\taskapp.qrc" />
@@ -39,6 +40,9 @@
     <QtMoc Include="gui\detailsview.h" />
     <QtMoc Include="gui\taskapp.h" />
     <QtMoc Include="gui\tasklistview.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="models\projectscollection.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{686C8658-8C23-4FC0-BA77-1E13BD273554}</ProjectGuid>
