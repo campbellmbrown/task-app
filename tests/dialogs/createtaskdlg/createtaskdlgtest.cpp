@@ -1,5 +1,5 @@
 #include "dialogs/createtaskdlg.h"
-#include "models/projectcollection.h"
+#include "models/projectscollection.h"
 #include <memory>
 #include <QtTest/QtTest>
 
