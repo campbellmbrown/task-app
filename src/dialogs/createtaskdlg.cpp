@@ -1,5 +1,5 @@
 #include "createtaskdlg.h"
-#include "models/projectsCollection.h"
+#include "models/projectscollection.h"
 
 CreateTaskDlg::CreateTaskDlg(ProjectsCollection& projectsCollection, QWidget *parent)
     : QDialog(parent)

@@ -1,0 +1,9 @@
+{
+    "files.exclude": {
+        "**/*.user": true,
+        "**/build-*": true,
+        "**/Debug": true,
+        "**/Release": true,
+        "**/x64": true
+    },
+}
