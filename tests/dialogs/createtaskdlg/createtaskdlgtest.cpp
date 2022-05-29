@@ -1,4 +1,5 @@
 #include "dialogs/createtaskdlg.h"
+#include "models/projectcollection.h"
 #include <memory>
 #include <QtTest/QtTest>
 
@@ -8,7 +9,7 @@ class CreateTaskDlgTest : public QObject
 
 private slots:
     void init();
-    void check_something();
+    void check_projectsComboBox_isPopulated();
 
 private:
     std::unique_ptr<CreateTaskDlg> m_createTaskDlg;
@@ -16,12 +17,15 @@ private:
 
 void CreateTaskDlgTest::init()
 {
-    m_createTaskDlg.reset(new CreateTaskDlg());
+    ProjectsCollection projectCollection;
+    projectCollection.addProject("project foo");
+    projectCollection.addProject("project bar");
+    m_createTaskDlg.reset(new CreateTaskDlg(projectCollection));
 }
 
-void CreateTaskDlgTest::check_something()
+void CreateTaskDlgTest::check_projectsComboBox_isPopulated()
 {
-    QVERIFY(true);
+    QVERIFY(m_createTaskDlg->m_ui.projectComboBox->count(), 2);
 }
 
 QTEST_MAIN(CreateTaskDlgTest)
