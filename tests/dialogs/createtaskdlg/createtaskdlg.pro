@@ -19,4 +19,3 @@ SOURCES += \
 
 FORMS += \
     $${SRCPATH}/dialogs/createtaskdlg.ui \
-    $${SRCPATH}/models/projectscollection.ui \

@@ -14,6 +14,3 @@ HEADERS += \
 
 SOURCES += \
     $${SRCPATH}/models/projectscollection.cpp \
-
-FORMS += \
-    $${SRCPATH}/models/projectscollection.ui \
