@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>CreateTaskDlg</class>
+ <widget class="QDialog" name="CreateTaskDlg">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>328</width>
+    <height>315</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>CreateTaskDlg</string>
+  </property>
+  <layout class="QGridLayout" name="createTaskLayout">
+   <item row="0" column="0">
+    <widget class="QPlainTextEdit" name="temp">
+     <property name="placeholderText">
+      <string>Temp...</string>
+     </property>
+    </widget>
+   </item>
+  </layout>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

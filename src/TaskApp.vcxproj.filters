@@ -13,6 +13,9 @@
     <ClCompile Include="main.cpp">
       <Filter>src</Filter>
     </ClCompile>
+    <ClCompile Include="dialogs\createtaskdlg.cpp">
+      <Filter>src\dialogs</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="gui\detailsview.h">
@@ -23,6 +26,9 @@
     </QtMoc>
     <QtMoc Include="gui\tasklistview.h">
       <Filter>src\gui</Filter>
+    </QtMoc>
+    <QtMoc Include="dialogs\createtaskdlg.h">
+      <Filter>src\dialogs</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
@@ -35,6 +41,9 @@
     <QtUic Include="gui\tasklistview.ui">
       <Filter>src\gui</Filter>
     </QtUic>
+    <QtUic Include="dialogs\createtaskdlg.ui">
+      <Filter>src\dialogs</Filter>
+    </QtUic>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="src">
@@ -45,6 +54,9 @@
     </Filter>
     <Filter Include="src\gui">
       <UniqueIdentifier>{8fb08a8d-a614-4ff6-a814-2a76d1c75329}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\dialogs">
+      <UniqueIdentifier>{aee64032-c86a-48b3-a488-f27d46efceb6}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>

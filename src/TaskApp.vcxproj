@@ -19,6 +19,7 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="dialogs\createtaskdlg.cpp" />
     <ClCompile Include="gui\detailsview.cpp" />
     <ClCompile Include="gui\taskapp.cpp" />
     <ClCompile Include="gui\tasklistview.cpp" />
@@ -28,11 +29,13 @@
     <QtRcc Include="rc\taskapp.qrc" />
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="dialogs\createtaskdlg.ui" />
     <QtUic Include="gui\detailsview.ui" />
     <QtUic Include="gui\taskapp.ui" />
     <QtUic Include="gui\tasklistview.ui" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="dialogs\createtaskdlg.h" />
     <QtMoc Include="gui\detailsview.h" />
     <QtMoc Include="gui\taskapp.h" />
     <QtMoc Include="gui\tasklistview.h" />
