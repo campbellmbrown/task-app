@@ -1,6 +1,6 @@
 #include "taskapp.h"
 
-TaskApp::TaskApp(QWidget* parent)
+TaskApp::TaskApp(QWidget *parent)
     : QMainWindow(parent)
 {
     m_ui.setupUi(this);
