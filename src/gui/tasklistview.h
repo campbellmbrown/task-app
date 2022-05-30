@@ -11,5 +11,11 @@ public:
     TaskListView(QWidget *parent = nullptr);
 
 private:
+    void initButtons();
+
+private slots:
+    void onNewBtnClicked();
+
+private:
     Ui::TaskListView m_ui;
 };

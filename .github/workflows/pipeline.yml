@@ -39,11 +39,20 @@ jobs:
         qmake ../src/TaskApp.pro
         make -j $(nproc)
 
-    - name: GUI Unit Tests
+    - name: Unit Tests
       run: |
         apt-get install -y xvfb
         mkdir -p tmptest
         cd tmptest
+        qmake ../tests/tests.pro
+        make -j $(nproc)
+        find . -type f -executable | xargs -I % sh -c '{ xvfb-run % || exit 1; sleep 1; }'
+
+    - name: GUI Unit Tests
+      run: |
+        apt-get install -y xvfb
+        mkdir -p tmpguitest
+        cd tmpguitest
         qmake ../tests/guitests.pro
         make -j $(nproc)
         find . -type f -executable | xargs -I % sh -c '{ xvfb-run % || exit 1; sleep 1; }'
