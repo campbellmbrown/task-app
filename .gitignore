@@ -1,3 +1,6 @@
+# Python
+*.pyc
+
 # C++ objects and libs
 *.slo
 *.lo
