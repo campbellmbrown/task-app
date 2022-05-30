@@ -3,6 +3,7 @@
 #include "dialogs/createtaskdlg.h"
 #include "models/projectscollection.h"
 #include <QAbstractButton>
+#include <QCheckBox>
 
 TaskListView::TaskListView(QWidget *parent)
     : QWidget(parent)
@@ -19,14 +20,16 @@ TaskListView::TaskListView(QWidget *parent)
     temp->setFirstColumnSpanned(true);
 
     auto temp2 = new QTreeWidgetItem();
-    temp2->setText(0, "foo");
-    temp2->setData(1, Qt::DisplayRole, 1);
+    temp2->setText(TaskItem::Title, "foo");
+    temp2->setData(TaskItem::Priority, Qt::DisplayRole, 1);
     temp->addChild(temp2);
+    m_ui.taskListTree->setItemWidget(temp2, TaskItem::Completed, new QCheckBox(this));
 
     auto temp3 = new QTreeWidgetItem();
-    temp3->setText(0, "bar");
-    temp3->setData(1, Qt::DisplayRole, 2);
+    temp3->setText(TaskItem::Title, "bar");
+    temp3->setData(TaskItem::Priority, Qt::DisplayRole, 2);
     temp->addChild(temp3);
+    m_ui.taskListTree->setItemWidget(temp3, TaskItem::Completed, new QCheckBox(this));
 
     auto temp4 = new QTreeWidgetItem();
     temp4->setText(0, "Complete");
@@ -35,21 +38,23 @@ TaskListView::TaskListView(QWidget *parent)
     temp4->setFirstColumnSpanned(true);
 
     auto temp5 = new QTreeWidgetItem();
-    temp5->setText(0, "hello");
-    temp5->setData(1, Qt::DisplayRole, 3);
+    temp5->setText(TaskItem::Title, "hello");
+    temp5->setData(TaskItem::Priority, Qt::DisplayRole, 3);
     temp4->addChild(temp5);
+    m_ui.taskListTree->setItemWidget(temp5, TaskItem::Completed, new QCheckBox(this));
 
     auto temp6 = new QTreeWidgetItem();
-    temp6->setText(0, "yo");
-    temp6->setData(1, Qt::DisplayRole, -1);
+    temp6->setText(TaskItem::Title, "yo");
+    temp6->setData(TaskItem::Priority, Qt::DisplayRole, -1);
     temp4->addChild(temp6);
+    m_ui.taskListTree->setItemWidget(temp6, TaskItem::Completed, new QCheckBox(this));
 }
 
 void TaskListView::initTreeSections()
 {
     auto tree = m_ui.taskListTree;
     tree->setColumnCount(TaskItem::Count);
-    tree->setHeaderLabels({ COL_HEADER_TITLE, COL_HEADER_PRIORITY });
+    tree->setHeaderLabels({ COL_HEADER_COMPLETED, COL_HEADER_TITLE, COL_HEADER_PRIORITY });
     auto header = tree->header();
     header->setStretchLastSection(false);
     header->setSectionResizeMode(TaskItem::Title, QHeaderView::Stretch);

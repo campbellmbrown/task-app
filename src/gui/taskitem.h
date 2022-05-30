@@ -7,7 +7,8 @@ class TaskItem : public QTreeWidgetItem
 public:
     enum Columns
     {
-        Title = 0,
+        Completed = 0,
+        Title,
         Priority,
         Count
     };
