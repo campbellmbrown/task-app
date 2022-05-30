@@ -2,7 +2,7 @@
 
 #include <QTreeWidgetItem>
 
-class TaskItem : public QTreeWidgetItem
+class TaskListItem : public QTreeWidgetItem
 {
 public:
     enum Columns
@@ -13,5 +13,5 @@ public:
         Count
     };
 
-    TaskItem();
+    TaskListItem();
 };
