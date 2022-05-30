@@ -9,6 +9,7 @@ jobs:
 
     container:
       image: campbellbrown/formatting:0.1
+      options: --user 1001
 
     steps:
 
