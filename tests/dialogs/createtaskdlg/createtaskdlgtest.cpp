@@ -25,7 +25,7 @@ void CreateTaskDlgTest::init()
 
 void CreateTaskDlgTest::check_projectsComboBox_isPopulated()
 {
-    QVERIFY(m_createTaskDlg->m_ui.projectComboBox->count(), 2);
+    QCOMPARE(m_createTaskDlg->m_ui.projectComboBox->count(), 2);
 }
 
 QTEST_MAIN(CreateTaskDlgTest)
