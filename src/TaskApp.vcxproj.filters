@@ -19,6 +19,9 @@
     <ClCompile Include="models\projectscollection.cpp">
       <Filter>src\models</Filter>
     </ClCompile>
+    <ClCompile Include="gui\taskitem.cpp">
+      <Filter>src\gui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="gui\detailsview.h">
@@ -73,6 +76,9 @@
   <ItemGroup>
     <ClInclude Include="models\projectscollection.h">
       <Filter>src\models</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\taskitem.h">
+      <Filter>src\gui</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -22,6 +22,7 @@
     <ClCompile Include="dialogs\createtaskdlg.cpp" />
     <ClCompile Include="gui\detailsview.cpp" />
     <ClCompile Include="gui\taskapp.cpp" />
+    <ClCompile Include="gui\taskitem.cpp" />
     <ClCompile Include="gui\tasklistview.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="models\projectscollection.cpp" />
@@ -42,6 +43,7 @@
     <QtMoc Include="gui\tasklistview.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="gui\taskitem.h" />
     <ClInclude Include="models\projectscollection.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
