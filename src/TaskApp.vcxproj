@@ -19,23 +19,30 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="dialogs\createtaskdlg.cpp" />
     <ClCompile Include="gui\detailsview.cpp" />
     <ClCompile Include="gui\taskapp.cpp" />
     <ClCompile Include="gui\tasklistview.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="models\projectscollection.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="rc\taskapp.qrc" />
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="dialogs\createtaskdlg.ui" />
     <QtUic Include="gui\detailsview.ui" />
     <QtUic Include="gui\taskapp.ui" />
     <QtUic Include="gui\tasklistview.ui" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="dialogs\createtaskdlg.h" />
     <QtMoc Include="gui\detailsview.h" />
     <QtMoc Include="gui\taskapp.h" />
     <QtMoc Include="gui\tasklistview.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="models\projectscollection.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{686C8658-8C23-4FC0-BA77-1E13BD273554}</ProjectGuid>
@@ -110,10 +117,17 @@
     <Import Project="$(QtMsBuild)\Qt.props" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <IncludePath>$(ProjectDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
-  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <IncludePath>$(ProjectDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|Win32'">
+    <IncludePath>$(ProjectDir);$(IncludePath)</IncludePath>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <IncludePath>$(ProjectDir);$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|Win32'" Label="Configuration">
     <ClCompile>

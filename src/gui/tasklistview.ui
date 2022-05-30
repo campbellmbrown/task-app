@@ -13,11 +13,42 @@
   <property name="windowTitle">
    <string>TaskListView</string>
   </property>
-  <layout class="QGridLayout" name="taskListViewLayout">
-   <item row="0" column="0">
-    <widget class="QTreeView" name="taskListTree"/>
-   </item>
-  </layout>
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="QTreeView" name="taskListTree"/>
+    </item>
+    <item>
+     <layout class="QHBoxLayout" name="footerLayout">
+      <item>
+       <widget class="QPushButton" name="newBtn">
+        <property name="text">
+         <string>New</string>
+        </property>
+       </widget>
+      </item>
+      <item>
+       <spacer name="footerSpacer">
+        <property name="orientation">
+         <enum>Qt::Horizontal</enum>
+        </property>
+        <property name="sizeHint" stdset="0">
+         <size>
+          <width>40</width>
+          <height>20</height>
+         </size>
+        </property>
+       </spacer>
+      </item>
+      <item>
+       <widget class="QPushButton" name="deleteBtn">
+        <property name="text">
+         <string>Delete</string>
+        </property>
+       </widget>
+      </item>
+     </layout>
+    </item>
+   </layout>
  </widget>
  <resources/>
  <connections/>
