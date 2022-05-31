@@ -47,6 +47,7 @@
     <ClInclude Include="gui\tasklistheader.h" />
     <ClInclude Include="gui\tasklistitem.h" />
     <ClInclude Include="models\projectscollection.h" />
+    <ClInclude Include="models\task.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{686C8658-8C23-4FC0-BA77-1E13BD273554}</ProjectGuid>

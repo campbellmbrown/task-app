@@ -3,16 +3,20 @@
 #include "ui_createtaskdlg.h"
 #include <QDialog>
 
+class Task;
 class ProjectsCollection;
 class CreateTaskDlg : public QDialog
 {
     Q_OBJECT
+    using SuperClass = QDialog;
 
     friend class CreateTaskDlgTest;
 
 public:
-    CreateTaskDlg(ProjectsCollection& projectsCollection, QWidget *parent = nullptr);
+    CreateTaskDlg(Task& task, ProjectsCollection& projectsCollection, QWidget *parent = nullptr);
+    void accept() override;
 
 private:
     Ui::CreateTaskDlg m_ui;
+    Task& m_task;
 };

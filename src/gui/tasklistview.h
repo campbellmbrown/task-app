@@ -3,14 +3,13 @@
 #include "ui_tasklistview.h"
 #include <QWidget>
 
+class Task;
+class TaskListHeader;
 class TaskListView : public QWidget
 {
     Q_OBJECT
 
-    // TODO: Consider the correct location for these.
-    static auto constexpr COL_HEADER_COMPLETED = "";
     static auto constexpr COL_HEADER_TITLE = "Title";
-    static auto constexpr COL_HEADER_PRIORITY = "Priority";
 
 public:
     TaskListView(QWidget *parent = nullptr);
@@ -18,10 +17,12 @@ public:
 private:
     void initTreeSections();
     void initButtons();
+    void addNewTask(Task &task);
 
 private slots:
     void onNewBtnClicked();
 
 private:
     Ui::TaskListView m_ui;
+    TaskListHeader *m_taskListHeader;
 };
