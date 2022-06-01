@@ -13,8 +13,8 @@
   <property name="windowTitle">
    <string>DetailsView</string>
   </property>
-  <layout class="QGridLayout" name="detailsViewLayout">
-   <item row="0" column="0">
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
     <widget class="QGroupBox" name="detailsGroupBox">
      <property name="title">
       <string>Details</string>

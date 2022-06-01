@@ -16,6 +16,9 @@
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
     <widget class="QTreeWidget" name="taskListTree">
+     <property name="styleSheet">
+      <string notr="true">QTreeView { border: none; }</string>
+     </property>
      <property name="alternatingRowColors">
       <bool>true</bool>
      </property>

@@ -16,6 +16,8 @@ TaskListView::TaskListView(QWidget *parent)
     initTreeSections();
     initButtons();
 
+    m_ui.verticalLayout->setContentsMargins(0, 0, 0, 0);
+
     m_taskListHeader = new TaskListHeader();
     m_taskListHeader->setText(0, "Incomplete");
     m_ui.taskListTree->addTopLevelItem(m_taskListHeader);
