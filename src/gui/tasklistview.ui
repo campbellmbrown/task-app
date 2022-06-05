@@ -15,22 +15,19 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QTreeWidget" name="taskListTree">
-     <property name="styleSheet">
-      <string notr="true">QTreeView { border: none; }</string>
-     </property>
-     <property name="alternatingRowColors">
+    <widget class="QTableView" name="taskListTable">
+     <!-- <property name="styleSheet"> -->
+      <!-- <string notr="true">QTableView { border: none; }</string> -->
+     <!-- </property> -->
+     <!-- <property name="alternatingRowColors">
       <bool>true</bool>
+     </property>
+     <property name="gridStyle">
+      <enum>Qt::NoPen</enum>
      </property>
      <property name="sortingEnabled">
       <bool>true</bool>
-     </property>
-     <property name="columnCount">
-      <number>0</number>
-     </property>
-     <attribute name="headerShowSortIndicator" stdset="0">
-      <bool>true</bool>
-     </attribute>
+     </property> -->
     </widget>
    </item>
    <item>

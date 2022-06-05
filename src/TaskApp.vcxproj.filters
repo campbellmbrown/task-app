@@ -19,10 +19,7 @@
     <ClCompile Include="models\projectscollection.cpp">
       <Filter>src\models</Filter>
     </ClCompile>
-    <ClCompile Include="gui\tasklistheader.cpp">
-      <Filter>src\gui</Filter>
-    </ClCompile>
-    <ClCompile Include="gui\tasklistitem.cpp">
+    <ClCompile Include="gui\tasktablemodel.cpp">
       <Filter>src\gui</Filter>
     </ClCompile>
   </ItemGroup>
@@ -80,10 +77,7 @@
     <ClInclude Include="models\projectscollection.h">
       <Filter>src\models</Filter>
     </ClInclude>
-    <ClInclude Include="gui\tasklistheader.h">
-      <Filter>src\gui</Filter>
-    </ClInclude>
-    <ClInclude Include="gui\tasklistitem.h">
+    <ClInclude Include="gui\tasktablemodel.h">
       <Filter>src\gui</Filter>
     </ClInclude>
     <ClInclude Include="models\task.h">

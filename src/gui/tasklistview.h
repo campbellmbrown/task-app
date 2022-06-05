@@ -1,10 +1,10 @@
 #pragma once
 
 #include "ui_tasklistview.h"
+#include <QStandardItemModel>
 #include <QWidget>
 
 class Task;
-class TaskListHeader;
 class TaskListView : public QWidget
 {
     Q_OBJECT
@@ -15,14 +15,14 @@ public:
     TaskListView(QWidget *parent = nullptr);
 
 private:
-    void initTreeSections();
+    void initTableSections();
     void initButtons();
-    void addNewTask(Task &task);
+    // TODO
+    // void addNewTask(Task &task);
 
 private slots:
     void onNewBtnClicked();
 
 private:
     Ui::TaskListView m_ui;
-    TaskListHeader *m_taskListHeader;
 };
