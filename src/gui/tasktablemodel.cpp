@@ -62,8 +62,15 @@ QVariant TaskTableModel::data(const QModelIndex &index, int role) const
 
 QVariant TaskTableModel::headerData(int section, Qt::Orientation orientation, int role) const
 {
-    if (role == Qt::DisplayRole && orientation == Qt::Horizontal) {
-        return m_headerNames[section];
+    if (orientation == Qt::Horizontal) {
+        switch (role) {
+            case Qt::DisplayRole:
+                return m_headerNames[section];
+            case Qt::FontRole:
+                QFont boldFont;
+                boldFont.setBold(true);
+                return boldFont;
+        }
     }
     return QVariant();
 }

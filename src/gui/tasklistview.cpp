@@ -23,6 +23,9 @@ void TaskListView::initTableSections()
 {
     auto table = m_ui.taskListTable;
     table->setModel(m_taskTableModel);
+    table->horizontalHeader()->setStretchLastSection(false);
+    table->horizontalHeader()->setSectionResizeMode(TaskTableModel::Title, QHeaderView::Stretch);
+    table->horizontalHeader()->setSectionResizeMode(TaskTableModel::TimeCreated, QHeaderView::ResizeToContents);
 }
 
 void TaskListView::initButtons()
