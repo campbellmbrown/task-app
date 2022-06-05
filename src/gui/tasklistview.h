@@ -10,8 +10,6 @@ class TaskListView : public QWidget
 {
     Q_OBJECT
 
-    static auto constexpr COL_HEADER_TITLE = "Title";
-
 public:
     TaskListView(QWidget *parent = nullptr);
 

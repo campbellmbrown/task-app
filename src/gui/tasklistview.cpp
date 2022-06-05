@@ -13,18 +13,16 @@ TaskListView::TaskListView(QWidget *parent)
       m_taskTableModel(new TaskTableModel())
 {
     m_ui.setupUi(this);
+    m_ui.verticalLayout->setContentsMargins(0, 0, 0, 0);
 
     initTableSections();
-    // initButtons();
-
-    auto table = m_ui.taskListTable;
-    table->setModel(m_taskTableModel);
-    // table->show();
-    // m_ui.verticalLayout->setContentsMargins(0, 0, 0, 0);
+    initButtons();
 }
 
 void TaskListView::initTableSections()
 {
+    auto table = m_ui.taskListTable;
+    table->setModel(m_taskTableModel);
 }
 
 void TaskListView::initButtons()
