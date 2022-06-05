@@ -8,13 +8,16 @@ HEADERS += \
     ./gui/detailsview.h \
     ./gui/taskapp.h \
     ./gui/tasklistview.h \
+    ./gui/tasktablemodel.h \
     ./models/projectscollection.h \
+    ./models/task.h
 
 SOURCES += \
     ./dialogs/createtaskdlg.cpp \
     ./gui/detailsview.cpp \
     ./gui/taskapp.cpp \
     ./gui/tasklistview.cpp \
+    ./gui/tasktablemodel.cpp \
     ./main.cpp \
     ./models/projectscollection.cpp \
 

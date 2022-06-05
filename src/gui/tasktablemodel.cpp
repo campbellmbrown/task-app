@@ -7,12 +7,12 @@ TaskTableModel::TaskTableModel(QObject *parent)
 
 int TaskTableModel::rowCount(const QModelIndex & /*parent*/) const
 {
-   return 5;
+   return 2;
 }
 
 int TaskTableModel::columnCount(const QModelIndex & /*parent*/) const
 {
-    return Count;
+    return 3;
 }
 
 QVariant TaskTableModel::data(const QModelIndex &index, int role) const

@@ -5,6 +5,7 @@
 #include <QWidget>
 
 class Task;
+class TaskTableModel;
 class TaskListView : public QWidget
 {
     Q_OBJECT
@@ -25,4 +26,5 @@ private slots:
 
 private:
     Ui::TaskListView m_ui;
+    TaskTableModel *m_taskTableModel;
 };

@@ -9,26 +9,22 @@
 #include <QHeaderView>
 
 TaskListView::TaskListView(QWidget *parent)
-    : QWidget(parent)
+    : QWidget(parent),
+      m_taskTableModel(new TaskTableModel())
 {
     m_ui.setupUi(this);
 
     initTableSections();
-    initButtons();
+    // initButtons();
 
-    m_ui.verticalLayout->setContentsMargins(0, 0, 0, 0);
+    auto table = m_ui.taskListTable;
+    table->setModel(m_taskTableModel);
+    // table->show();
+    // m_ui.verticalLayout->setContentsMargins(0, 0, 0, 0);
 }
 
 void TaskListView::initTableSections()
 {
-    auto table = m_ui.taskListTable;
-    TaskTableModel taskTableModel;
-    table->setModel(&taskTableModel);
-    // table->setColumnCount(TaskTableModel::Count);
-    // table->setHorizontalHeaderLabels({ COL_HEADER_TITLE });
-
-    // auto header = table->horizontalHeader();
-    // header->setSectionResizeMode(TaskTableModel::Title, QHeaderView::Stretch);
 }
 
 void TaskListView::initButtons()
