@@ -6,6 +6,7 @@
 
 class Task;
 class TaskTableModel;
+class QSortFilterProxyModel;
 class TaskListView : public QWidget
 {
     Q_OBJECT
@@ -16,8 +17,6 @@ public:
 private:
     void initTableSections();
     void initButtons();
-    // TODO
-    // void addNewTask(Task &task);
 
 private slots:
     void onNewBtnClicked();
@@ -25,4 +24,5 @@ private slots:
 private:
     Ui::TaskListView m_ui;
     TaskTableModel *m_taskTableModel;
+    QSortFilterProxyModel *m_proxyModel;
 };

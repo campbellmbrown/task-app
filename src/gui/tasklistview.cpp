@@ -7,10 +7,12 @@
 #include <QCheckBox>
 #include <QComboBox>
 #include <QHeaderView>
+#include <QSortFilterProxyModel>
 
 TaskListView::TaskListView(QWidget *parent)
     : QWidget(parent),
-      m_taskTableModel(new TaskTableModel())
+      m_taskTableModel(new TaskTableModel()),
+      m_proxyModel(new QSortFilterProxyModel())
 {
     m_ui.setupUi(this);
     m_ui.verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -19,10 +21,12 @@ TaskListView::TaskListView(QWidget *parent)
     initButtons();
 }
 
+
 void TaskListView::initTableSections()
 {
+    m_proxyModel->setSourceModel(m_taskTableModel);
     auto table = m_ui.taskListTable;
-    table->setModel(m_taskTableModel);
+    table->setModel(m_proxyModel);
     table->horizontalHeader()->setStretchLastSection(false);
     table->horizontalHeader()->setSectionResizeMode(TaskTableModel::Title, QHeaderView::Stretch);
     table->horizontalHeader()->setSectionResizeMode(TaskTableModel::TimeCreated, QHeaderView::ResizeToContents);
