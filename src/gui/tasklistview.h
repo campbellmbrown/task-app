@@ -1,7 +1,6 @@
 #pragma once
 
 #include "ui_tasklistview.h"
-#include <QStandardItemModel>
 #include <QWidget>
 
 class Task;

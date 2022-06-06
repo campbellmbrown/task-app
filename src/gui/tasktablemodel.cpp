@@ -35,6 +35,15 @@ QVariant TaskTableModel::data(const QModelIndex& index, int role) const
                 case TimeCreated:
                     return m_tasks.at(row).timeCreated.toString("dd/MM/yy hh:mm:ss ap");
             }
+
+        case Qt::UserRole:
+            switch (col) {
+                case Title:
+                    return m_tasks.at(row).title;
+
+                case TimeCreated:
+                    return m_tasks.at(row).timeCreated;
+            }
     }
     return QVariant();
 }

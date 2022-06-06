@@ -4,9 +4,6 @@
 #include "models/task.h"
 #include "tasktablemodel.h"
 #include <QAbstractButton>
-#include <QCheckBox>
-#include <QComboBox>
-#include <QHeaderView>
 #include <QSortFilterProxyModel>
 
 TaskListView::TaskListView(QWidget *parent)
@@ -24,6 +21,7 @@ TaskListView::TaskListView(QWidget *parent)
 
 void TaskListView::initTableSections()
 {
+    m_proxyModel->setSortRole(Qt::UserRole);
     m_proxyModel->setSourceModel(m_taskTableModel);
     auto table = m_ui.taskListTable;
     table->setModel(m_proxyModel);
