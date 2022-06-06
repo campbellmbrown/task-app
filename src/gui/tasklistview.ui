@@ -15,7 +15,17 @@
   </property>
   <layout class="QVBoxLayout" name="verticalLayout">
    <item>
-    <widget class="QTableView" name="taskListTable"/>
+    <widget class="QTableView" name="taskListTable">
+     <property name="styleSheet">
+      <string notr="true">QTableView { border: none; }</string>
+     </property>
+     <property name="alternatingRowColors">
+      <bool>true</bool>
+     </property>
+     <property name="showGrid">
+      <bool>false</bool>
+     </property>
+    </widget>
    </item>
    <item>
     <layout class="QHBoxLayout" name="footerLayout">

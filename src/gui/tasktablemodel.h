@@ -9,7 +9,7 @@ class TaskTableModel : public QAbstractTableModel
 public:
     enum Columns
     {
-        Title,
+        Title = 0,
         TimeCreated,
         Count,
     };
