@@ -44,6 +44,6 @@ void TaskListView::onNewBtnClicked()
     Task task;
     CreateTaskDlg createTaskDlg(task, projectsCollection, this);
     if (createTaskDlg.exec() == QDialog::Accepted) {
-        // TODO
+        m_taskTableModel->addTask(task);
     }
 }

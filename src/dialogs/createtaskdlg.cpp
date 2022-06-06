@@ -1,9 +1,10 @@
 #include "createtaskdlg.h"
 #include "models/projectscollection.h"
 #include "models/task.h"
+#include <QDateTime>
 #include <QDialogButtonBox>
 
-CreateTaskDlg::CreateTaskDlg(Task &task, ProjectsCollection& projectsCollection, QWidget *parent)
+CreateTaskDlg::CreateTaskDlg(Task& task, ProjectsCollection& projectsCollection, QWidget *parent)
     : QDialog(parent),
       m_task(task)
 {
@@ -19,5 +20,6 @@ CreateTaskDlg::CreateTaskDlg(Task &task, ProjectsCollection& projectsCollection,
 void CreateTaskDlg::accept()
 {
     m_task.title = m_ui.titleLineEdit->text();
+    m_task.timeCreated = QDateTime::currentDateTime();
     SuperClass::accept();
 }
