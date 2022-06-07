@@ -11,31 +11,15 @@ python3 scripts/format-cpp.py
 
 import itertools
 import os
-import shlex
-import subprocess
 from pathlib import Path
 from typing import List
+
+from .utilities import execute_command, execute_command_output
 
 PATH_OF_THIS_FILE = Path(__file__).parent.absolute()
 CONFIG_PATH = Path.joinpath(PATH_OF_THIS_FILE, "config/Uncrustify-0.72.0_f.cfg")
 UNCRUSTIFY_VERSION_TO_CHECK = b"Uncrustify-0.72.0_f"
 TEMP_FILE_NAME = "uncrustify_temp.txt"
-
-
-def execute_command(command: str) -> int:
-    """Runs a command in a subprocess.
-
-    Args:
-        command (str): The command to run.
-
-    Returns:
-        int: The exit code of the command.
-    """
-    print(f"> {command}")
-    p = subprocess.Popen(shlex.split(command))
-    p.wait()
-    p.communicate()
-    return p.returncode
 
 
 class UncrustifyFormatter:
@@ -81,7 +65,7 @@ class UncrustifyFormatter:
         return files
 
     def check_version(self) -> bool:
-        match = subprocess.check_output(["uncrustify", "--version"]).strip(b"\r\n") == UNCRUSTIFY_VERSION_TO_CHECK
+        match = execute_command_output("uncrustify --version") == UNCRUSTIFY_VERSION_TO_CHECK
         if not match:
             print(f"WARNING: You are using the wrong uncrustify version. Please install {UNCRUSTIFY_VERSION_TO_CHECK}")
 
