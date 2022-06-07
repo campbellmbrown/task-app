@@ -16,10 +16,10 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v2
 
-    - name: Format C++
-      run: |
-        python3 scripts/format_cpp.py
-        git diff --exit-code
+    # - name: Format C++
+    #   run: |
+    #     python3 scripts/format_cpp.py
+    #     git diff --exit-code
 
     - name: Format Python
       run: |
