@@ -83,7 +83,7 @@ class UncrustifyFormatter:
                 f.write(file.as_posix() + "\n")
 
         # Executing command
-        exit_code = execute_command(f"uncrustify -c \"{CONFIG_PATH.as_posix()}\" {check_args} -F {TEMP_FILE_NAME}")
+        exit_code = execute_command(f'uncrustify -c "{CONFIG_PATH.as_posix()}" {check_args} -F {TEMP_FILE_NAME}')
         os.remove(TEMP_FILE_NAME)
         if exit_code != 0:
             print(f"COMMAND FAILED (exit code: {exit_code})")
