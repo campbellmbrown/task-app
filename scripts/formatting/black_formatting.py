@@ -1,3 +1,12 @@
+"""A script to apply formatting on python files.
+
+Uses Black (https://black.readthedocs.io/en/stable/) to format (or check the formatting of) the codebase.
+
+Example usage:
+    python3 scripts/format-py.py --check
+    python3 scripts/format-py.py
+"""
+
 from pathlib import Path
 from typing import List
 

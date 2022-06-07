@@ -1,12 +1,12 @@
 """A script to apply formatting on .cpp and .h files.
 
-Uses uncrustify (https://github.com/uncrustify/uncrustify) to format (or check the formatting of) the codebase.
+Uses Uncrustify (https://github.com/uncrustify/uncrustify) to format (or check the formatting of) the codebase.
 The formatting settings are found in uncrustify.cfg.
-To generate a list of default settings for uncrustify use uncrustify --show-config
+To generate a list of default settings for Uncrustify use `uncrustify --show-config`
 
 Example usage:
-python3 scripts/format-cpp.py --check
-python3 scripts/format-cpp.py
+    python3 scripts/format-cpp.py --check
+    python3 scripts/format-cpp.py
 """
 
 import itertools

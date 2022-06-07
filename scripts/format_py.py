@@ -8,8 +8,10 @@ PATH_OF_THIS_FILE = Path(__file__).parent.absolute()
 SEARCH_DIR_RELATIVE = ".."
 SEARCH_PATH = Path.joinpath(PATH_OF_THIS_FILE, SEARCH_DIR_RELATIVE).resolve()
 
+# Exclude directories relative to the search path.
 EXCLUDE_FILES = []
 
+# Exclude paths relative to the search path.
 EXCLUDE_DIRECTORIES = []
 
 if __name__ == "__main__":
