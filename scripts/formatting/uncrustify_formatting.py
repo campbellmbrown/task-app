@@ -69,6 +69,10 @@ class UncrustifyFormatter:
         if not match:
             print(f"WARNING: You are using the wrong uncrustify version. Please install {UNCRUSTIFY_VERSION_TO_CHECK}")
 
+
+
+
+
     def format(self, check: bool) -> None:
         self.check_version()
 

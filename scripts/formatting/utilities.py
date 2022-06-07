@@ -13,4 +13,4 @@ def execute_command(command: str) -> int:
 
 def execute_command_output(command: str) -> str:
     """Runs a command in a subprocess and returns the output."""
-    return subprocess.check_output(command).strip(b"\r\n")
+    return subprocess.check_output(shlex.split(command)).strip(b"\r\n")
