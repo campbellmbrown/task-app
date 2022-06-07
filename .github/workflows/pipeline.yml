@@ -21,6 +21,11 @@ jobs:
         python3 scripts/format_cpp.py
         git diff --exit-code
 
+    - name: Format Python
+      run: |
+        python3 scripts/format_py.py
+        git diff --exit-code
+
   build-and-test:
     runs-on: ubuntu-latest
     name: Build and Test
