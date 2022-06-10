@@ -7,6 +7,8 @@ class TaskTableModel : public QAbstractTableModel
 {
     Q_OBJECT
 
+    friend class TaskTableModelTest;
+
 public:
     enum Columns
     {

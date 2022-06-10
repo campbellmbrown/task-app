@@ -4,3 +4,4 @@ SUBDIRS += \
     detailsview \
     taskapp \
     tasklistview \
+    tasktablemodel \

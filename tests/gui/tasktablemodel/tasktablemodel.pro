@@ -7,10 +7,10 @@ INCLUDEPATH = \
     $${SRCPATH} \
 
 SOURCES += \
-    tasktableviewtest.cpp \
+    tasktablemodeltest.cpp \
 
 HEADERS += \
-    $${SRCPATH}/gui/tasktableview.h \
+    $${SRCPATH}/gui/tasktablemodel.h \
 
 SOURCES += \
-    $${SRCPATH}/gui/tasktableview.cpp \
+    $${SRCPATH}/gui/tasktablemodel.cpp \
