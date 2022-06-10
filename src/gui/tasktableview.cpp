@@ -1,6 +1,5 @@
 #include "tasktableview.h"
 #include <QKeyEvent>
-#include <QItemSelectionModel>
 
 TaskTableView::TaskTableView(QWidget *parent)
     : QTableView(parent)

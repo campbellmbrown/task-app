@@ -3,7 +3,6 @@
 #include "models/projectscollection.h"
 #include "models/task.h"
 #include "tasktablemodel.h"
-#include <QAbstractButton>
 #include <QSortFilterProxyModel>
 
 TaskSection::TaskSection(QWidget *parent)
