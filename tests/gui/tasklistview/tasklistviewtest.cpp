@@ -8,16 +8,20 @@ class TaskListViewTest : public QObject
 
 private slots:
     void init();
-    void check_something();
+    void check_deleteButtonDisabledByDefault();
+
+private:
+    std::unique_ptr<TaskListView> m_taskListView;
 };
 
 void TaskListViewTest::init()
 {
+    m_taskListView.reset(new TaskListView());
 }
 
-void TaskListViewTest::check_something()
+void TaskListViewTest::check_deleteButtonDisabledByDefault()
 {
-    QVERIFY(true);
+    QCOMPARE(m_taskListView->m_ui.deleteBtn->isEnabled(), false);
 }
 
 QTEST_MAIN(TaskListViewTest)

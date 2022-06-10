@@ -10,6 +10,8 @@ class TaskListView : public QWidget
 {
     Q_OBJECT
 
+    friend class TaskListViewTest;
+
 public:
     TaskListView(QWidget *parent = nullptr);
 
@@ -19,6 +21,8 @@ private:
 
 private slots:
     void onNewBtnClicked();
+    void onDeleteBtnClicked();
+    void onSelectedTaskChanged(const QModelIndex &current, const QModelIndex &previous);
 
 private:
     Ui::TaskListView m_ui;

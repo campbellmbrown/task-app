@@ -22,6 +22,9 @@
     <ClCompile Include="gui\tasktablemodel.cpp">
       <Filter>src\gui</Filter>
     </ClCompile>
+    <ClCompile Include="gui\tasktableview.cpp">
+      <Filter>src\gui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="gui\detailsview.h">
@@ -35,6 +38,9 @@
     </QtMoc>
     <QtMoc Include="dialogs\createtaskdlg.h">
       <Filter>src\dialogs</Filter>
+    </QtMoc>
+    <QtMoc Include="gui\tasktablemodel.h">
+      <Filter>src\gui</Filter>
     </QtMoc>
   </ItemGroup>
   <ItemGroup>
@@ -77,11 +83,11 @@
     <ClInclude Include="models\projectscollection.h">
       <Filter>src\models</Filter>
     </ClInclude>
-    <ClInclude Include="gui\tasktablemodel.h">
-      <Filter>src\gui</Filter>
-    </ClInclude>
     <ClInclude Include="models\task.h">
       <Filter>src\models</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\tasktableview.h">
+      <Filter>src\gui</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

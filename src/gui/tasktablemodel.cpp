@@ -13,11 +13,13 @@ TaskTableModel::TaskTableModel(QObject *parent)
 
 int TaskTableModel::rowCount(const QModelIndex& parent) const
 {
+    Q_UNUSED(parent);
     return m_tasks.count();
 }
 
 int TaskTableModel::columnCount(const QModelIndex& parent) const
 {
+    Q_UNUSED(parent);
     return Count;
 }
 
@@ -69,15 +71,30 @@ QVariant TaskTableModel::headerData(int section, Qt::Orientation orientation, in
     return QVariant();
 }
 
+bool TaskTableModel::insertRow(int row, const QModelIndex& parent)
+{
+    Q_UNUSED(parent);
+    beginInsertRows(QModelIndex(), row, row);
+    endInsertRows();
+    return true;
+}
+
+bool TaskTableModel::removeRow(int row, const QModelIndex &parent)
+{
+    Q_UNUSED(parent);
+    beginRemoveRows(QModelIndex(), row, row);
+    endRemoveRows();
+    return true;
+}
+
 void TaskTableModel::addTask(const Task& task)
 {
     m_tasks.insert(0, task);
     insertRow(0);
 }
 
-bool TaskTableModel::insertRow(int row, const QModelIndex& parent)
+void TaskTableModel::removeTaskAt(int row)
 {
-    beginInsertRows(QModelIndex(), row, row);
-    endInsertRows();
-    return true;
+    removeRow(row);
+    m_tasks.removeAt(row);
 }

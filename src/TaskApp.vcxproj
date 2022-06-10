@@ -24,6 +24,7 @@
     <ClCompile Include="gui\taskapp.cpp" />
     <ClCompile Include="gui\tasklistview.cpp" />
     <ClCompile Include="gui\tasktablemodel.cpp" />
+    <ClCompile Include="gui\tasktableview.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="models\projectscollection.cpp" />
   </ItemGroup>
@@ -44,6 +45,7 @@
     <QtMoc Include="gui\tasktablemodel.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="gui\tasktableview.h" />
     <ClInclude Include="models\projectscollection.h" />
     <ClInclude Include="models\task.h" />
   </ItemGroup>
