@@ -30,7 +30,8 @@ void TaskSection::initTableSections()
     table->horizontalHeader()->setStretchLastSection(false);
     table->horizontalHeader()->setSectionResizeMode(TaskTableModel::Title, QHeaderView::Stretch);
     table->horizontalHeader()->setSectionResizeMode(TaskTableModel::TimeCreated, QHeaderView::ResizeToContents);
-    connect(table->selectionModel(), &QItemSelectionModel::currentRowChanged, this, &TaskSection::onSelectedTaskChanged);
+    connect(table->selectionModel(), &QItemSelectionModel::currentRowChanged, this,
+            &TaskSection::onSelectedTaskChanged);
 }
 
 void TaskSection::initButtons()
@@ -62,7 +63,7 @@ void TaskSection::onDeleteBtnClicked()
     m_taskTableModel->removeTaskAt(selectedRows[0].row());
 }
 
-void TaskSection::onSelectedTaskChanged(const QModelIndex &current, const QModelIndex &previous)
+void TaskSection::onSelectedTaskChanged(const QModelIndex& current, const QModelIndex& previous)
 {
     Q_UNUSED(previous);
     // The button should only be enabled if we have selected something.

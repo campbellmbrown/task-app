@@ -79,7 +79,7 @@ bool TaskTableModel::insertRow(int row, const QModelIndex& parent)
     return true;
 }
 
-bool TaskTableModel::removeRow(int row, const QModelIndex &parent)
+bool TaskTableModel::removeRow(int row, const QModelIndex& parent)
 {
     Q_UNUSED(parent);
     beginRemoveRows(QModelIndex(), row, row);

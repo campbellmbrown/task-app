@@ -22,7 +22,7 @@ private:
 private slots:
     void onNewBtnClicked();
     void onDeleteBtnClicked();
-    void onSelectedTaskChanged(const QModelIndex &current, const QModelIndex &previous);
+    void onSelectedTaskChanged(const QModelIndex& current, const QModelIndex& previous);
 
 private:
     Ui::TaskSection m_ui;
