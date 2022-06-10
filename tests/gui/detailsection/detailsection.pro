@@ -7,13 +7,13 @@ INCLUDEPATH = \
     $${SRCPATH} \
 
 SOURCES += \
-    detailsviewtest.cpp \
+    detailsectiontest.cpp \
 
 HEADERS += \
-    $${SRCPATH}/gui/detailsview.h \
+    $${SRCPATH}/gui/detailsection.h \
 
 SOURCES += \
-    $${SRCPATH}/gui/detailsview.cpp \
+    $${SRCPATH}/gui/detailsection.cpp \
 
 FORMS += \
-    $${SRCPATH}/gui/detailsview.ui \
+    $${SRCPATH}/gui/detailsection.ui \

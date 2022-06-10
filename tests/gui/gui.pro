@@ -1,7 +1,7 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-    detailsview \
+    detailsection \
     taskapp \
-    tasklistview \
+    tasksection \
     tasktablemodel \

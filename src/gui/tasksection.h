@@ -1,19 +1,19 @@
 #pragma once
 
-#include "ui_tasklistview.h"
+#include "ui_tasksection.h"
 #include <QWidget>
 
 struct Task;
 class TaskTableModel;
 class QSortFilterProxyModel;
-class TaskListView : public QWidget
+class TaskSection : public QWidget
 {
     Q_OBJECT
 
-    friend class TaskListViewTest;
+    friend class TaskSectionTest;
 
 public:
-    TaskListView(QWidget *parent = nullptr);
+    TaskSection(QWidget *parent = nullptr);
 
 private:
     void initTableSections();
@@ -25,7 +25,7 @@ private slots:
     void onSelectedTaskChanged(const QModelIndex &current, const QModelIndex &previous);
 
 private:
-    Ui::TaskListView m_ui;
+    Ui::TaskSection m_ui;
     TaskTableModel *m_taskTableModel;
     QSortFilterProxyModel *m_proxyModel;
 };

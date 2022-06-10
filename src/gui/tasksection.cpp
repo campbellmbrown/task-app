@@ -1,4 +1,4 @@
-#include "tasklistview.h"
+#include "tasksection.h"
 #include "dialogs/createtaskdlg.h"
 #include "models/projectscollection.h"
 #include "models/task.h"
@@ -6,7 +6,7 @@
 #include <QAbstractButton>
 #include <QSortFilterProxyModel>
 
-TaskListView::TaskListView(QWidget *parent)
+TaskSection::TaskSection(QWidget *parent)
     : QWidget(parent),
       m_taskTableModel(new TaskTableModel()),
       m_proxyModel(new QSortFilterProxyModel())
@@ -18,7 +18,7 @@ TaskListView::TaskListView(QWidget *parent)
     initButtons();
 }
 
-void TaskListView::initTableSections()
+void TaskSection::initTableSections()
 {
     // Enabling sorting/filtering
     m_proxyModel->setSortRole(Qt::UserRole);
@@ -30,17 +30,17 @@ void TaskListView::initTableSections()
     table->horizontalHeader()->setStretchLastSection(false);
     table->horizontalHeader()->setSectionResizeMode(TaskTableModel::Title, QHeaderView::Stretch);
     table->horizontalHeader()->setSectionResizeMode(TaskTableModel::TimeCreated, QHeaderView::ResizeToContents);
-    connect(table->selectionModel(), &QItemSelectionModel::currentRowChanged, this, &TaskListView::onSelectedTaskChanged);
+    connect(table->selectionModel(), &QItemSelectionModel::currentRowChanged, this, &TaskSection::onSelectedTaskChanged);
 }
 
-void TaskListView::initButtons()
+void TaskSection::initButtons()
 {
     m_ui.deleteBtn->setEnabled(false);
-    connect(m_ui.newBtn, &QAbstractButton::clicked, this, &TaskListView::onNewBtnClicked);
-    connect(m_ui.deleteBtn, &QAbstractButton::clicked, this, &TaskListView::onDeleteBtnClicked);
+    connect(m_ui.newBtn, &QAbstractButton::clicked, this, &TaskSection::onNewBtnClicked);
+    connect(m_ui.deleteBtn, &QAbstractButton::clicked, this, &TaskSection::onDeleteBtnClicked);
 }
 
-void TaskListView::onNewBtnClicked()
+void TaskSection::onNewBtnClicked()
 {
     // Temporary - TODO: remove
     ProjectsCollection projectsCollection;
@@ -55,14 +55,14 @@ void TaskListView::onNewBtnClicked()
     }
 }
 
-void TaskListView::onDeleteBtnClicked()
+void TaskSection::onDeleteBtnClicked()
 {
     auto selectedRows = m_ui.taskTableView->selectionModel()->selectedRows();
     assert(selectedRows.count() == 1);
     m_taskTableModel->removeTaskAt(selectedRows[0].row());
 }
 
-void TaskListView::onSelectedTaskChanged(const QModelIndex &current, const QModelIndex &previous)
+void TaskSection::onSelectedTaskChanged(const QModelIndex &current, const QModelIndex &previous)
 {
     Q_UNUSED(previous);
     // The button should only be enabled if we have selected something.

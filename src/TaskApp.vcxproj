@@ -20,9 +20,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dialogs\createtaskdlg.cpp" />
-    <ClCompile Include="gui\detailsview.cpp" />
+    <ClCompile Include="gui\detailsection.cpp" />
     <ClCompile Include="gui\taskapp.cpp" />
-    <ClCompile Include="gui\tasklistview.cpp" />
+    <ClCompile Include="gui\tasksection.cpp" />
     <ClCompile Include="gui\tasktablemodel.cpp" />
     <ClCompile Include="gui\tasktableview.cpp" />
     <ClCompile Include="main.cpp" />
@@ -33,15 +33,15 @@
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="dialogs\createtaskdlg.ui" />
-    <QtUic Include="gui\detailsview.ui" />
+    <QtUic Include="gui\detailsection.ui" />
     <QtUic Include="gui\taskapp.ui" />
-    <QtUic Include="gui\tasklistview.ui" />
+    <QtUic Include="gui\tasksection.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="dialogs\createtaskdlg.h" />
-    <QtMoc Include="gui\detailsview.h" />
+    <QtMoc Include="gui\detailsection.h" />
     <QtMoc Include="gui\taskapp.h" />
-    <QtMoc Include="gui\tasklistview.h" />
+    <QtMoc Include="gui\tasksection.h" />
     <QtMoc Include="gui\tasktablemodel.h" />
   </ItemGroup>
   <ItemGroup>
