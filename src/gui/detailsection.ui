@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>DetailsView</class>
- <widget class="QWidget" name="DetailsView">
+ <class>DetailSection</class>
+ <widget class="QWidget" name="DetailSection">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,10 +11,10 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>DetailsView</string>
+   <string>DetailSection</string>
   </property>
-  <layout class="QGridLayout" name="detailsViewLayout">
-   <item row="0" column="0">
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
     <widget class="QGroupBox" name="detailsGroupBox">
      <property name="title">
       <string>Details</string>

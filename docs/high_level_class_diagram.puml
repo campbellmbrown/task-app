@@ -1,0 +1,54 @@
+@startuml High Level Class Diagram
+
+title High Level Class Diagram
+
+skinparam class {
+    BackgroundColor<<Library>> LightGray
+}
+skinparam spotChar<<Struct>> S
+
+class QAbstractTableModel <<Library>>
+class QDialog <<Library>>
+class QMainWindow <<Library>>
+class QTableView <<Library>>
+class QWidget <<Library>>
+class QSortFilterProxyModel <<Library>>
+
+class TaskApp
+class CreateTaskDlg
+class DetailSection
+class TaskSection
+class TaskTableView
+class TaskTableModel
+class ProjectsCollection
+class Task <<Struct>>
+
+QMainWindow <|-- TaskApp
+QWidget <|-- TaskSection
+QWidget <|-- DetailSection
+QTableView <|-- TaskTableView
+QDialog <|-- CreateTaskDlg
+QAbstractTableModel <|-- TaskTableModel
+
+TaskApp *-- DetailSection
+TaskApp *-- TaskSection
+
+TaskSection *-- TaskTableView
+TaskSection *-- TaskTableModel
+TaskSection *-- CreateTaskDlg
+TaskSection *-- QSortFilterProxyModel
+
+QSortFilterProxyModel -o TaskTableView
+TaskTableModel -o QSortFilterProxyModel
+
+TaskTableModel *-- Task
+
+CreateTaskDlg *-- ProjectsCollection
+
+note left of ProjectsCollection
+    This class in the future should
+    be composed somewhere else and
+    be aggregated here instead.
+end note
+
+@enduml

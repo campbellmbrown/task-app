@@ -48,7 +48,7 @@
           <property name="childrenCollapsible">
            <bool>false</bool>
           </property>
-          <widget class="QFrame" name="taskListViewArea">
+          <widget class="QFrame" name="tasksectionArea">
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
            </property>
@@ -57,11 +57,11 @@
            </property>
            <layout class="QGridLayout" name="taskListLayout">
             <item row="0" column="0">
-             <widget class="TaskListView" name="taskListView"/>
+             <widget class="TaskSection" name="taskSection"/>
             </item>
            </layout>
           </widget>
-          <widget class="QFrame" name="detailsViewArea">
+          <widget class="QFrame" name="detailSectionArea">
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
            </property>
@@ -70,7 +70,7 @@
            </property>
            <layout class="QGridLayout" name="detailsLayout">
             <item row="0" column="0">
-             <widget class="DetailsView" name="detailsView"/>
+             <widget class="DetailSection" name="detailSection"/>
             </item>
            </layout>
           </widget>
@@ -111,15 +111,15 @@
  <layoutdefault spacing="6" margin="11"/>
  <customwidgets>
   <customwidget>
-   <class>DetailsView</class>
+   <class>DetailSection</class>
    <extends>QWidget</extends>
-   <header>gui/detailsview.h</header>
+   <header>gui/detailsection.h</header>
    <container>1</container>
   </customwidget>
   <customwidget>
-   <class>TaskListView</class>
+   <class>TaskSection</class>
    <extends>QWidget</extends>
-   <header>gui/tasklistview.h</header>
+   <header>gui/tasksection.h</header>
    <container>1</container>
   </customwidget>
  </customwidgets>

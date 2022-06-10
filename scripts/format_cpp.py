@@ -16,10 +16,12 @@ EXCLUDE_FILES = [
 # Exclude directories relative to the search path.
 EXCLUDE_DIRECTORIES = [
     "src/Debug",
+    "src/Release",
+    "src/x64",
 ]
 
 # Exclude directories with patterns
-EXCLUDE_DIRECTORIES.extend(SEARCH_PATH.glob("tests/**/build-*"))
+EXCLUDE_DIRECTORIES.extend(SEARCH_PATH.glob("**/build-*"))
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Formats all cpp code.")
