@@ -3,7 +3,7 @@
 #include "ui_createtaskdlg.h"
 #include <QDialog>
 
-class Task;
+struct Task;
 class ProjectsCollection;
 class CreateTaskDlg : public QDialog
 {

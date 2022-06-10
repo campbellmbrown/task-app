@@ -64,6 +64,7 @@ void TaskListView::onDeleteBtnClicked()
 
 void TaskListView::onSelectedTaskChanged(const QModelIndex &current, const QModelIndex &previous)
 {
+    Q_UNUSED(previous);
     // The button should only be enabled if we have selected something.
     m_ui.deleteBtn->setEnabled(current.row() >= 0);
 }

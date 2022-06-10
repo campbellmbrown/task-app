@@ -3,7 +3,7 @@
 #include "ui_tasklistview.h"
 #include <QWidget>
 
-class Task;
+struct Task;
 class TaskTableModel;
 class QSortFilterProxyModel;
 class TaskListView : public QWidget
