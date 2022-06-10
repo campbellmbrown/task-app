@@ -81,7 +81,7 @@ void TaskTableModelTest::check_addTask()
     QCOMPARE(m_taskTableModel->m_tasks.count(), 0);
 
     // When:
-    addCustomTask("taskTitle", QDateTime::fromSecsSinceEpoch(7321));
+    addCustomTask("taskTitle", QDateTime::fromSecsSinceEpoch(10921, Qt::UTC, 0));
 
     // Then:
     QCOMPARE(m_taskTableModel->rowCount(), 1);
@@ -91,9 +91,9 @@ void TaskTableModelTest::check_addTask()
     auto firstRowTimeCreated = m_taskTableModel->index(0, TaskTableModel::TimeCreated);
     QCOMPARE(m_taskTableModel->data(firstRowTitle, Qt::DisplayRole).toString(), "taskTitle");
     QCOMPARE(m_taskTableModel->data(firstRowTitle, Qt::UserRole).toString(), "taskTitle");
-    QCOMPARE(m_taskTableModel->data(firstRowTimeCreated, Qt::DisplayRole).toString(), "01/01/70 03:02:01 pm");
+    QCOMPARE(m_taskTableModel->data(firstRowTimeCreated, Qt::DisplayRole).toString(), "01/01/70 03:02:01 am");
     QCOMPARE(m_taskTableModel->data(firstRowTimeCreated, Qt::UserRole).toDateTime().date(), QDate(1970, 1, 1));
-    QCOMPARE(m_taskTableModel->data(firstRowTimeCreated, Qt::UserRole).toDateTime().time(), QTime(15, 2, 1));
+    QCOMPARE(m_taskTableModel->data(firstRowTimeCreated, Qt::UserRole).toDateTime().time(), QTime(3, 2, 1));
 }
 
 void TaskTableModelTest::check_removeTask_beginning()
