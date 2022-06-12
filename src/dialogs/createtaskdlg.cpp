@@ -21,5 +21,6 @@ void CreateTaskDlg::accept()
 {
     m_task.title = m_ui.titleLineEdit->text();
     m_task.timeCreated = QDateTime::currentDateTime();
+    m_task.uuid = QUuid::createUuid();
     SuperClass::accept();
 }

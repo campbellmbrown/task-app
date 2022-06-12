@@ -16,7 +16,7 @@ public:
     TaskSection(QWidget *parent = nullptr);
 
 private:
-    void initTableSections();
+    void initTableView();
     void initButtons();
 
 private slots:
