@@ -33,6 +33,8 @@ void CreateTaskDlgTest::check_projectsComboBox_isPopulated()
     QCOMPARE(m_createTaskDlg->m_ui.projectComboBox->count(), 2);
 }
 
+#include <QRegularExpression>
+
 void CreateTaskDlgTest::check_savesOnAccept()
 {
     // Given:
@@ -43,6 +45,8 @@ void CreateTaskDlgTest::check_savesOnAccept()
 
     // Then:
     QCOMPARE(m_task.title, "someTitle");
+    auto regex = QRegularExpression("[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}");
+    QCOMPARE(regex.match(m_task.uuid.toString(QUuid::WithoutBraces)).hasMatch(), true);
 }
 
 void CreateTaskDlgTest::check_doesntSaveTaskOnReject()
@@ -55,6 +59,7 @@ void CreateTaskDlgTest::check_doesntSaveTaskOnReject()
 
     // Then:
     QCOMPARE(m_task.title, "");
+    QCOMPARE(m_task.uuid.toString(QUuid::WithoutBraces), "00000000-0000-0000-0000-000000000000");
 }
 
 QTEST_MAIN(CreateTaskDlgTest)

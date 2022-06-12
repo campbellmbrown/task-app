@@ -13,11 +13,11 @@ TaskSection::TaskSection(QWidget *parent)
     m_ui.setupUi(this);
     m_ui.verticalLayout->setContentsMargins(0, 0, 0, 0);
 
-    initTableSections();
+    initTableView();
     initButtons();
 }
 
-void TaskSection::initTableSections()
+void TaskSection::initTableView()
 {
     // Enabling sorting/filtering
     m_proxyModel->setSortRole(Qt::UserRole);
