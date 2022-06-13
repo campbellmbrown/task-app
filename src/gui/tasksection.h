@@ -15,6 +15,9 @@ class TaskSection : public QWidget
 public:
     TaskSection(QWidget *parent = nullptr);
 
+signals:
+    void taskSelected(Task& selected);
+
 private:
     void initTableView();
     void initButtons();

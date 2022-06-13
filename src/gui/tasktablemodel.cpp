@@ -97,3 +97,8 @@ void TaskTableModel::removeTaskAt(int row)
     removeRow(row);
     m_tasks.removeAt(row);
 }
+
+Task& TaskTableModel::taskAt(int row)
+{
+    return m_tasks[row];
+}

@@ -66,5 +66,11 @@ void TaskSection::onSelectedTaskChanged(const QModelIndex& current, const QModel
 {
     Q_UNUSED(previous);
     // The button should only be enabled if we have selected something.
-    m_ui.deleteBtn->setEnabled(current.row() >= 0);
+
+    auto row = current.row();
+    bool someRowSelected = (current.row() >= 0);
+    m_ui.deleteBtn->setEnabled(someRowSelected);
+    if (someRowSelected) {
+        emit taskSelected(m_taskTableModel->taskAt(row));
+    }
 }
