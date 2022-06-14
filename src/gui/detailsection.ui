@@ -45,7 +45,7 @@
        </widget>
       </item>
       <item row="2" column="0" colspan="2">
-       <widget class="QDialogButtonBox" name="buttonBox">
+       <widget class="QDialogButtonBox" name="generalButtonBox">
         <property name="standardButtons">
          <set>QDialogButtonBox::Apply|QDialogButtonBox::Reset</set>
         </property>

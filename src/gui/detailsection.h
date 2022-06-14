@@ -17,6 +17,9 @@ public:
 private:
     void reset();
 
+private slots:
+    void onApply();
+
 private:
     Ui::DetailSection m_ui;
     std::shared_ptr<Task> m_selectedTask = nullptr;

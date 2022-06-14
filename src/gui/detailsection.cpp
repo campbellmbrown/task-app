@@ -6,6 +6,9 @@ DetailSection::DetailSection(QWidget *parent)
 {
     m_ui.setupUi(this);
     m_ui.verticalLayout->setContentsMargins(0, 0, 0, 0);
+
+    connect(m_ui.generalButtonBox->button(QDialogButtonBox::Apply), &QPushButton::clicked, this, &DetailSection::onApply);
+
     reset();
 }
 
@@ -41,4 +44,13 @@ void DetailSection::onNothingSelected()
 {
     m_selectedTask = nullptr;
     reset();
+}
+
+#include <QDebug>
+void DetailSection::onApply()
+{
+    qDebug() << "foo";
+    // General
+    m_selectedTask->title = m_ui.titleLineEdit->text();
+    m_selectedTask->notes = m_ui.notesPlainTextEdit->toPlainText();
 }
