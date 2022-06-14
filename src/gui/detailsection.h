@@ -11,9 +11,13 @@ class DetailSection : public QWidget
 public:
     DetailSection(QWidget *parent = nullptr);
 
-    void onTaskSelected(Task& selected);
+    void onTaskSelected(std::shared_ptr<Task> selected);
     void onNothingSelected();
 
 private:
+    void reset();
+
+private:
     Ui::DetailSection m_ui;
+    std::shared_ptr<Task> m_selectedTask = nullptr;
 };
