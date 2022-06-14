@@ -3,7 +3,7 @@
 #include "ui_detailsection.h"
 #include <QWidget>
 
-class Task;
+struct Task;
 class DetailSection : public QWidget
 {
     Q_OBJECT
@@ -12,6 +12,7 @@ public:
     DetailSection(QWidget *parent = nullptr);
 
     void onTaskSelected(Task& selected);
+    void onNothingSelected();
 
 private:
     Ui::DetailSection m_ui;

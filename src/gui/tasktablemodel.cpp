@@ -31,7 +31,7 @@ QVariant TaskTableModel::data(const QModelIndex& index, int role) const
         case Qt::DisplayRole:
             switch (col) {
                 case Title:
-                    return m_tasks.at(row).title;
+                    return QString("%1 (%2)").arg(m_tasks.at(row).title).arg(row);
 
                 case TimeCreated:
                     return m_tasks.at(row).timeCreated.toString("dd/MM/yy hh:mm:ss ap");

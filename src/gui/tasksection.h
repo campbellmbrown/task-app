@@ -17,6 +17,7 @@ public:
 
 signals:
     void taskSelected(Task& selected);
+    void nothingSelected();
 
 private:
     void initTableView();

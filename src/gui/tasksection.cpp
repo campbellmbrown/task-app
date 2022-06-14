@@ -59,18 +59,25 @@ void TaskSection::onDeleteBtnClicked()
 {
     auto selectedRows = m_ui.taskTableView->selectionModel()->selectedRows();
     assert(selectedRows.count() == 1);
-    m_taskTableModel->removeTaskAt(selectedRows[0].row());
+    auto sourceIndex = m_proxyModel->mapToSource(selectedRows[0]);
+    m_taskTableModel->removeTaskAt(sourceIndex.row());
 }
 
 void TaskSection::onSelectedTaskChanged(const QModelIndex& current, const QModelIndex& previous)
 {
     Q_UNUSED(previous);
-    // The button should only be enabled if we have selected something.
 
-    auto row = current.row();
-    bool someRowSelected = (current.row() >= 0);
+    auto sourceIndex = m_proxyModel->mapToSource(current);
+    auto row = sourceIndex.row();
+
+    // The button should only be enabled if we have selected something.
+    bool someRowSelected = (row >= 0);
+
     m_ui.deleteBtn->setEnabled(someRowSelected);
     if (someRowSelected) {
         emit taskSelected(m_taskTableModel->taskAt(row));
+    }
+    else {
+        emit nothingSelected();
     }
 }

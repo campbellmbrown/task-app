@@ -11,5 +11,10 @@ DetailSection::DetailSection(QWidget *parent)
 
 void DetailSection::onTaskSelected(Task& selected)
 {
-    m_ui.titleLabel->setText(selected.title);
+    m_ui.titleLineEdit->setText(selected.title);
+}
+
+void DetailSection::onNothingSelected()
+{
+    m_ui.titleLineEdit->setText("");
 }

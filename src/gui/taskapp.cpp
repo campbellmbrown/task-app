@@ -21,4 +21,5 @@ void TaskApp::initGuiElements()
     m_ui.detailsLayout->addWidget(detailSection, 0, 0);
 
     connect(taskSection, &TaskSection::taskSelected, detailSection, &DetailSection::onTaskSelected);
+    connect(taskSection, &TaskSection::nothingSelected, detailSection, &DetailSection::onNothingSelected);
 }
