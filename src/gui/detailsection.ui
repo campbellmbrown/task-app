@@ -75,6 +75,11 @@
       </item>
       <item row="0" column="1">
        <widget class="QLabel" name="uuidDisplayLabel">
+        <property name="font">
+         <font>
+          <family>Consolas</family>
+         </font>
+        </property>
         <property name="text">
          <string>-</string>
         </property>
