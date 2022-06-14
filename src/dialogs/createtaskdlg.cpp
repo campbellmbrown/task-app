@@ -20,6 +20,7 @@ CreateTaskDlg::CreateTaskDlg(Task& task, ProjectsCollection& projectsCollection,
 void CreateTaskDlg::accept()
 {
     m_task.title = m_ui.titleLineEdit->text();
+    m_task.notes = m_ui.notesPlainTextEdit->toPlainText();
     m_task.timeCreated = QDateTime::currentDateTime();
     m_task.uuid = QUuid::createUuid();
     SuperClass::accept();

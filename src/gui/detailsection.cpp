@@ -13,10 +13,13 @@ void DetailSection::reset()
 {
     // General
     m_ui.titleLineEdit->setText("");
+    m_ui.notesPlainTextEdit->setPlainText("");
 
     // Metadata
-    m_ui.dataCreatedDisplayLabel->setText("-");
+    m_ui.timeCreatedDisplayLabel->setText("-");
     m_ui.uuidDisplayLabel->setText(QUuid().toString(QUuid::WithoutBraces));
+
+    setDisabled(true);
 }
 
 void DetailSection::onTaskSelected(std::shared_ptr<Task> selected)
@@ -25,10 +28,13 @@ void DetailSection::onTaskSelected(std::shared_ptr<Task> selected)
 
     // General
     m_ui.titleLineEdit->setText(m_selectedTask->title);
+    m_ui.notesPlainTextEdit->setPlainText(m_selectedTask->notes);
 
     // Metadata
-    m_ui.dataCreatedDisplayLabel->setText(m_selectedTask->timeCreated.toString(Task::DATE_FORMAT));
+    m_ui.timeCreatedDisplayLabel->setText(m_selectedTask->timeCreated.toString(Task::DATE_FORMAT));
     m_ui.uuidDisplayLabel->setText(m_selectedTask->uuid.toString(QUuid::WithoutBraces));
+
+    setEnabled(true);
 }
 
 void DetailSection::onNothingSelected()
