@@ -95,7 +95,8 @@ void TaskTableModelTest::check_addTask()
     auto firstRowTimeCreated = m_taskTableModel->index(0, TaskTableModel::TimeCreated);
     QCOMPARE(m_taskTableModel->data(firstRowTitle, Qt::DisplayRole).toString(), "taskTitle");
     QCOMPARE(m_taskTableModel->data(firstRowTitle, Qt::UserRole).toString(), "taskTitle");
-    QCOMPARE(m_taskTableModel->data(firstRowPriority, Qt::DisplayRole).toString(), PriorityDisplay::text(Priority::High));
+    QCOMPARE(m_taskTableModel->data(firstRowPriority, Qt::DisplayRole).toString(),
+             PriorityDisplay::text(Priority::High));
     QCOMPARE(m_taskTableModel->data(firstRowPriority, Qt::UserRole).toInt(), Priority::High);
     QCOMPARE(m_taskTableModel->data(firstRowTimeCreated, Qt::DisplayRole).toString(), "01/01/70 03:02:01 am");
     QCOMPARE(m_taskTableModel->data(firstRowTimeCreated, Qt::UserRole).toDateTime().date(), QDate(1970, 1, 1));
