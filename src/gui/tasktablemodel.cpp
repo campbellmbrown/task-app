@@ -59,7 +59,6 @@ QVariant TaskTableModel::data(const QModelIndex& index, int role) const
                 case Priority:
                     return PriorityDisplay::icon(m_tasks.at(row).priority);
             }
-
     }
     return QVariant();
 }
