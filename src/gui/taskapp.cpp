@@ -1,5 +1,5 @@
 #include "taskapp.h"
-#include "detailSection.h"
+#include "detailsection.h"
 #include "tasksection.h"
 
 TaskApp::TaskApp(QWidget *parent)

@@ -8,6 +8,8 @@ class DetailSection : public QWidget
 {
     Q_OBJECT
 
+    friend class DetailSectionTest;
+
 public:
     DetailSection(QWidget *parent = nullptr);
 
