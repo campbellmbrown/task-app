@@ -75,8 +75,8 @@ void TaskSection::onSelectedTaskChanged(const QModelIndex& current, const QModel
 
     m_ui.deleteBtn->setEnabled(someRowSelected);
     if (someRowSelected) {
-        auto ptr = std::make_shared<Task>(m_taskTableModel->taskAt(row));
-        emit taskSelected(ptr);
+        Task& task = m_taskTableModel->taskAt(row);
+        emit taskSelected(task);
     }
     else {
         emit nothingSelected();

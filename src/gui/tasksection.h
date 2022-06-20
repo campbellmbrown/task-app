@@ -16,7 +16,7 @@ public:
     TaskSection(QWidget *parent = nullptr);
 
 signals:
-    void taskSelected(std::shared_ptr<Task> selected);
+    void taskSelected(Task& selected);
     void nothingSelected();
 
 private:

@@ -1,9 +1,9 @@
 #pragma once
 
+#include "models/task.h"
 #include "ui_detailsection.h"
 #include <QWidget>
 
-struct Task;
 class DetailSection : public QWidget
 {
     Q_OBJECT
@@ -11,7 +11,7 @@ class DetailSection : public QWidget
 public:
     DetailSection(QWidget *parent = nullptr);
 
-    void onTaskSelected(std::shared_ptr<Task> selected);
+    void onTaskSelected(Task& selected);
     void onNothingSelected();
 
 private:
@@ -22,5 +22,5 @@ private slots:
 
 private:
     Ui::DetailSection m_ui;
-    std::shared_ptr<Task> m_selectedTask = nullptr;
+    Task *m_selectedTask = nullptr;
 };

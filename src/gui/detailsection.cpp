@@ -1,5 +1,6 @@
 #include "detailsection.h"
-#include "models/task.h"
+#include <QDebug>
+#include <QPushButton>
 
 DetailSection::DetailSection(QWidget *parent)
     : QWidget(parent)
@@ -25,9 +26,9 @@ void DetailSection::reset()
     setDisabled(true);
 }
 
-void DetailSection::onTaskSelected(std::shared_ptr<Task> selected)
+void DetailSection::onTaskSelected(Task& selected)
 {
-    m_selectedTask = selected;
+    m_selectedTask = &selected;
 
     // General
     m_ui.titleLineEdit->setText(m_selectedTask->title);
@@ -46,10 +47,10 @@ void DetailSection::onNothingSelected()
     reset();
 }
 
-#include <QDebug>
 void DetailSection::onApply()
 {
-    qDebug() << "foo";
+    qInfo() << "Updating task" << m_selectedTask->uuid.toString(QUuid::WithoutBraces);
+
     // General
     m_selectedTask->title = m_ui.titleLineEdit->text();
     m_selectedTask->notes = m_ui.notesPlainTextEdit->toPlainText();
