@@ -13,6 +13,8 @@ private slots:
     void init();
     void check_comboBoxes_arePopulated();
     void check_savesOnAccept();
+    void check_preventEmptyTitle();
+    void check_preventEmptyPriority();
     void check_doesntSaveTaskOnReject();
 
 private:
@@ -52,6 +54,40 @@ void CreateTaskDlgTest::check_savesOnAccept()
     QCOMPARE(regex.match(m_task.uuid.toString(QUuid::WithoutBraces)).hasMatch(), true);
     QCOMPARE(m_task.priority, Priority::High);
 }
+
+void CreateTaskDlgTest::check_preventEmptyTitle()
+{
+    // Given:
+    m_createTaskDlg->m_ui.titleLineEdit->setText("");
+
+    // When:
+    m_createTaskDlg->accept();
+
+    // Then:
+    QCOMPARE(m_task.title, "");
+    QCOMPARE(m_task.notes, "");
+    QCOMPARE(m_task.uuid.toString(QUuid::WithoutBraces), "00000000-0000-0000-0000-000000000000");
+    QCOMPARE(m_task.timeCreated, QDateTime());
+    QCOMPARE(m_task.priority, Priority::Medium);
+}
+
+void CreateTaskDlgTest::check_preventEmptyPriority()
+{
+    // Given:
+    m_createTaskDlg->m_ui.titleLineEdit->setText("something");
+    m_createTaskDlg->m_ui.priorityComboBox->setCurrentIndex(-1);
+
+    // When:
+    m_createTaskDlg->accept();
+
+    // Then:
+    QCOMPARE(m_task.title, "");
+    QCOMPARE(m_task.notes, "");
+    QCOMPARE(m_task.uuid.toString(QUuid::WithoutBraces), "00000000-0000-0000-0000-000000000000");
+    QCOMPARE(m_task.timeCreated, QDateTime());
+    QCOMPARE(m_task.priority, Priority::Medium);
+}
+
 
 void CreateTaskDlgTest::check_doesntSaveTaskOnReject()
 {

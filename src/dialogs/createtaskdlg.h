@@ -17,6 +17,9 @@ public:
     void accept() override;
 
 private:
+    bool checkFields();
+
+private:
     Ui::CreateTaskDlg m_ui;
     Task& m_task;
 };

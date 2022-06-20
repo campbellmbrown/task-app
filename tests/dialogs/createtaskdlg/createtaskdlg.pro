@@ -21,3 +21,5 @@ SOURCES += \
 
 FORMS += \
     $${SRCPATH}/dialogs/createtaskdlg.ui \
+
+DEFINES += IGNORE_DIALOG
