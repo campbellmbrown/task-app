@@ -15,6 +15,10 @@ CreateTaskDlg::CreateTaskDlg(Task& task, ProjectsCollection& projectsCollection,
     for (int idx = 0; idx < projectsCollection.projects().count(); idx++) {
         m_ui.projectComboBox->addItem(projectsCollection.projects().at(idx));
     }
+
+    for (int idx = 0; idx < (int)Priority::Count; idx++) {
+        m_ui.priorityComboBox->addItem(QString("%1").arg(idx));
+    }
 }
 
 void CreateTaskDlg::accept()

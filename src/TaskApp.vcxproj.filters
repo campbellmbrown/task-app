@@ -25,6 +25,9 @@
     <ClCompile Include="gui\tasktableview.cpp">
       <Filter>src\gui</Filter>
     </ClCompile>
+    <ClCompile Include="models\priority.cpp">
+      <Filter>src\models</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="gui\detailsection.h">
@@ -88,6 +91,9 @@
     </ClInclude>
     <ClInclude Include="gui\tasktableview.h">
       <Filter>src\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="models\priority.h">
+      <Filter>src\models</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -26,6 +26,7 @@
     <ClCompile Include="gui\tasktablemodel.cpp" />
     <ClCompile Include="gui\tasktableview.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="models\priority.cpp" />
     <ClCompile Include="models\projectscollection.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -46,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="gui\tasktableview.h" />
+    <ClInclude Include="models\priority.h" />
     <ClInclude Include="models\projectscollection.h" />
     <ClInclude Include="models\task.h" />
   </ItemGroup>
