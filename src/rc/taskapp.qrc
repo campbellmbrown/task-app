@@ -1,4 +1,11 @@
 <RCC>
     <qresource prefix="src">
     </qresource>
+    <qresource>
+        <file>icons/blockerpriority.png</file>
+        <file>icons/highpriority.png</file>
+        <file>icons/mediumpriority.png</file>
+        <file>icons/lowpriority.png</file>
+        <file>icons/downtimepriority.png</file>
+    </qresource>
 </RCC>

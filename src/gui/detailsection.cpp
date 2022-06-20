@@ -12,7 +12,8 @@ DetailSection::DetailSection(QWidget *parent)
             &DetailSection::onApply);
 
     for (int idx = 0; idx < (int)Priority::Count; idx++) {
-        m_ui.priorityComboBox->addItem(PriorityDisplay::text(static_cast<Priority>(idx)));
+        auto priority = static_cast<Priority>(idx);
+        m_ui.priorityComboBox->addItem(PriorityDisplay::icon(priority), PriorityDisplay::text(priority));
     }
 
     reset();
