@@ -19,7 +19,7 @@ CreateTaskDlg::CreateTaskDlg(Task& task, ProjectsCollection& projectsCollection,
     for (int idx = 0; idx < (int)Priority::Count; idx++) {
         m_ui.priorityComboBox->addItem(PriorityDisplay::text(static_cast<Priority>(idx)));
     }
-    m_ui.priorityComboBox->setCurrentIndex(PriorityDisplay::defaultPriority);
+    m_ui.priorityComboBox->setCurrentIndex(-1);
 }
 
 void CreateTaskDlg::accept()

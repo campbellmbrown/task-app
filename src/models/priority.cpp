@@ -8,8 +8,6 @@ QMap<Priority, QString> PriorityDisplay::m_labelMap{{
     {Priority::Blocker, "Blocker"},
 }};
 
-Priority PriorityDisplay::defaultPriority = Priority::Medium;
-
 QString PriorityDisplay::text(Priority priority)
 {
     return m_labelMap[priority];
