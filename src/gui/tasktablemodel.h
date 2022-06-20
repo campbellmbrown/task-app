@@ -13,6 +13,7 @@ public:
     enum Columns
     {
         Title = 0,
+        Priority,
         TimeCreated,
         Count,
     };

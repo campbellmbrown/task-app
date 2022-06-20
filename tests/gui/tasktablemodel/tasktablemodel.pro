@@ -11,6 +11,8 @@ SOURCES += \
 
 HEADERS += \
     $${SRCPATH}/gui/tasktablemodel.h \
+    $${SRCPATH}/models/priority.h \
 
 SOURCES += \
     $${SRCPATH}/gui/tasktablemodel.cpp \
+    $${SRCPATH}/models/priority.cpp \
