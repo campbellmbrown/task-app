@@ -10,6 +10,7 @@ HEADERS += \
     ./gui/tasksection.h \
     ./gui/tasktablemodel.h \
     ./gui/tasktableview.h \
+    ./models/priority.h \
     ./models/projectscollection.h \
 
 SOURCES += \
@@ -20,6 +21,7 @@ SOURCES += \
     ./gui/tasktablemodel.cpp \
     ./gui/tasktableview.cpp \
     ./main.cpp \
+    ./models/priority.cpp \
     ./models/projectscollection.cpp \
 
 FORMS += \
