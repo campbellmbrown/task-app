@@ -13,8 +13,6 @@ QString PriorityDisplay::text(Priority priority)
     return m_labelMap[priority];
 }
 
-#include <QDebug>
-
 QIcon PriorityDisplay::icon(Priority priority)
 {
     static QIcon downtimePriorityIcon(":/icons/downtimepriority.png");
