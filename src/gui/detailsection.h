@@ -13,6 +13,7 @@ class DetailSection : public QWidget
 public:
     DetailSection(QWidget *parent = nullptr);
 
+public slots:
     void onTaskSelected(Task& selected);
     void onNothingSelected();
 
