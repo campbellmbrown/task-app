@@ -39,7 +39,7 @@ void CreateTaskDlgTest::check_savesOnAccept()
 {
     // Given:
     m_createTaskDlg->m_ui.titleLineEdit->setText("someTitle");
-    m_createTaskDlg->m_ui.notesTextEdit->setPlainText("some\nNotes");
+    m_createTaskDlg->m_ui.notesPlainTextEdit->setPlainText("some\nNotes");
 
     // When:
     m_createTaskDlg->accept();
@@ -55,7 +55,7 @@ void CreateTaskDlgTest::check_doesntSaveTaskOnReject()
 {
     // Given:
     m_createTaskDlg->m_ui.titleLineEdit->setText("someTitle");
-    m_createTaskDlg->m_ui.notesTextEdit->setPlainText("some\nNotes");
+    m_createTaskDlg->m_ui.notesPlainTextEdit->setPlainText("some\nNotes");
 
     // When:
     m_createTaskDlg->reject();
