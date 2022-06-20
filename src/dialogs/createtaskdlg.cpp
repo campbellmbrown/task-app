@@ -4,7 +4,6 @@
 #include <QDateTime>
 #include <QDialogButtonBox>
 #include <QMessageBox>
-#include <QIcon>
 
 CreateTaskDlg::CreateTaskDlg(Task& task, ProjectsCollection& projectsCollection, QWidget *parent)
     : QDialog(parent),
