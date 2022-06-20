@@ -15,6 +15,11 @@ CreateTaskDlg::CreateTaskDlg(Task& task, ProjectsCollection& projectsCollection,
     for (int idx = 0; idx < projectsCollection.projects().count(); idx++) {
         m_ui.projectComboBox->addItem(projectsCollection.projects().at(idx));
     }
+
+    for (int idx = 0; idx < (int)Priority::Count; idx++) {
+        m_ui.priorityComboBox->addItem(PriorityDisplay::text(static_cast<Priority>(idx)));
+    }
+    m_ui.priorityComboBox->setCurrentIndex(-1);
 }
 
 void CreateTaskDlg::accept()
@@ -23,5 +28,6 @@ void CreateTaskDlg::accept()
     m_task.notes = m_ui.notesPlainTextEdit->toPlainText();
     m_task.timeCreated = QDateTime::currentDateTime();
     m_task.uuid = QUuid::createUuid();
+    m_task.priority = static_cast<Priority>(m_ui.priorityComboBox->currentIndex());
     SuperClass::accept();
 }

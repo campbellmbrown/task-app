@@ -26,6 +26,7 @@ void DetailSectionTest::check_initResets()
 {
     // General
     QCOMPARE(m_detailSection->m_ui.titleLineEdit->text(), "");
+    QCOMPARE(m_detailSection->m_ui.priorityComboBox->currentText(), "");
     QCOMPARE(m_detailSection->m_ui.notesPlainTextEdit->toPlainText(), "");
     // Metadata
     QCOMPARE(m_detailSection->m_ui.timeCreatedDisplayLabel->text(), "-");
@@ -40,6 +41,7 @@ void DetailSectionTest::check_onSelected()
     Task task;
     task.title = "some title";
     task.notes = "some notes";
+    task.priority = Priority::High;
     task.timeCreated = QDateTime::fromSecsSinceEpoch(10921, Qt::UTC, 0);
     task.uuid = QUuid("01234567-8901-2345-6789-012345678901");
 
@@ -49,6 +51,7 @@ void DetailSectionTest::check_onSelected()
     // Then:
     // General
     QCOMPARE(m_detailSection->m_ui.titleLineEdit->text(), "some title");
+    QCOMPARE(m_detailSection->m_ui.priorityComboBox->currentIndex(), Priority::High);
     QCOMPARE(m_detailSection->m_ui.notesPlainTextEdit->toPlainText(), "some notes");
     // Metadata
     QCOMPARE(m_detailSection->m_ui.timeCreatedDisplayLabel->text(), "01/01/70 03:02:01 am");
@@ -68,6 +71,7 @@ void DetailSectionTest::check_onApply()
     Task task;
     m_detailSection->onTaskSelected(task);
     m_detailSection->m_ui.titleLineEdit->setText("some title");
+    m_detailSection->m_ui.priorityComboBox->setCurrentIndex(Priority::High);
     m_detailSection->m_ui.notesPlainTextEdit->setPlainText("some notes");
 
     // When:
@@ -75,6 +79,7 @@ void DetailSectionTest::check_onApply()
 
     // Then:
     QCOMPARE(task.title, "some title");
+    QCOMPARE(task.priority, Priority::High);
     QCOMPARE(task.notes, "some notes");
 }
 

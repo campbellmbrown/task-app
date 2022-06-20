@@ -6,6 +6,7 @@ TaskTableModel::TaskTableModel(QObject *parent)
     : QAbstractTableModel(parent)
 {
     m_headerNames.insert(Title, "Title");
+    m_headerNames.insert(Priority, "Priority");
     m_headerNames.insert(TimeCreated, "Time created");
     assert(m_headerNames.count() == Count);
 }
@@ -33,6 +34,9 @@ QVariant TaskTableModel::data(const QModelIndex& index, int role) const
                 case Title:
                     return m_tasks.at(row).title;
 
+                case Priority:
+                    return PriorityDisplay::text(m_tasks.at(row).priority);
+
                 case TimeCreated:
                     return m_tasks.at(row).timeCreated.toString(Task::DATE_FORMAT);
             }
@@ -41,6 +45,9 @@ QVariant TaskTableModel::data(const QModelIndex& index, int role) const
             switch (col) {
                 case Title:
                     return m_tasks.at(row).title;
+
+                case Priority:
+                    return m_tasks.at(row).priority;
 
                 case TimeCreated:
                     return m_tasks.at(row).timeCreated;

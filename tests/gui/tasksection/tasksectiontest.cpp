@@ -29,8 +29,6 @@ void TaskSectionTest::check_deleteButton_enabledWhenRowSelected()
 {
     // Given:
     QCOMPARE(m_taskSection->m_ui.deleteBtn->isEnabled(), false);
-    // Add a task so we can get the index of it and simulate the
-    // user selecting that task
     Task task;
     m_taskSection->m_taskTableModel->addTask(task);
 
