@@ -1,17 +1,26 @@
 #pragma once
 
-enum class Priority
+#include <QString>
+#include <QMap>
+
+enum Priority
 {
     Downtime,
-    Minor,
-    Major,
-    Critical,
+    Low,
+    Medium,
+    High,
     Blocker,
     Count,
 };
 
-// class Priority
-// {
-// public:
+class PriorityDisplay
+{
+public:
+    static QString text(Priority priority);
 
-// };
+public:
+    static Priority defaultPriority;
+
+private:
+    static QMap<Priority, QString> m_labels;
+};
