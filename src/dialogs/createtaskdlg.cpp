@@ -4,6 +4,7 @@
 #include <QDateTime>
 #include <QDialogButtonBox>
 #include <QMessageBox>
+#include <QIcon>
 
 CreateTaskDlg::CreateTaskDlg(Task& task, ProjectsCollection& projectsCollection, QWidget *parent)
     : QDialog(parent),
@@ -18,7 +19,8 @@ CreateTaskDlg::CreateTaskDlg(Task& task, ProjectsCollection& projectsCollection,
     }
 
     for (int idx = 0; idx < (int)Priority::Count; idx++) {
-        m_ui.priorityComboBox->addItem(PriorityDisplay::text(static_cast<Priority>(idx)));
+        auto priority = static_cast<Priority>(idx);
+        m_ui.priorityComboBox->addItem(PriorityDisplay::icon(priority), PriorityDisplay::text(priority));
     }
     m_ui.priorityComboBox->setCurrentIndex(-1);
 }

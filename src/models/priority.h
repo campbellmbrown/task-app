@@ -1,7 +1,8 @@
 #pragma once
 
-#include <QString>
+#include <QIcon>
 #include <QMap>
+#include <QString>
 
 enum Priority
 {
@@ -17,6 +18,7 @@ class PriorityDisplay
 {
 public:
     static QString text(Priority priority);
+    static QIcon icon(Priority priority);
 
 private:
     static QMap<Priority, QString> m_labelMap;

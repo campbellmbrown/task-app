@@ -1,6 +1,7 @@
 #include "tasktablemodel.h"
 #include <QBrush>
 #include <QFont>
+#include <QIcon>
 
 TaskTableModel::TaskTableModel(QObject *parent)
     : QAbstractTableModel(parent)
@@ -52,6 +53,13 @@ QVariant TaskTableModel::data(const QModelIndex& index, int role) const
                 case TimeCreated:
                     return m_tasks.at(row).timeCreated;
             }
+
+        case Qt::DecorationRole:
+            switch (col) {
+                case Priority:
+                    return PriorityDisplay::icon(m_tasks.at(row).priority);
+            }
+
     }
     return QVariant();
 }
