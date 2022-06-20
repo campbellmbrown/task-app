@@ -22,5 +22,5 @@ public:
     static Priority defaultPriority;
 
 private:
-    static QMap<Priority, QString> m_labels;
+    static QMap<Priority, QString> m_labelMap;
 };

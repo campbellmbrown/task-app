@@ -2,6 +2,7 @@
 #include "models/projectscollection.h"
 #include "models/task.h"
 #include <memory>
+#include <QRegularExpression>
 #include <QtTest/QtTest>
 
 class CreateTaskDlgTest : public QObject
@@ -10,7 +11,7 @@ class CreateTaskDlgTest : public QObject
 
 private slots:
     void init();
-    void check_projectsComboBox_isPopulated();
+    void check_comboBoxes_arePopulated();
     void check_savesOnAccept();
     void check_doesntSaveTaskOnReject();
 
@@ -28,18 +29,18 @@ void CreateTaskDlgTest::init()
     m_createTaskDlg.reset(new CreateTaskDlg(m_task, projectCollection));
 }
 
-void CreateTaskDlgTest::check_projectsComboBox_isPopulated()
+void CreateTaskDlgTest::check_comboBoxes_arePopulated()
 {
     QCOMPARE(m_createTaskDlg->m_ui.projectComboBox->count(), 2);
+    QCOMPARE(m_createTaskDlg->m_ui.priorityComboBox->count(), Priority::Count);
 }
-
-#include <QRegularExpression>
 
 void CreateTaskDlgTest::check_savesOnAccept()
 {
     // Given:
     m_createTaskDlg->m_ui.titleLineEdit->setText("someTitle");
     m_createTaskDlg->m_ui.notesPlainTextEdit->setPlainText("some\nNotes");
+    m_createTaskDlg->m_ui.priorityComboBox->setCurrentIndex(Priority::High);
 
     // When:
     m_createTaskDlg->accept();
@@ -49,6 +50,7 @@ void CreateTaskDlgTest::check_savesOnAccept()
     QCOMPARE(m_task.notes, "some\nNotes");
     auto regex = QRegularExpression("[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}");
     QCOMPARE(regex.match(m_task.uuid.toString(QUuid::WithoutBraces)).hasMatch(), true);
+    QCOMPARE(m_task.priority, Priority::High);
 }
 
 void CreateTaskDlgTest::check_doesntSaveTaskOnReject()
@@ -64,6 +66,8 @@ void CreateTaskDlgTest::check_doesntSaveTaskOnReject()
     QCOMPARE(m_task.title, "");
     QCOMPARE(m_task.notes, "");
     QCOMPARE(m_task.uuid.toString(QUuid::WithoutBraces), "00000000-0000-0000-0000-000000000000");
+    QCOMPARE(m_task.timeCreated, QDateTime());
+    QCOMPARE(m_task.priority, Priority::Medium);
 }
 
 QTEST_MAIN(CreateTaskDlgTest)

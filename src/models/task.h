@@ -16,5 +16,5 @@ struct Task
     QDateTime timeCreated;
     QUuid uuid;
     QString notes;
-    Priority priority;
+    Priority priority = Priority::Medium;
 };

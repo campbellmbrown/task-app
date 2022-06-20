@@ -28,5 +28,6 @@ void CreateTaskDlg::accept()
     m_task.notes = m_ui.notesPlainTextEdit->toPlainText();
     m_task.timeCreated = QDateTime::currentDateTime();
     m_task.uuid = QUuid::createUuid();
+    m_task.priority = static_cast<Priority>(m_ui.priorityComboBox->currentIndex());
     SuperClass::accept();
 }
