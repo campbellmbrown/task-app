@@ -1,7 +1,6 @@
 #include "tasktablemodel.h"
 #include <QBrush>
 #include <QFont>
-#include <QIcon>
 
 TaskTableModel::TaskTableModel(QObject *parent)
     : QAbstractTableModel(parent)
