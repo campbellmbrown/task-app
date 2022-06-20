@@ -28,6 +28,8 @@ public:
 
     void addTask(const Task& task);
     void removeTaskAt(int row);
+    Task& taskAt(int row);
+    void forceUpdate();
 
 private:
     QMap<int, QString> m_headerNames;

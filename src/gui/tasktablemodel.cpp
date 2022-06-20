@@ -34,7 +34,7 @@ QVariant TaskTableModel::data(const QModelIndex& index, int role) const
                     return m_tasks.at(row).title;
 
                 case TimeCreated:
-                    return m_tasks.at(row).timeCreated.toString("dd/MM/yy hh:mm:ss ap");
+                    return m_tasks.at(row).timeCreated.toString(Task::DATE_FORMAT);
             }
 
         case Qt::UserRole:
@@ -96,4 +96,16 @@ void TaskTableModel::removeTaskAt(int row)
 {
     removeRow(row);
     m_tasks.removeAt(row);
+}
+
+Task& TaskTableModel::taskAt(int row)
+{
+    return m_tasks[row];
+}
+
+void TaskTableModel::forceUpdate()
+{
+    auto topLeft = index(0, 0);
+    auto bottomRight = index(rowCount() - 1, columnCount() - 1);
+    emit dataChanged(topLeft, bottomRight);
 }

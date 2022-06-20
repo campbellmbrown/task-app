@@ -39,12 +39,14 @@ void CreateTaskDlgTest::check_savesOnAccept()
 {
     // Given:
     m_createTaskDlg->m_ui.titleLineEdit->setText("someTitle");
+    m_createTaskDlg->m_ui.notesPlainTextEdit->setPlainText("some\nNotes");
 
     // When:
     m_createTaskDlg->accept();
 
     // Then:
     QCOMPARE(m_task.title, "someTitle");
+    QCOMPARE(m_task.notes, "some\nNotes");
     auto regex = QRegularExpression("[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}");
     QCOMPARE(regex.match(m_task.uuid.toString(QUuid::WithoutBraces)).hasMatch(), true);
 }
@@ -53,12 +55,14 @@ void CreateTaskDlgTest::check_doesntSaveTaskOnReject()
 {
     // Given:
     m_createTaskDlg->m_ui.titleLineEdit->setText("someTitle");
+    m_createTaskDlg->m_ui.notesPlainTextEdit->setPlainText("some\nNotes");
 
     // When:
     m_createTaskDlg->reject();
 
     // Then:
     QCOMPARE(m_task.title, "");
+    QCOMPARE(m_task.notes, "");
     QCOMPARE(m_task.uuid.toString(QUuid::WithoutBraces), "00000000-0000-0000-0000-000000000000");
 }
 

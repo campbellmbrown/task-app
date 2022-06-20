@@ -10,7 +10,6 @@ private slots:
     void init();
     void check_deleteButton_disabledByDefault();
     void check_deleteButton_enabledWhenRowSelected();
-    void check_deleteButton_disabledWhenNoRowSelected();
 
 private:
     std::unique_ptr<TaskSection> m_taskSection;
@@ -30,32 +29,16 @@ void TaskSectionTest::check_deleteButton_enabledWhenRowSelected()
 {
     // Given:
     QCOMPARE(m_taskSection->m_ui.deleteBtn->isEnabled(), false);
-
-    // When:
-    const int DONT_CARE = 1;
     // Add a task so we can get the index of it and simulate the
     // user selecting that task
     Task task;
     m_taskSection->m_taskTableModel->addTask(task);
-    auto current = m_taskSection->m_taskTableModel->index(0, DONT_CARE);
-    m_taskSection->onSelectedTaskChanged(current, QModelIndex());
+
+    // When:
+    m_taskSection->m_ui.taskTableView->selectRow(0);
 
     // Then:
     QCOMPARE(m_taskSection->m_ui.deleteBtn->isEnabled(), true);
-}
-
-void TaskSectionTest::check_deleteButton_disabledWhenNoRowSelected()
-{
-    // Given:
-    check_deleteButton_enabledWhenRowSelected();
-    const int DONT_CARE = 1;
-    // Select a really high index so it doesn't return a valid QModelIndex
-    auto current = m_taskSection->m_taskTableModel->index(9999, DONT_CARE);
-
-    m_taskSection->onSelectedTaskChanged(current, QModelIndex());
-
-    // When:
-    QCOMPARE(m_taskSection->m_ui.deleteBtn->isEnabled(), false);
 }
 
 QTEST_MAIN(TaskSectionTest)

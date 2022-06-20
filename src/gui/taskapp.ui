@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>675</width>
-    <height>459</height>
+    <width>1200</width>
+    <height>800</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -55,11 +55,7 @@
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
            </property>
-           <layout class="QGridLayout" name="taskListLayout">
-            <item row="0" column="0">
-             <widget class="TaskSection" name="taskSection"/>
-            </item>
-           </layout>
+           <layout class="QGridLayout" name="taskListLayout"/>
           </widget>
           <widget class="QFrame" name="detailSectionArea">
            <property name="frameShape">
@@ -68,11 +64,7 @@
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
            </property>
-           <layout class="QGridLayout" name="detailsLayout">
-            <item row="0" column="0">
-             <widget class="DetailSection" name="detailSection"/>
-            </item>
-           </layout>
+           <layout class="QGridLayout" name="detailsLayout"/>
           </widget>
          </widget>
         </item>
@@ -93,7 +85,7 @@
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>675</width>
+     <width>1200</width>
      <height>21</height>
     </rect>
    </property>

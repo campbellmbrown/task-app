@@ -6,11 +6,13 @@
 
 struct Task
 {
-    static constexpr auto VERSION = 1;
+    static constexpr auto VERSION = 2;
+    static constexpr auto DATE_FORMAT = "dd/MM/yy hh:mm:ss ap";
 
     explicit Task() {}
 
     QString title;
     QDateTime timeCreated;
     QUuid uuid;
+    QString notes;
 };
