@@ -14,6 +14,9 @@ public:
     void onTaskSelected(Task& selected);
     void onNothingSelected();
 
+signals:
+    void taskUpdated();
+
 private:
     void reset();
 

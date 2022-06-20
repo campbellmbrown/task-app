@@ -102,3 +102,10 @@ Task& TaskTableModel::taskAt(int row)
 {
     return m_tasks[row];
 }
+
+void TaskTableModel::forceUpdate()
+{
+    auto topLeft = index(0, 0);
+    auto bottomRight = index(rowCount() - 1, columnCount() - 1);
+    emit dataChanged(topLeft, bottomRight);
+}

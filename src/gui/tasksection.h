@@ -15,6 +15,8 @@ class TaskSection : public QWidget
 public:
     TaskSection(QWidget *parent = nullptr);
 
+    void forceTableUpdate();
+
 signals:
     void taskSelected(Task& selected);
     void nothingSelected();

@@ -82,3 +82,8 @@ void TaskSection::onSelectedTaskChanged(const QModelIndex& current, const QModel
         emit nothingSelected();
     }
 }
+
+void TaskSection::forceTableUpdate()
+{
+    m_taskTableModel->forceUpdate();
+}

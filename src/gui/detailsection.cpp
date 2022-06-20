@@ -54,4 +54,6 @@ void DetailSection::onApply()
     // General
     m_selectedTask->title = m_ui.titleLineEdit->text();
     m_selectedTask->notes = m_ui.notesPlainTextEdit->toPlainText();
+
+    emit taskUpdated();
 }

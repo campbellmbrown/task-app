@@ -22,4 +22,5 @@ void TaskApp::initGuiElements()
 
     connect(taskSection, &TaskSection::taskSelected, detailSection, &DetailSection::onTaskSelected);
     connect(taskSection, &TaskSection::nothingSelected, detailSection, &DetailSection::onNothingSelected);
+    connect(detailSection, &DetailSection::taskUpdated, taskSection, &TaskSection::forceTableUpdate);
 }
