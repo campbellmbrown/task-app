@@ -88,7 +88,6 @@ void CreateTaskDlgTest::check_preventEmptyPriority()
     QCOMPARE(m_task.priority, Priority::Medium);
 }
 
-
 void CreateTaskDlgTest::check_doesntSaveTaskOnReject()
 {
     // Given:
