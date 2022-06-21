@@ -20,6 +20,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dialogs\createtaskdlg.cpp" />
+    <ClCompile Include="gui\projectdetailsection.cpp" />
     <ClCompile Include="gui\projectsection.cpp" />
     <ClCompile Include="gui\projecttableview.cpp" />
     <ClCompile Include="gui\taskapp.cpp" />
@@ -36,6 +37,7 @@
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="dialogs\createtaskdlg.ui" />
+    <QtUic Include="gui\projectdetailsection.ui" />
     <QtUic Include="gui\projectsection.ui" />
     <QtUic Include="gui\taskapp.ui" />
     <QtUic Include="gui\taskdetailsection.ui" />
@@ -50,6 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="gui\projectsection.h" />
+    <QtMoc Include="gui\projectdetailsection.h" />
     <ClInclude Include="gui\projecttableview.h" />
     <ClInclude Include="gui\tasktableview.h" />
     <ClInclude Include="models\priority.h" />

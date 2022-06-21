@@ -34,6 +34,9 @@
     <ClCompile Include="gui\projecttableview.cpp">
       <Filter>src\gui</Filter>
     </ClCompile>
+    <ClCompile Include="gui\projectdetailsection.cpp">
+      <Filter>src\gui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="gui\taskapp.h">
@@ -54,6 +57,9 @@
     <QtMoc Include="gui\projectsection.h">
       <Filter>src\gui</Filter>
     </QtMoc>
+    <QtMoc Include="gui\projectdetailsection.h">
+      <Filter>src\gui</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="gui\taskapp.ui">
@@ -67,6 +73,9 @@
     </QtUic>
     <QtUic Include="gui\taskdetailsection.ui" />
     <QtUic Include="gui\projectsection.ui">
+      <Filter>src\gui</Filter>
+    </QtUic>
+    <QtUic Include="gui\projectdetailsection.ui">
       <Filter>src\gui</Filter>
     </QtUic>
   </ItemGroup>
