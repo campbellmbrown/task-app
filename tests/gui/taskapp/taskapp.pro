@@ -11,7 +11,7 @@ SOURCES += \
 
 HEADERS += \
     $${SRCPATH}/dialogs/createtaskdlg.h \
-    $${SRCPATH}/gui/detailsection.h \
+    $${SRCPATH}/gui/taskdetailsection.h \
     $${SRCPATH}/gui/taskapp.h \
     $${SRCPATH}/gui/tasksection.h \
     $${SRCPATH}/gui/tasktablemodel.h \
@@ -21,7 +21,7 @@ HEADERS += \
 
 SOURCES += \
     $${SRCPATH}/dialogs/createtaskdlg.cpp \
-    $${SRCPATH}/gui/detailsection.cpp \
+    $${SRCPATH}/gui/taskdetailsection.cpp \
     $${SRCPATH}/gui/taskapp.cpp \
     $${SRCPATH}/gui/tasksection.cpp \
     $${SRCPATH}/gui/tasktablemodel.cpp \
@@ -31,6 +31,6 @@ SOURCES += \
 
 FORMS += \
     $${SRCPATH}/dialogs/createtaskdlg.ui \
-    $${SRCPATH}/gui/detailsection.ui \
+    $${SRCPATH}/gui/taskdetailsection.ui \
     $${SRCPATH}/gui/taskapp.ui \
     $${SRCPATH}/gui/tasksection.ui \

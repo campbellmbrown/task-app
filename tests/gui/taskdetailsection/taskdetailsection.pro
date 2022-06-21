@@ -7,15 +7,15 @@ INCLUDEPATH = \
     $${SRCPATH} \
 
 SOURCES += \
-    detailsectiontest.cpp \
+    taskdetailsectiontest.cpp \
 
 HEADERS += \
-    $${SRCPATH}/gui/detailsection.h \
+    $${SRCPATH}/gui/taskdetailsection.h \
     $${SRCPATH}/models/priority.h \
 
 SOURCES += \
-    $${SRCPATH}/gui/detailsection.cpp \
+    $${SRCPATH}/gui/taskdetailsection.cpp \
     $${SRCPATH}/models/priority.cpp \
 
 FORMS += \
-    $${SRCPATH}/gui/detailsection.ui \
+    $${SRCPATH}/gui/taskdetailsection.ui \

@@ -5,7 +5,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 HEADERS += \
     ./dialogs/createtaskdlg.h \
-    ./gui/detailsection.h \
+    ./gui/taskdetailsection.h \
     ./gui/taskapp.h \
     ./gui/tasksection.h \
     ./gui/tasktablemodel.h \
@@ -15,7 +15,7 @@ HEADERS += \
 
 SOURCES += \
     ./dialogs/createtaskdlg.cpp \
-    ./gui/detailsection.cpp \
+    ./gui/taskdetailsection.cpp \
     ./gui/taskapp.cpp \
     ./gui/tasksection.cpp \
     ./gui/tasktablemodel.cpp \
@@ -26,7 +26,7 @@ SOURCES += \
 
 FORMS += \
     ./dialogs/createtaskdlg.ui \
-    ./gui/detailsection.ui \
+    ./gui/taskdetailsection.ui \
     ./gui/taskapp.ui \
     ./gui/tasksection.ui \
 

@@ -4,7 +4,7 @@
 #include "ui_taskapp.h"
 
 class TaskSection;
-class DetailSection;
+class TaskDetailSection;
 class TaskApp : public QMainWindow
 {
     Q_OBJECT
@@ -13,11 +13,12 @@ public:
     TaskApp(QWidget *parent = Q_NULLPTR);
 
 private:
-    void initGuiElements();
+    void initTasksTab();
+    void initProjectsTab();
 
 private:
     Ui::TaskApp m_ui;
 
     TaskSection *taskSection;
-    DetailSection *detailSection;
+    TaskDetailSection *taskDetailSection;
 };

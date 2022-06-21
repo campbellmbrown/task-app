@@ -1,5 +1,5 @@
 #include "taskapp.h"
-#include "detailsection.h"
+#include "taskdetailsection.h"
 #include "tasksection.h"
 
 TaskApp::TaskApp(QWidget *parent)
@@ -11,18 +11,24 @@ TaskApp::TaskApp(QWidget *parent)
     m_ui.projectsDetailsSplitter->setStretchFactor(0, 5);
     m_ui.projectsDetailsSplitter->setStretchFactor(1, 2);
 
-    initGuiElements();
+    initTasksTab();
+    initProjectsTab();
 }
 
-void TaskApp::initGuiElements()
+void TaskApp::initTasksTab()
 {
     taskSection = new TaskSection(this);
     m_ui.taskListLayout->addWidget(taskSection, 0, 0);
 
-    detailSection = new DetailSection(this);
-    m_ui.taskDetailLayout->addWidget(detailSection, 0, 0);
+    taskDetailSection = new TaskDetailSection(this);
+    m_ui.taskDetailLayout->addWidget(taskDetailSection, 0, 0);
 
-    connect(taskSection, &TaskSection::taskSelected, detailSection, &DetailSection::onTaskSelected);
-    connect(taskSection, &TaskSection::nothingSelected, detailSection, &DetailSection::onNothingSelected);
-    connect(detailSection, &DetailSection::taskUpdated, taskSection, &TaskSection::forceTableUpdate);
+    connect(taskSection, &TaskSection::taskSelected, taskDetailSection, &TaskDetailSection::onTaskSelected);
+    connect(taskSection, &TaskSection::nothingSelected, taskDetailSection, &TaskDetailSection::onNothingSelected);
+    connect(taskDetailSection, &TaskDetailSection::taskUpdated, taskSection, &TaskSection::forceTableUpdate);
+}
+
+void TaskApp::initProjectsTab()
+{
+
 }
