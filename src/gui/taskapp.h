@@ -5,8 +5,8 @@
 
 class TaskSection;
 class TaskDetailSection;
-// class ProjectSection;
-// class ProjectDetailSection;
+class ProjectSection;
+class ProjectDetailSection;
 class TaskApp : public QMainWindow
 {
     Q_OBJECT
@@ -25,6 +25,6 @@ private:
     TaskSection *taskSection;
     TaskDetailSection *taskDetailSection;
     // Projects tab
-    // ProjectSection *projectSection;
-    // ProjectDetailSection *projectDetailSection;
+    ProjectSection *projectSection;
+    ProjectDetailSection *projectDetailSection;
 };

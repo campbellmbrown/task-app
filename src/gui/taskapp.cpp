@@ -1,4 +1,6 @@
 #include "taskapp.h"
+#include "projectsection.h"
+#include "projectdetailsection.h"
 #include "taskdetailsection.h"
 #include "tasksection.h"
 
@@ -30,9 +32,9 @@ void TaskApp::initTasksTab()
 
 void TaskApp::initProjectsTab()
 {
-    // projectSection = new ProjectSection(this);
-    // m_ui.projectListLayout->addWidget(projectSection, 0, 0);
+    projectSection = new ProjectSection(this);
+    m_ui.projectListLayout->addWidget(projectSection, 0, 0);
 
-    // projectDetailSection = new ProjectDetailSection(this);
-    // m_ui.projectDetailLayout->addWidget(projectDetailSection, 0, 0);
+    projectDetailSection = new ProjectDetailSection(this);
+    m_ui.projectDetailLayout->addWidget(projectDetailSection, 0, 0);
 }
