@@ -3,6 +3,8 @@
 #include <QtWidgets/QMainWindow>
 #include "ui_taskapp.h"
 
+class TaskSection;
+class DetailSection;
 class TaskApp : public QMainWindow
 {
     Q_OBJECT
