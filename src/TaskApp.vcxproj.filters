@@ -28,6 +28,12 @@
     <ClCompile Include="models\priority.cpp">
       <Filter>src\models</Filter>
     </ClCompile>
+    <ClCompile Include="gui\projectsection.cpp">
+      <Filter>src\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\projecttableview.cpp">
+      <Filter>src\gui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="gui\taskapp.h">
@@ -45,11 +51,11 @@
     <QtMoc Include="gui\tasktablemodel.h">
       <Filter>src\gui</Filter>
     </QtMoc>
+    <QtMoc Include="gui\projectsection.h">
+      <Filter>src\gui</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="gui\detailsection.ui">
-      <Filter>src\gui</Filter>
-    </QtUic>
     <QtUic Include="gui\taskapp.ui">
       <Filter>src\gui</Filter>
     </QtUic>
@@ -58,6 +64,10 @@
     </QtUic>
     <QtUic Include="dialogs\createtaskdlg.ui">
       <Filter>src\dialogs</Filter>
+    </QtUic>
+    <QtUic Include="gui\taskdetailsection.ui" />
+    <QtUic Include="gui\projectsection.ui">
+      <Filter>src\gui</Filter>
     </QtUic>
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +104,9 @@
     </ClInclude>
     <ClInclude Include="models\priority.h">
       <Filter>src\models</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\projecttableview.h">
+      <Filter>src\gui</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

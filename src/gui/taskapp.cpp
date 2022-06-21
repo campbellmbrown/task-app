@@ -30,5 +30,9 @@ void TaskApp::initTasksTab()
 
 void TaskApp::initProjectsTab()
 {
+    // projectSection = new ProjectSection(this);
+    // m_ui.projectListLayout->addWidget(projectSection, 0, 0);
 
+    // projectDetailSection = new ProjectDetailSection(this);
+    // m_ui.projectDetailLayout->addWidget(projectDetailSection, 0, 0);
 }
