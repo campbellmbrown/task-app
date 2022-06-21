@@ -8,7 +8,9 @@ TaskDetailSection::TaskDetailSection(QWidget *parent)
     m_ui.setupUi(this);
     m_ui.verticalLayout->setContentsMargins(0, 0, 0, 0);
 
-    connect(m_ui.generalButtonBox->button(QDialogButtonBox::Apply), &QPushButton::clicked, this,
+    connect(m_ui.generalButtonBox->button(QDialogButtonBox::Apply),
+            &QPushButton::clicked,
+            this,
             &TaskDetailSection::onApply);
 
     for (int idx = 0; idx < (int)Priority::Count; idx++) {

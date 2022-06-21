@@ -7,7 +7,7 @@ class ProjectDetailSection : public QWidget
 {
     Q_OBJECT
 
-    friend class ProjectDetailSection;
+    friend class ProjectDetailSectionTest;
 
 public:
     ProjectDetailSection(QWidget *parent = nullptr);
