@@ -16,7 +16,7 @@ class QSortFilterProxyModel <<Library>>
 
 class TaskApp
 class CreateTaskDlg
-class DetailSection
+class TaskDetailSection
 class TaskSection
 class TaskTableView
 class TaskTableModel
@@ -25,12 +25,12 @@ class Task <<Struct>>
 
 QMainWindow <|-- TaskApp
 QWidget <|-- TaskSection
-QWidget <|-- DetailSection
+QWidget <|-- TaskDetailSection
 QTableView <|-- TaskTableView
 QDialog <|-- CreateTaskDlg
 QAbstractTableModel <|-- TaskTableModel
 
-TaskApp *-- DetailSection
+TaskApp *-- TaskDetailSection
 TaskApp *-- TaskSection
 
 TaskSection *-- TaskTableView

@@ -1,15 +1,17 @@
-#include "detailsection.h"
+#include "taskdetailsection.h"
 #include <QDebug>
 #include <QPushButton>
 
-DetailSection::DetailSection(QWidget *parent)
+TaskDetailSection::TaskDetailSection(QWidget *parent)
     : QWidget(parent)
 {
     m_ui.setupUi(this);
     m_ui.verticalLayout->setContentsMargins(0, 0, 0, 0);
 
-    connect(m_ui.generalButtonBox->button(QDialogButtonBox::Apply), &QPushButton::clicked, this,
-            &DetailSection::onApply);
+    connect(m_ui.generalButtonBox->button(QDialogButtonBox::Apply),
+            &QPushButton::clicked,
+            this,
+            &TaskDetailSection::onApply);
 
     for (int idx = 0; idx < (int)Priority::Count; idx++) {
         auto priority = static_cast<Priority>(idx);
@@ -19,7 +21,7 @@ DetailSection::DetailSection(QWidget *parent)
     reset();
 }
 
-void DetailSection::reset()
+void TaskDetailSection::reset()
 {
     // General
     m_ui.titleLineEdit->setText("");
@@ -33,7 +35,7 @@ void DetailSection::reset()
     setDisabled(true);
 }
 
-void DetailSection::onTaskSelected(Task& selected)
+void TaskDetailSection::onTaskSelected(Task& selected)
 {
     m_selectedTask = &selected;
 
@@ -49,13 +51,13 @@ void DetailSection::onTaskSelected(Task& selected)
     setEnabled(true);
 }
 
-void DetailSection::onNothingSelected()
+void TaskDetailSection::onNothingSelected()
 {
     m_selectedTask = nullptr;
     reset();
 }
 
-void DetailSection::onApply()
+void TaskDetailSection::onApply()
 {
     qInfo() << "Updating task" << m_selectedTask->uuid.toString(QUuid::WithoutBraces);
 

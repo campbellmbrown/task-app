@@ -48,7 +48,7 @@
           <property name="childrenCollapsible">
            <bool>false</bool>
           </property>
-          <widget class="QFrame" name="tasksectionArea">
+          <widget class="QFrame" name="taskSectionArea">
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
            </property>
@@ -57,14 +57,14 @@
            </property>
            <layout class="QGridLayout" name="taskListLayout"/>
           </widget>
-          <widget class="QFrame" name="detailSectionArea">
+          <widget class="QFrame" name="taskDetailSectionArea">
            <property name="frameShape">
             <enum>QFrame::StyledPanel</enum>
            </property>
            <property name="frameShadow">
             <enum>QFrame::Raised</enum>
            </property>
-           <layout class="QGridLayout" name="detailsLayout"/>
+           <layout class="QGridLayout" name="taskDetailLayout"/>
           </widget>
          </widget>
         </item>
@@ -74,7 +74,51 @@
        <attribute name="title">
         <string>Projects</string>
        </attribute>
-       <layout class="QGridLayout" name="projectsTabLayout"/>
+       <layout class="QGridLayout" name="projectsTabLayout">
+        <item row="0" column="0">
+         <widget class="QSplitter" name="projectsDetailsSplitter">
+          <property name="frameShadow">
+           <enum>QFrame::Plain</enum>
+          </property>
+          <property name="lineWidth">
+           <number>1</number>
+          </property>
+          <property name="midLineWidth">
+           <number>0</number>
+          </property>
+          <property name="orientation">
+           <enum>Qt::Horizontal</enum>
+          </property>
+          <property name="opaqueResize">
+           <bool>false</bool>
+          </property>
+          <property name="handleWidth">
+           <number>3</number>
+          </property>
+          <property name="childrenCollapsible">
+           <bool>false</bool>
+          </property>
+          <widget class="QFrame" name="projectSectionArea">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QGridLayout" name="projectListLayout"/>
+          </widget>
+          <widget class="QFrame" name="projectDetailSectionArea">
+           <property name="frameShape">
+            <enum>QFrame::StyledPanel</enum>
+           </property>
+           <property name="frameShadow">
+            <enum>QFrame::Raised</enum>
+           </property>
+           <layout class="QGridLayout" name="projectDetailLayout"/>
+          </widget>
+         </widget>
+        </item>
+       </layout>
       </widget>
      </widget>
     </item>
@@ -101,20 +145,6 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <customwidgets>
-  <customwidget>
-   <class>DetailSection</class>
-   <extends>QWidget</extends>
-   <header>gui/detailsection.h</header>
-   <container>1</container>
-  </customwidget>
-  <customwidget>
-   <class>TaskSection</class>
-   <extends>QWidget</extends>
-   <header>gui/tasksection.h</header>
-   <container>1</container>
-  </customwidget>
- </customwidgets>
  <resources>
   <include location="taskapp.qrc"/>
  </resources>

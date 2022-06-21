@@ -1,8 +1,8 @@
-#include "gui/detailsection.h"
+#include "gui/taskdetailsection.h"
 
 #include <QtTest/QtTest>
 
-class DetailSectionTest : public QObject
+class TaskDetailSectionTest : public QObject
 {
     Q_OBJECT
 
@@ -14,15 +14,15 @@ private slots:
     void check_onApply();
 
 private:
-    std::unique_ptr<DetailSection> m_detailSection;
+    std::unique_ptr<TaskDetailSection> m_detailSection;
 };
 
-void DetailSectionTest::init()
+void TaskDetailSectionTest::init()
 {
-    m_detailSection.reset(new DetailSection());
+    m_detailSection.reset(new TaskDetailSection());
 }
 
-void DetailSectionTest::check_initResets()
+void TaskDetailSectionTest::check_initResets()
 {
     // General
     QCOMPARE(m_detailSection->m_ui.titleLineEdit->text(), "");
@@ -35,7 +35,7 @@ void DetailSectionTest::check_initResets()
     QCOMPARE(m_detailSection->isEnabled(), false);
 }
 
-void DetailSectionTest::check_onSelected()
+void TaskDetailSectionTest::check_onSelected()
 {
     // Given:
     Task task;
@@ -60,12 +60,12 @@ void DetailSectionTest::check_onSelected()
     QCOMPARE(m_detailSection->isEnabled(), true);
 }
 
-void DetailSectionTest::check_onNothingSelected()
+void TaskDetailSectionTest::check_onNothingSelected()
 {
     check_initResets();
 }
 
-void DetailSectionTest::check_onApply()
+void TaskDetailSectionTest::check_onApply()
 {
     // Given:
     Task task;
@@ -83,5 +83,5 @@ void DetailSectionTest::check_onApply()
     QCOMPARE(task.notes, "some notes");
 }
 
-QTEST_MAIN(DetailSectionTest)
-#include "detailsectiontest.moc"
+QTEST_MAIN(TaskDetailSectionTest)
+#include "taskdetailsectiontest.moc"

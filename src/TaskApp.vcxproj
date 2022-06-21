@@ -20,8 +20,11 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="dialogs\createtaskdlg.cpp" />
-    <ClCompile Include="gui\detailsection.cpp" />
+    <ClCompile Include="gui\projectdetailsection.cpp" />
+    <ClCompile Include="gui\projectsection.cpp" />
+    <ClCompile Include="gui\projecttableview.cpp" />
     <ClCompile Include="gui\taskapp.cpp" />
+    <ClCompile Include="gui\taskdetailsection.cpp" />
     <ClCompile Include="gui\tasksection.cpp" />
     <ClCompile Include="gui\tasktablemodel.cpp" />
     <ClCompile Include="gui\tasktableview.cpp" />
@@ -34,18 +37,23 @@
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="dialogs\createtaskdlg.ui" />
-    <QtUic Include="gui\detailsection.ui" />
+    <QtUic Include="gui\projectdetailsection.ui" />
+    <QtUic Include="gui\projectsection.ui" />
     <QtUic Include="gui\taskapp.ui" />
+    <QtUic Include="gui\taskdetailsection.ui" />
     <QtUic Include="gui\tasksection.ui" />
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="dialogs\createtaskdlg.h" />
-    <QtMoc Include="gui\detailsection.h" />
     <QtMoc Include="gui\taskapp.h" />
+    <QtMoc Include="gui\taskdetailsection.h" />
     <QtMoc Include="gui\tasksection.h" />
     <QtMoc Include="gui\tasktablemodel.h" />
   </ItemGroup>
   <ItemGroup>
+    <QtMoc Include="gui\projectsection.h" />
+    <QtMoc Include="gui\projectdetailsection.h" />
+    <ClInclude Include="gui\projecttableview.h" />
     <ClInclude Include="gui\tasktableview.h" />
     <ClInclude Include="models\priority.h" />
     <ClInclude Include="models\projectscollection.h" />

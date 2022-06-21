@@ -1,7 +1,9 @@
 TEMPLATE = subdirs
 
 SUBDIRS += \
-    detailsection \
+    projectdetailsection \
+    projectsection \
     taskapp \
+    taskdetailsection \
     tasksection \
     tasktablemodel \

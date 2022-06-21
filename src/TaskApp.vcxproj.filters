@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <ClCompile Include="gui\detailsection.cpp">
+    <ClCompile Include="gui\taskapp.cpp">
       <Filter>src\gui</Filter>
     </ClCompile>
-    <ClCompile Include="gui\taskapp.cpp">
+    <ClCompile Include="gui\taskdetailsection.cpp">
       <Filter>src\gui</Filter>
     </ClCompile>
     <ClCompile Include="gui\tasksection.cpp">
@@ -28,12 +28,21 @@
     <ClCompile Include="models\priority.cpp">
       <Filter>src\models</Filter>
     </ClCompile>
+    <ClCompile Include="gui\projectsection.cpp">
+      <Filter>src\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\projecttableview.cpp">
+      <Filter>src\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\projectdetailsection.cpp">
+      <Filter>src\gui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <QtMoc Include="gui\detailsection.h">
+    <QtMoc Include="gui\taskapp.h">
       <Filter>src\gui</Filter>
     </QtMoc>
-    <QtMoc Include="gui\taskapp.h">
+    <QtMoc Include="gui\taskdetailsection.h">
       <Filter>src\gui</Filter>
     </QtMoc>
     <QtMoc Include="gui\tasksection.h">
@@ -45,11 +54,14 @@
     <QtMoc Include="gui\tasktablemodel.h">
       <Filter>src\gui</Filter>
     </QtMoc>
+    <QtMoc Include="gui\projectsection.h">
+      <Filter>src\gui</Filter>
+    </QtMoc>
+    <QtMoc Include="gui\projectdetailsection.h">
+      <Filter>src\gui</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
-    <QtUic Include="gui\detailsection.ui">
-      <Filter>src\gui</Filter>
-    </QtUic>
     <QtUic Include="gui\taskapp.ui">
       <Filter>src\gui</Filter>
     </QtUic>
@@ -58,6 +70,13 @@
     </QtUic>
     <QtUic Include="dialogs\createtaskdlg.ui">
       <Filter>src\dialogs</Filter>
+    </QtUic>
+    <QtUic Include="gui\taskdetailsection.ui" />
+    <QtUic Include="gui\projectsection.ui">
+      <Filter>src\gui</Filter>
+    </QtUic>
+    <QtUic Include="gui\projectdetailsection.ui">
+      <Filter>src\gui</Filter>
     </QtUic>
   </ItemGroup>
   <ItemGroup>
@@ -94,6 +113,9 @@
     </ClInclude>
     <ClInclude Include="models\priority.h">
       <Filter>src\models</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\projecttableview.h">
+      <Filter>src\gui</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

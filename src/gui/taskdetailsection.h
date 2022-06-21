@@ -1,17 +1,17 @@
 #pragma once
 
 #include "models/task.h"
-#include "ui_detailsection.h"
+#include "ui_taskdetailsection.h"
 #include <QWidget>
 
-class DetailSection : public QWidget
+class TaskDetailSection : public QWidget
 {
     Q_OBJECT
 
-    friend class DetailSectionTest;
+    friend class TaskDetailSectionTest;
 
 public:
-    DetailSection(QWidget *parent = nullptr);
+    TaskDetailSection(QWidget *parent = nullptr);
 
 public slots:
     void onTaskSelected(Task& selected);
@@ -27,6 +27,6 @@ private slots:
     void onApply();
 
 private:
-    Ui::DetailSection m_ui;
+    Ui::TaskDetailSection m_ui;
     Task *m_selectedTask = nullptr;
 };
