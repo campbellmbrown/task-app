@@ -35,5 +35,9 @@ QIcon PriorityDisplay::icon(Priority priority)
 
         case Priority::Blocker:
             return blockerPriorityIcon;
+
+        default:
+            assert(false);
+            return QIcon();
     }
 }
