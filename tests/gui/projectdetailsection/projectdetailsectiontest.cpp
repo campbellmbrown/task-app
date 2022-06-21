@@ -8,10 +8,6 @@ class ProjectDetailSectionTest : public QObject
 
 private slots:
     void init();
-    void check_initResets();
-    void check_onSelected();
-    void check_onNothingSelected();
-    void check_onApply();
 
 private:
     std::unique_ptr<ProjectDetailSection> m_detailSection;
