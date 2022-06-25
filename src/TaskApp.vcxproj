@@ -19,9 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="dialogs\createprojectdlg.cpp" />
     <ClCompile Include="dialogs\createtaskdlg.cpp" />
     <ClCompile Include="gui\projectdetailsection.cpp" />
     <ClCompile Include="gui\projectsection.cpp" />
+    <ClCompile Include="gui\projecttablemodel.cpp" />
     <ClCompile Include="gui\projecttableview.cpp" />
     <ClCompile Include="gui\taskapp.cpp" />
     <ClCompile Include="gui\taskdetailsection.cpp" />
@@ -36,6 +38,7 @@
     <QtRcc Include="rc\taskapp.qrc" />
   </ItemGroup>
   <ItemGroup>
+    <QtUic Include="dialogs\createprojectdlg.ui" />
     <QtUic Include="dialogs\createtaskdlg.ui" />
     <QtUic Include="gui\projectdetailsection.ui" />
     <QtUic Include="gui\projectsection.ui" />
@@ -53,9 +56,12 @@
   <ItemGroup>
     <QtMoc Include="gui\projectsection.h" />
     <QtMoc Include="gui\projectdetailsection.h" />
+    <QtMoc Include="gui\projecttablemodel.h" />
+    <QtMoc Include="dialogs\createprojectdlg.h" />
     <ClInclude Include="gui\projecttableview.h" />
     <ClInclude Include="gui\tasktableview.h" />
     <ClInclude Include="models\priority.h" />
+    <ClInclude Include="models\project.h" />
     <ClInclude Include="models\projectscollection.h" />
     <ClInclude Include="models\task.h" />
   </ItemGroup>

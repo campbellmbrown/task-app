@@ -37,6 +37,12 @@
     <ClCompile Include="gui\projectdetailsection.cpp">
       <Filter>src\gui</Filter>
     </ClCompile>
+    <ClCompile Include="gui\projecttablemodel.cpp">
+      <Filter>src\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\createprojectdlg.cpp">
+      <Filter>src\dialogs</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="gui\taskapp.h">
@@ -60,6 +66,12 @@
     <QtMoc Include="gui\projectdetailsection.h">
       <Filter>src\gui</Filter>
     </QtMoc>
+    <QtMoc Include="gui\projecttablemodel.h">
+      <Filter>src\gui</Filter>
+    </QtMoc>
+    <QtMoc Include="dialogs\createprojectdlg.h">
+      <Filter>src\dialogs</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="gui\taskapp.ui">
@@ -77,6 +89,9 @@
     </QtUic>
     <QtUic Include="gui\projectdetailsection.ui">
       <Filter>src\gui</Filter>
+    </QtUic>
+    <QtUic Include="dialogs\createprojectdlg.ui">
+      <Filter>src\dialogs</Filter>
     </QtUic>
   </ItemGroup>
   <ItemGroup>
@@ -116,6 +131,9 @@
     </ClInclude>
     <ClInclude Include="gui\projecttableview.h">
       <Filter>src\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="models\project.h">
+      <Filter>src\models</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
