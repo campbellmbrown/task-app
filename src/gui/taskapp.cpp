@@ -38,7 +38,16 @@ void TaskApp::initProjectsTab()
     projectDetailSection = new ProjectDetailSection(this);
     m_ui.projectDetailLayout->addWidget(projectDetailSection, 0, 0);
 
-    connect(projectSection, &ProjectSection::projectSelected, projectDetailSection, &ProjectDetailSection::onProjectSelected);
-    connect(projectSection, &ProjectSection::nothingSelected, projectDetailSection, &ProjectDetailSection::onNothingSelected);
-    connect(projectDetailSection, &ProjectDetailSection::projectUpdated, projectSection, &ProjectSection::forceTableUpdate);
+    connect(projectSection,
+            &ProjectSection::projectSelected,
+            projectDetailSection,
+            &ProjectDetailSection::onProjectSelected);
+    connect(projectSection,
+            &ProjectSection::nothingSelected,
+            projectDetailSection,
+            &ProjectDetailSection::onNothingSelected);
+    connect(projectDetailSection,
+            &ProjectDetailSection::projectUpdated,
+            projectSection,
+            &ProjectSection::forceTableUpdate);
 }

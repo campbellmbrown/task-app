@@ -27,7 +27,9 @@ void ProjectSection::initTableView()
     // Setting up the headers
     table->horizontalHeader()->setStretchLastSection(false);
     table->horizontalHeader()->setSectionResizeMode(ProjectTableModel::Name, QHeaderView::Stretch);
-    connect(table->selectionModel(), &QItemSelectionModel::currentRowChanged, this,
+    connect(table->selectionModel(),
+            &QItemSelectionModel::currentRowChanged,
+            this,
             &ProjectSection::onSelectedProjectChanged);
 }
 
