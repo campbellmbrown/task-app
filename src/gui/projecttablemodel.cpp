@@ -1,8 +1,9 @@
 #include "projecttablemodel.h"
 #include <QFont>
 
-ProjectTableModel::ProjectTableModel(QObject *parent)
-    : QAbstractTableModel(parent)
+ProjectTableModel::ProjectTableModel(QList<Project>& projects, QObject *parent)
+    : QAbstractTableModel(parent),
+      m_projects(projects)
 {
     m_headerNames.insert(Name, "Name");
     assert(m_headerNames.count() == Count);

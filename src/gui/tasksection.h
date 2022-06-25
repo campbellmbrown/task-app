@@ -1,8 +1,9 @@
 #pragma once
 
-#include "ui_tasksection.h"
 #include <QWidget>
+#include "ui_tasksection.h"
 
+struct Project;
 struct Task;
 class TaskTableModel;
 class QSortFilterProxyModel;
@@ -13,7 +14,7 @@ class TaskSection : public QWidget
     friend class TaskSectionTest;
 
 public:
-    TaskSection(QWidget *parent = nullptr);
+    TaskSection(QList<Task>& tasks, QList<Project> &projects, QWidget *parent = nullptr);
 
     void forceTableUpdate();
 
@@ -34,4 +35,5 @@ private:
     Ui::TaskSection m_ui;
     TaskTableModel *m_taskTableModel;
     QSortFilterProxyModel *m_proxyModel;
+    QList<Project>& m_projects;
 };

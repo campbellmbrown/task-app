@@ -3,8 +3,8 @@
 #include "ui_createtaskdlg.h"
 #include <QDialog>
 
+struct Project;
 struct Task;
-class ProjectsCollection;
 class CreateTaskDlg : public QDialog
 {
     Q_OBJECT
@@ -13,7 +13,7 @@ class CreateTaskDlg : public QDialog
     friend class CreateTaskDlgTest;
 
 public:
-    CreateTaskDlg(Task& task, ProjectsCollection& projectsCollection, QWidget *parent = nullptr);
+    CreateTaskDlg(Task& task, QList<Project>& projects, QWidget *parent = nullptr);
     void accept() override;
 
 private:

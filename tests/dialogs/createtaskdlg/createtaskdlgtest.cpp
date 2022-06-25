@@ -1,5 +1,5 @@
 #include "dialogs/createtaskdlg.h"
-#include "models/projectscollection.h"
+#include "models/project.h"
 #include "models/task.h"
 #include <memory>
 #include <QRegularExpression>
@@ -25,10 +25,14 @@ private:
 void CreateTaskDlgTest::init()
 {
     m_task = Task();
-    ProjectsCollection projectCollection;
-    projectCollection.addProject("project foo");
-    projectCollection.addProject("project bar");
-    m_createTaskDlg.reset(new CreateTaskDlg(m_task, projectCollection));
+    QList<Project> projects;
+    Project proj1;
+    Project proj2;
+    proj1.name = "project foo";
+    proj2.name = "project bar";
+    projects.append(proj1);
+    projects.append(proj2);
+    m_createTaskDlg.reset(new CreateTaskDlg(m_task, projects));
 }
 
 void CreateTaskDlgTest::check_comboBoxes_arePopulated()

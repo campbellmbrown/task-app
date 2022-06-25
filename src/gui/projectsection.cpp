@@ -4,9 +4,9 @@
 #include "projecttablemodel.h"
 #include <QSortFilterProxyModel>
 
-ProjectSection::ProjectSection(QWidget *parent)
+ProjectSection::ProjectSection(QList<Project>& projects, QWidget *parent)
     : QWidget(parent),
-      m_projectTableModel(new ProjectTableModel()),
+      m_projectTableModel(new ProjectTableModel(projects)),
       m_proxyModel(new QSortFilterProxyModel())
 {
     m_ui.setupUi(this);

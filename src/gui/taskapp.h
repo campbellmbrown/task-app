@@ -1,7 +1,9 @@
 #pragma once
 
-#include <QtWidgets/QMainWindow>
+#include "models/task.h"
+#include "models/project.h"
 #include "ui_taskapp.h"
+#include <QtWidgets/QMainWindow>
 
 class TaskSection;
 class TaskDetailSection;
@@ -24,7 +26,9 @@ private:
     // Tasks tab
     TaskSection *taskSection;
     TaskDetailSection *taskDetailSection;
+    QList<Task> m_tasks;
     // Projects tab
     ProjectSection *projectSection;
     ProjectDetailSection *projectDetailSection;
+    QList<Project> m_projects;
 };

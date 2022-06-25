@@ -18,7 +18,7 @@ public:
         Count,
     };
 
-    TaskTableModel(QObject *parent = nullptr);
+    explicit TaskTableModel(QList<Task>& tasks, QObject *parent = nullptr);
 
     int rowCount(const QModelIndex& parent = QModelIndex()) const override;
     int columnCount(const QModelIndex& parent = QModelIndex()) const override;
@@ -34,5 +34,5 @@ public:
 
 private:
     QMap<int, QString> m_headerNames;
-    QList<Task> m_tasks;
+    QList<Task>& m_tasks;
 };

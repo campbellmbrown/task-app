@@ -2,8 +2,9 @@
 #include <QBrush>
 #include <QFont>
 
-TaskTableModel::TaskTableModel(QObject *parent)
-    : QAbstractTableModel(parent)
+TaskTableModel::TaskTableModel(QList<Task>& tasks, QObject *parent)
+    : QAbstractTableModel(parent),
+      m_tasks(tasks)
 {
     m_headerNames.insert(Title, "Title");
     m_headerNames.insert(Priority, "Priority");

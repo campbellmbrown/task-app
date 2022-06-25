@@ -1,11 +1,11 @@
 #include "createtaskdlg.h"
-#include "models/projectscollection.h"
+#include "models/project.h"
 #include "models/task.h"
 #include <QDateTime>
 #include <QDialogButtonBox>
 #include <QMessageBox>
 
-CreateTaskDlg::CreateTaskDlg(Task& task, ProjectsCollection& projectsCollection, QWidget *parent)
+CreateTaskDlg::CreateTaskDlg(Task& task, QList<Project>& projects, QWidget *parent)
     : QDialog(parent),
       m_task(task)
 {
@@ -13,8 +13,8 @@ CreateTaskDlg::CreateTaskDlg(Task& task, ProjectsCollection& projectsCollection,
     connect(m_ui.buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
     connect(m_ui.buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
 
-    for (int idx = 0; idx < projectsCollection.projects().count(); idx++) {
-        m_ui.projectComboBox->addItem(projectsCollection.projects().at(idx));
+    for (int idx = 0; idx < projects.count(); idx++) {
+        m_ui.projectComboBox->addItem(projects.at(idx).name);
     }
 
     for (int idx = 0; idx < (int)Priority::Count; idx++) {

@@ -16,7 +16,7 @@ public:
         Count,
     };
 
-    ProjectTableModel(QObject *parent = nullptr);
+    ProjectTableModel(QList<Project>& projects, QObject *parent = nullptr);
 
     int rowCount(const QModelIndex& parent = QModelIndex()) const override;
     int columnCount(const QModelIndex& parent = QModelIndex()) const override;
@@ -32,5 +32,5 @@ public:
 
 private:
     QMap<int, QString> m_headerNames;
-    QList<Project> m_projects;
+    QList<Project>& m_projects;
 };

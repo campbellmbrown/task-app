@@ -14,7 +14,6 @@ HEADERS += \
     ./gui/tasktablemodel.h \
     ./gui/tasktableview.h \
     ./models/priority.h \
-    ./models/projectscollection.h \
 
 SOURCES += \
     ./dialogs/createtaskdlg.cpp \
@@ -28,7 +27,6 @@ SOURCES += \
     ./gui/tasktableview.cpp \
     ./main.cpp \
     ./models/priority.cpp \
-    ./models/projectscollection.cpp \
 
 FORMS += \
     ./dialogs/createtaskdlg.ui \

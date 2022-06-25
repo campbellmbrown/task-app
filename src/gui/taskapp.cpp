@@ -19,7 +19,7 @@ TaskApp::TaskApp(QWidget *parent)
 
 void TaskApp::initTasksTab()
 {
-    taskSection = new TaskSection(this);
+    taskSection = new TaskSection(m_tasks, m_projects, this);
     m_ui.taskListLayout->addWidget(taskSection, 0, 0);
 
     taskDetailSection = new TaskDetailSection(this);
@@ -32,7 +32,7 @@ void TaskApp::initTasksTab()
 
 void TaskApp::initProjectsTab()
 {
-    projectSection = new ProjectSection(this);
+    projectSection = new ProjectSection(m_projects, this);
     m_ui.projectListLayout->addWidget(projectSection, 0, 0);
 
     projectDetailSection = new ProjectDetailSection(this);

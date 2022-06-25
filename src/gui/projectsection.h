@@ -13,7 +13,7 @@ class ProjectSection : public QWidget
     friend class ProjectSectionTest;
 
 public:
-    ProjectSection(QWidget *parent = nullptr);
+    explicit ProjectSection(QList<Project>& projects, QWidget *parent = nullptr);
 
     void forceTableUpdate();
 

@@ -16,9 +16,6 @@
     <ClCompile Include="dialogs\createtaskdlg.cpp">
       <Filter>src\dialogs</Filter>
     </ClCompile>
-    <ClCompile Include="models\projectscollection.cpp">
-      <Filter>src\models</Filter>
-    </ClCompile>
     <ClCompile Include="gui\tasktablemodel.cpp">
       <Filter>src\gui</Filter>
     </ClCompile>
@@ -117,9 +114,6 @@
     </QtRcc>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="models\projectscollection.h">
-      <Filter>src\models</Filter>
-    </ClInclude>
     <ClInclude Include="models\task.h">
       <Filter>src\models</Filter>
     </ClInclude>
