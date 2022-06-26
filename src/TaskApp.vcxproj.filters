@@ -80,7 +80,6 @@
     <QtUic Include="dialogs\createtaskdlg.ui">
       <Filter>src\dialogs</Filter>
     </QtUic>
-    <QtUic Include="gui\taskdetailsection.ui" />
     <QtUic Include="gui\projectsection.ui">
       <Filter>src\gui</Filter>
     </QtUic>
@@ -89,6 +88,9 @@
     </QtUic>
     <QtUic Include="dialogs\createprojectdlg.ui">
       <Filter>src\dialogs</Filter>
+    </QtUic>
+    <QtUic Include="gui\taskdetailsection.ui">
+      <Filter>src\gui</Filter>
     </QtUic>
   </ItemGroup>
   <ItemGroup>
