@@ -22,4 +22,5 @@ private:
 private:
     Ui::CreateTaskDlg m_ui;
     Task& m_task;
+    QList<Project>& m_projects;
 };

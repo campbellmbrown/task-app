@@ -7,14 +7,15 @@
 
 CreateTaskDlg::CreateTaskDlg(Task& task, QList<Project>& projects, QWidget *parent)
     : QDialog(parent),
-      m_task(task)
+      m_task(task),
+      m_projects(projects)
 {
     m_ui.setupUi(this);
     connect(m_ui.buttonBox, &QDialogButtonBox::accepted, this, &QDialog::accept);
     connect(m_ui.buttonBox, &QDialogButtonBox::rejected, this, &QDialog::reject);
 
-    for (int idx = 0; idx < projects.count(); idx++) {
-        m_ui.projectComboBox->addItem(projects.at(idx).name);
+    for (int idx = 0; idx < m_projects.count(); idx++) {
+        m_ui.projectComboBox->addItem(m_projects.at(idx).name);
     }
 
     for (int idx = 0; idx < (int)Priority::Count; idx++) {
@@ -47,15 +48,24 @@ bool CreateTaskDlg::checkFields()
     return valid;
 }
 
+#include <QDebug>
 void CreateTaskDlg::accept()
 {
     if (!checkFields()) {
         return;
     }
+    // General
     m_task.title = m_ui.titleLineEdit->text();
+    auto projectIndex = m_ui.projectComboBox->currentIndex();
+    qDebug() << projectIndex;
+    if (projectIndex >= 0) {
+        m_task.projectId = m_projects.at(projectIndex).uuid;
+        qDebug() << "Selected" << projectIndex << m_task.projectId;
+    }
+    m_task.priority = static_cast<Priority>(m_ui.priorityComboBox->currentIndex());
     m_task.notes = m_ui.notesPlainTextEdit->toPlainText();
+    // Metadata
     m_task.timeCreated = QDateTime::currentDateTime();
     m_task.uuid = QUuid::createUuid();
-    m_task.priority = static_cast<Priority>(m_ui.priorityComboBox->currentIndex());
     SuperClass::accept();
 }

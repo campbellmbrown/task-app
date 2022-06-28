@@ -12,9 +12,12 @@ struct Task
 
     explicit Task() {}
 
+    // General
     QString title;
-    QDateTime timeCreated;
-    QUuid uuid;
-    QString notes;
     Priority priority = Priority::Medium;
+    QUuid projectId;
+    QString notes;
+    // Metadata
+    QUuid uuid;
+    QDateTime timeCreated;
 };
