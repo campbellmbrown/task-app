@@ -8,6 +8,7 @@ HEADERS += \
     ./dialogs/createtaskdlg.h \
     ./gui/projectdetailsection.h \
     ./gui/projectsection.h \
+    ./gui/projecttablemodel.h \
     ./gui/projecttableview.h \
     ./gui/taskapp.h \
     ./gui/taskdetailsection.h \
@@ -22,6 +23,7 @@ SOURCES += \
     ./dialogs/createtaskdlg.cpp \
     ./gui/projectdetailsection.cpp \
     ./gui/projectsection.cpp \
+    ./gui/projecttablemodel.cpp \
     ./gui/projecttableview.cpp \
     ./gui/taskapp.cpp \
     ./gui/taskdetailsection.cpp \

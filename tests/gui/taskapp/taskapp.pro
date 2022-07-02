@@ -14,6 +14,7 @@ HEADERS += \
     $${SRCPATH}/dialogs/createtaskdlg.h \
     $${SRCPATH}/gui/projectdetailsection.h \
     $${SRCPATH}/gui/projectsection.h \
+    $${SRCPATH}/gui/projecttablemodel.h \
     $${SRCPATH}/gui/projecttableview.h \
     $${SRCPATH}/gui/taskapp.h \
     $${SRCPATH}/gui/taskdetailsection.h \
@@ -28,6 +29,7 @@ SOURCES += \
     $${SRCPATH}/dialogs/createtaskdlg.cpp \
     $${SRCPATH}/gui/projectdetailsection.cpp \
     $${SRCPATH}/gui/projectsection.cpp \
+    $${SRCPATH}/gui/projecttablemodel.cpp \
     $${SRCPATH}/gui/projecttableview.cpp \
     $${SRCPATH}/gui/taskapp.cpp \
     $${SRCPATH}/gui/taskdetailsection.cpp \
