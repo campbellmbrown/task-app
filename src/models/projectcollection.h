@@ -17,6 +17,7 @@ public:
     void insert(int i, const Project& project);
     QString name(QUuid id) const;
     bool contains(QUuid id) const;
+    bool contains(QString name) const;
 
 public slots:
     void setupQuickFind();

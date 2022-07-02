@@ -35,7 +35,7 @@ void TaskApp::initProjectsTab()
     m_projectSection = new ProjectSection(m_projectCollection, this);
     m_ui.projectListLayout->addWidget(m_projectSection, 0, 0);
 
-    m_projectDetailSection = new ProjectDetailSection(this);
+    m_projectDetailSection = new ProjectDetailSection(m_projectCollection, this);
     m_ui.projectDetailLayout->addWidget(m_projectDetailSection, 0, 0);
 
     connect(m_projectSection,

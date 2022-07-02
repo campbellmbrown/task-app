@@ -49,3 +49,13 @@ bool ProjectCollection::contains(QUuid id) const
 {
     return m_quickFindName.contains(id);
 }
+
+bool ProjectCollection::contains(QString name) const
+{
+    for (auto proj : m_projects) {
+        if (proj.name == name) {
+            return true;
+        }
+    }
+    return false;
+}

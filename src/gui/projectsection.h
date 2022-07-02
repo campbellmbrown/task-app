@@ -36,4 +36,5 @@ private:
     Ui::ProjectSection m_ui;
     ProjectTableModel *m_projectTableModel;
     QSortFilterProxyModel *m_proxyModel;
+    ProjectCollection& m_projectCollection;
 };

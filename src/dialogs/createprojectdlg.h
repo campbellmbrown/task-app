@@ -4,6 +4,7 @@
 #include <QDialog>
 
 struct Project;
+class ProjectCollection;
 class CreateProjectDlg : public QDialog
 {
     Q_OBJECT
@@ -12,7 +13,7 @@ class CreateProjectDlg : public QDialog
     friend class CreateProjectDlgTest;
 
 public:
-    CreateProjectDlg(Project& project, QWidget *parent = nullptr);
+    CreateProjectDlg(Project& project, ProjectCollection& projectCollection, QWidget *parent = nullptr);
     void accept() override;
 
 private:
@@ -21,4 +22,5 @@ private:
 private:
     Ui::CreateProjectDlg m_ui;
     Project& m_project;
+    ProjectCollection& m_projectCollection;
 };

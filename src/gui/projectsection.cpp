@@ -7,7 +7,8 @@
 ProjectSection::ProjectSection(ProjectCollection& projectCollection, QWidget *parent)
     : QWidget(parent),
       m_projectTableModel(new ProjectTableModel(projectCollection)),
-      m_proxyModel(new QSortFilterProxyModel())
+      m_proxyModel(new QSortFilterProxyModel()),
+      m_projectCollection(projectCollection)
 {
     m_ui.setupUi(this);
     m_ui.verticalLayout->setContentsMargins(0, 0, 0, 0);
@@ -43,7 +44,7 @@ void ProjectSection::initButtons()
 void ProjectSection::onNewBtnClicked()
 {
     Project project;
-    CreateProjectDlg createProjectDlg(project, this);
+    CreateProjectDlg createProjectDlg(project, m_projectCollection, this);
     if (createProjectDlg.exec() == QDialog::Accepted) {
         m_projectTableModel->addProject(project);
     }
