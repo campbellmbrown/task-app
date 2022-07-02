@@ -2,7 +2,9 @@
 
 #include "models/task.h"
 #include <QAbstractTableModel>
+#include <QUuid>
 
+class ProjectCollection;
 class TaskTableModel : public QAbstractTableModel
 {
     Q_OBJECT
@@ -14,11 +16,12 @@ public:
     {
         Title = 0,
         Priority,
+        ProjectCol,
         TimeCreated,
         Count,
     };
 
-    explicit TaskTableModel(QList<Task>& tasks, QObject *parent = nullptr);
+    explicit TaskTableModel(QList<Task>& tasks, ProjectCollection& projectCollection, QObject *parent = nullptr);
 
     int rowCount(const QModelIndex& parent = QModelIndex()) const override;
     int columnCount(const QModelIndex& parent = QModelIndex()) const override;
@@ -29,10 +32,11 @@ public:
 
     void addTask(const Task& task);
     void removeTaskAt(int row);
-    Task& taskAt(int row);
+    Task& taskAt(int row) const;
     void forceUpdate();
 
 private:
     QMap<int, QString> m_headerNames;
     QList<Task>& m_tasks;
+    ProjectCollection& m_projectCollection;
 };

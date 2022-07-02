@@ -1,7 +1,7 @@
 #pragma once
 
 #include "models/task.h"
-#include "models/project.h"
+#include "models/projectcollection.h"
 #include "ui_taskapp.h"
 #include <QtWidgets/QMainWindow>
 
@@ -24,11 +24,11 @@ private:
     Ui::TaskApp m_ui;
 
     // Tasks tab
-    TaskSection *taskSection;
-    TaskDetailSection *taskDetailSection;
+    TaskSection *m_taskSection;
+    TaskDetailSection *m_taskDetailSection;
     QList<Task> m_tasks;
     // Projects tab
-    ProjectSection *projectSection;
-    ProjectDetailSection *projectDetailSection;
-    QList<Project> m_projects;
+    ProjectSection *m_projectSection;
+    ProjectDetailSection *m_projectDetailSection;
+    ProjectCollection m_projectCollection;
 };

@@ -1,9 +1,10 @@
 #include "projecttablemodel.h"
+#include "models/projectcollection.h"
 #include <QFont>
 
-ProjectTableModel::ProjectTableModel(QList<Project>& projects, QObject *parent)
+ProjectTableModel::ProjectTableModel(ProjectCollection& projectCollection, QObject *parent)
     : QAbstractTableModel(parent),
-      m_projects(projects)
+      m_projectCollection(projectCollection)
 {
     m_headerNames.insert(Name, "Name");
     assert(m_headerNames.count() == Count);
@@ -12,7 +13,7 @@ ProjectTableModel::ProjectTableModel(QList<Project>& projects, QObject *parent)
 int ProjectTableModel::rowCount(const QModelIndex& parent) const
 {
     Q_UNUSED(parent);
-    return m_projects.count();
+    return m_projectCollection.projects().count();
 }
 
 int ProjectTableModel::columnCount(const QModelIndex& parent) const
@@ -30,13 +31,13 @@ QVariant ProjectTableModel::data(const QModelIndex& index, int role) const
         case Qt::DisplayRole:
             switch (col) {
                 case Name:
-                    return m_projects.at(row).name;
+                    return m_projectCollection.projects().at(row).name;
             }
 
         case Qt::UserRole:
             switch (col) {
                 case Name:
-                    return m_projects.at(row).name;
+                    return m_projectCollection.projects().at(row).name;
             }
     }
     return QVariant();
@@ -81,19 +82,19 @@ bool ProjectTableModel::removeRow(int row, const QModelIndex& parent)
 
 void ProjectTableModel::addProject(const Project& project)
 {
-    m_projects.insert(0, project);
+    m_projectCollection.insert(0, project);
     insertRow(0);
 }
 
 void ProjectTableModel::removeProjectAt(int row)
 {
     removeRow(row);
-    m_projects.removeAt(row);
+    m_projectCollection.removeAt(row);
 }
 
 Project& ProjectTableModel::projectAt(int row)
 {
-    return m_projects[row];
+    return m_projectCollection.projects()[row];
 }
 
 void ProjectTableModel::forceUpdate()

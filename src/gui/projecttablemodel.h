@@ -1,8 +1,9 @@
 #pragma once
 
-#include "models/project.h"
 #include <QAbstractTableModel>
 
+struct Project;
+class ProjectCollection;
 class ProjectTableModel : public QAbstractTableModel
 {
     Q_OBJECT
@@ -16,7 +17,7 @@ public:
         Count,
     };
 
-    ProjectTableModel(QList<Project>& projects, QObject *parent = nullptr);
+    ProjectTableModel(ProjectCollection& ProjectCollection, QObject *parent = nullptr);
 
     int rowCount(const QModelIndex& parent = QModelIndex()) const override;
     int columnCount(const QModelIndex& parent = QModelIndex()) const override;
@@ -32,5 +33,5 @@ public:
 
 private:
     QMap<int, QString> m_headerNames;
-    QList<Project>& m_projects;
+    ProjectCollection& m_projectCollection;
 };

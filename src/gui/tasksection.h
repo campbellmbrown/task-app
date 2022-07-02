@@ -3,8 +3,8 @@
 #include <QWidget>
 #include "ui_tasksection.h"
 
-struct Project;
 struct Task;
+class ProjectCollection;
 class TaskTableModel;
 class QSortFilterProxyModel;
 class TaskSection : public QWidget
@@ -14,7 +14,7 @@ class TaskSection : public QWidget
     friend class TaskSectionTest;
 
 public:
-    TaskSection(QList<Task>& tasks, QList<Project> &projects, QWidget *parent = nullptr);
+    TaskSection(QList<Task>& tasks, ProjectCollection& projectCollection, QWidget *parent = nullptr);
 
     void forceTableUpdate();
 
@@ -35,5 +35,5 @@ private:
     Ui::TaskSection m_ui;
     TaskTableModel *m_taskTableModel;
     QSortFilterProxyModel *m_proxyModel;
-    QList<Project>& m_projects;
+    ProjectCollection& m_projectCollection;
 };

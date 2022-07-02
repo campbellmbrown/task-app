@@ -1,12 +1,12 @@
 #include "projectsection.h"
 #include "dialogs/createprojectdlg.h"
-#include "models/project.h"
+#include "models/projectcollection.h"
 #include "projecttablemodel.h"
 #include <QSortFilterProxyModel>
 
-ProjectSection::ProjectSection(QList<Project>& projects, QWidget *parent)
+ProjectSection::ProjectSection(ProjectCollection& projectCollection, QWidget *parent)
     : QWidget(parent),
-      m_projectTableModel(new ProjectTableModel(projects)),
+      m_projectTableModel(new ProjectTableModel(projectCollection)),
       m_proxyModel(new QSortFilterProxyModel())
 {
     m_ui.setupUi(this);
@@ -55,6 +55,7 @@ void ProjectSection::onDeleteBtnClicked()
     assert(selectedRows.count() == 1);
     auto sourceIndex = m_proxyModel->mapToSource(selectedRows[0]);
     m_projectTableModel->removeProjectAt(sourceIndex.row());
+    emit projectDeleted();
 }
 
 void ProjectSection::onSelectedProjectChanged(const QModelIndex& current, const QModelIndex& previous)

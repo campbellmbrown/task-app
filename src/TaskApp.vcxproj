@@ -32,6 +32,7 @@
     <ClCompile Include="gui\tasktableview.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="models\priority.cpp" />
+    <ClCompile Include="models\projectcollection.cpp" />
   </ItemGroup>
   <ItemGroup>
     <QtRcc Include="rc\taskapp.qrc" />
@@ -61,6 +62,7 @@
     <ClInclude Include="gui\tasktableview.h" />
     <ClInclude Include="models\priority.h" />
     <ClInclude Include="models\project.h" />
+    <QtMoc Include="models\projectcollection.h" />
     <ClInclude Include="models\task.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

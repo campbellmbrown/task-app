@@ -12,12 +12,17 @@ struct Task
 
     explicit Task() {}
 
-    // General
+    // ===============
+    //     General
+    // ===============
     QString title;
     Priority priority = Priority::Medium;
+    // Only store the projectId because the project name can change.
     QUuid projectId;
     QString notes;
-    // Metadata
+    // ===============
+    //    Metadata
+    // ===============
     QUuid uuid;
     QDateTime timeCreated;
 };

@@ -3,8 +3,19 @@
 #include "ui_createtaskdlg.h"
 #include <QDialog>
 
-struct Project;
 struct Task;
+class ProjectCollection;
+
+/**
+ * @brief Dialog for creating tasks.
+ *
+ * Inputs:
+ * - Collection of projects
+ * - input selection from the user
+ *
+ * Outputs:
+ * - Task based on user input selection
+ */
 class CreateTaskDlg : public QDialog
 {
     Q_OBJECT
@@ -13,14 +24,15 @@ class CreateTaskDlg : public QDialog
     friend class CreateTaskDlgTest;
 
 public:
-    CreateTaskDlg(Task& task, QList<Project>& projects, QWidget *parent = nullptr);
+    CreateTaskDlg(Task& task, ProjectCollection& projectCollection, QWidget *parent = nullptr);
     void accept() override;
 
 private:
+    void fillInComboBoxes();
     bool checkFields();
 
 private:
     Ui::CreateTaskDlg m_ui;
     Task& m_task;
-    QList<Project>& m_projects;
+    ProjectCollection& m_projectCollection;
 };

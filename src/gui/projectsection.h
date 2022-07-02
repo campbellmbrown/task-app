@@ -4,6 +4,7 @@
 #include <QWidget>
 
 struct Project;
+class ProjectCollection;
 class ProjectTableModel;
 class QSortFilterProxyModel;
 class ProjectSection : public QWidget
@@ -13,13 +14,14 @@ class ProjectSection : public QWidget
     friend class ProjectSectionTest;
 
 public:
-    explicit ProjectSection(QList<Project>& projects, QWidget *parent = nullptr);
+    explicit ProjectSection(ProjectCollection& projectCollection, QWidget *parent = nullptr);
 
     void forceTableUpdate();
 
 signals:
     void projectSelected(Project& selected);
     void nothingSelected();
+    void projectDeleted();
 
 private:
     void initTableView();

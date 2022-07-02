@@ -4,6 +4,7 @@
 #include "ui_taskdetailsection.h"
 #include <QWidget>
 
+class ProjectCollection;
 class TaskDetailSection : public QWidget
 {
     Q_OBJECT
@@ -11,11 +12,12 @@ class TaskDetailSection : public QWidget
     friend class TaskDetailSectionTest;
 
 public:
-    TaskDetailSection(QWidget *parent = nullptr);
+    TaskDetailSection(ProjectCollection& projects, QWidget *parent = nullptr);
 
 public slots:
     void onTaskSelected(Task& selected);
     void onNothingSelected();
+    void refresh();
 
 signals:
     void taskUpdated();
@@ -29,4 +31,5 @@ private slots:
 private:
     Ui::TaskDetailSection m_ui;
     Task *m_selectedTask = nullptr;
+    ProjectCollection& m_projectCollection;
 };

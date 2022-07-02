@@ -40,6 +40,9 @@
     <ClCompile Include="dialogs\createprojectdlg.cpp">
       <Filter>src\dialogs</Filter>
     </ClCompile>
+    <ClCompile Include="models\projectcollection.cpp">
+      <Filter>src\models</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <QtMoc Include="gui\taskapp.h">
@@ -129,6 +132,9 @@
       <Filter>src\gui</Filter>
     </ClInclude>
     <ClInclude Include="models\project.h">
+      <Filter>src\models</Filter>
+    </ClInclude>
+    <ClInclude Include="models\projectcollection.h">
       <Filter>src\models</Filter>
     </ClInclude>
   </ItemGroup>

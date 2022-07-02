@@ -5,10 +5,10 @@
 #include "tasktablemodel.h"
 #include <QSortFilterProxyModel>
 
-TaskSection::TaskSection(QList<Task>& tasks, QList<Project>& projects, QWidget *parent)
+TaskSection::TaskSection(QList<Task>& tasks, ProjectCollection& projectCollection, QWidget *parent)
     : QWidget(parent),
-      m_projects(projects),
-      m_taskTableModel(new TaskTableModel(tasks)),
+      m_projectCollection(projectCollection),
+      m_taskTableModel(new TaskTableModel(tasks, projectCollection)),
       m_proxyModel(new QSortFilterProxyModel())
 {
     m_ui.setupUi(this);
@@ -44,7 +44,7 @@ void TaskSection::initButtons()
 void TaskSection::onNewBtnClicked()
 {
     Task task;
-    CreateTaskDlg createTaskDlg(task, m_projects, this);
+    CreateTaskDlg createTaskDlg(task, m_projectCollection, this);
     if (createTaskDlg.exec() == QDialog::Accepted) {
         m_taskTableModel->addTask(task);
     }
