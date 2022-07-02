@@ -2,6 +2,7 @@
 #include "models/projectcollection.h"
 #include <QDebug>
 #include <QPushButton>
+#include <QMessageBox>
 
 TaskDetailSection::TaskDetailSection(ProjectCollection& projectCollection, QWidget *parent)
     : QWidget(parent),
@@ -82,8 +83,32 @@ void TaskDetailSection::onNothingSelected()
     reset();
 }
 
+bool TaskDetailSection::checkFields()
+{
+    QString message;
+    bool valid = false;
+    if (m_ui.titleLineEdit->text() == "") {
+        message = "Title cannot be empty.";
+    }
+    else {
+        valid = true;
+    }
+
+    if (!valid) {
+#ifndef IGNORE_DIALOG
+        QMessageBox::warning(this, "Invalid task", message, QMessageBox::Ok);
+#endif
+    }
+
+    return valid;
+}
+
 void TaskDetailSection::onApply()
 {
+    if (!checkFields()) {
+        return;
+    }
+
     qInfo() << "Updating task" << m_selectedTask->uuid.toString(QUuid::WithoutBraces);
 
     // General

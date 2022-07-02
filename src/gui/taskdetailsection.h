@@ -24,6 +24,7 @@ signals:
 
 private:
     void reset();
+    bool checkFields();
 
 private slots:
     void onApply();
