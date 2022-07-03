@@ -2,7 +2,6 @@
 
 #include "models/task.h"
 #include <QAbstractTableModel>
-#include <QUuid>
 
 class ProjectCollection;
 class TaskTableModel : public QAbstractTableModel

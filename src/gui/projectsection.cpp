@@ -6,9 +6,9 @@
 
 ProjectSection::ProjectSection(ProjectCollection& projectCollection, QWidget *parent)
     : QWidget(parent),
+      m_projectCollection(projectCollection),
       m_projectTableModel(new ProjectTableModel(projectCollection)),
-      m_proxyModel(new QSortFilterProxyModel()),
-      m_projectCollection(projectCollection)
+      m_proxyModel(new QSortFilterProxyModel())
 {
     m_ui.setupUi(this);
     m_ui.verticalLayout->setContentsMargins(0, 0, 0, 0);

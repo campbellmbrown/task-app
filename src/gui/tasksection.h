@@ -1,7 +1,7 @@
 #pragma once
 
-#include <QWidget>
 #include "ui_tasksection.h"
+#include <QWidget>
 
 struct Task;
 class ProjectCollection;
