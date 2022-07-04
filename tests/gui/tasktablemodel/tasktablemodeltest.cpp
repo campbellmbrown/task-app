@@ -75,11 +75,7 @@ void TaskTableModelTest::check_headerData()
     QCOMPARE(textAlignment, int(Qt::AlignLeft | Qt::AlignVCenter));
 }
 
-void TaskTableModelTest::addCustomTask(
-    QString title,
-    Priority priority,
-    QUuid projectId,
-    QDateTime timeCreated)
+void TaskTableModelTest::addCustomTask(QString title, Priority priority, QUuid projectId, QDateTime timeCreated)
 {
     Task task;
     task.title = title;
@@ -101,11 +97,7 @@ void TaskTableModelTest::check_addTask()
 
     // When:
     addCustomTask(
-        "taskTitle",
-        Priority::High,
-        proj.uuid,
-        QDateTime::fromSecsSinceEpoch(10921, Qt::UTC, 0)
-    );
+        "taskTitle", Priority::High, proj.uuid, QDateTime::fromSecsSinceEpoch(10921, Qt::UTC, 0));
 
     // Then:
     QCOMPARE(m_taskTableModel->rowCount(), 1);
