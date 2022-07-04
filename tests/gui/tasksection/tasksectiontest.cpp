@@ -1,5 +1,6 @@
 #include "gui/tasksection.h"
 #include "gui/tasktablemodel.h"
+#include "models/projectcollection.h"
 #include <QtTest/QtTest>
 
 class TaskSectionTest : public QObject
@@ -12,12 +13,16 @@ private slots:
     void check_deleteButton_enabledWhenRowSelected();
 
 private:
+    QList<Task> m_tasks;
+    std::shared_ptr<ProjectCollection> m_projectCollection;
     std::unique_ptr<TaskSection> m_taskSection;
 };
 
 void TaskSectionTest::init()
 {
-    m_taskSection.reset(new TaskSection());
+    m_tasks.clear();
+    m_projectCollection.reset(new ProjectCollection());
+    m_taskSection.reset(new TaskSection(m_tasks, *m_projectCollection));
 }
 
 void TaskSectionTest::check_deleteButton_disabledByDefault()

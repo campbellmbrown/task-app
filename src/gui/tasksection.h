@@ -33,7 +33,7 @@ private slots:
 
 private:
     Ui::TaskSection m_ui;
+    ProjectCollection& m_projectCollection;
     TaskTableModel *m_taskTableModel;
     QSortFilterProxyModel *m_proxyModel;
-    ProjectCollection& m_projectCollection;
 };
