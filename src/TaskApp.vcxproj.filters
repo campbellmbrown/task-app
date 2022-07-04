@@ -16,9 +16,6 @@
     <ClCompile Include="dialogs\createtaskdlg.cpp">
       <Filter>src\dialogs</Filter>
     </ClCompile>
-    <ClCompile Include="models\projectscollection.cpp">
-      <Filter>src\models</Filter>
-    </ClCompile>
     <ClCompile Include="gui\tasktablemodel.cpp">
       <Filter>src\gui</Filter>
     </ClCompile>
@@ -36,6 +33,15 @@
     </ClCompile>
     <ClCompile Include="gui\projectdetailsection.cpp">
       <Filter>src\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\projecttablemodel.cpp">
+      <Filter>src\gui</Filter>
+    </ClCompile>
+    <ClCompile Include="dialogs\createprojectdlg.cpp">
+      <Filter>src\dialogs</Filter>
+    </ClCompile>
+    <ClCompile Include="models\projectcollection.cpp">
+      <Filter>src\models</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -60,6 +66,12 @@
     <QtMoc Include="gui\projectdetailsection.h">
       <Filter>src\gui</Filter>
     </QtMoc>
+    <QtMoc Include="gui\projecttablemodel.h">
+      <Filter>src\gui</Filter>
+    </QtMoc>
+    <QtMoc Include="dialogs\createprojectdlg.h">
+      <Filter>src\dialogs</Filter>
+    </QtMoc>
   </ItemGroup>
   <ItemGroup>
     <QtUic Include="gui\taskapp.ui">
@@ -71,11 +83,16 @@
     <QtUic Include="dialogs\createtaskdlg.ui">
       <Filter>src\dialogs</Filter>
     </QtUic>
-    <QtUic Include="gui\taskdetailsection.ui" />
     <QtUic Include="gui\projectsection.ui">
       <Filter>src\gui</Filter>
     </QtUic>
     <QtUic Include="gui\projectdetailsection.ui">
+      <Filter>src\gui</Filter>
+    </QtUic>
+    <QtUic Include="dialogs\createprojectdlg.ui">
+      <Filter>src\dialogs</Filter>
+    </QtUic>
+    <QtUic Include="gui\taskdetailsection.ui">
       <Filter>src\gui</Filter>
     </QtUic>
   </ItemGroup>
@@ -102,9 +119,6 @@
     </QtRcc>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="models\projectscollection.h">
-      <Filter>src\models</Filter>
-    </ClInclude>
     <ClInclude Include="models\task.h">
       <Filter>src\models</Filter>
     </ClInclude>
@@ -116,6 +130,12 @@
     </ClInclude>
     <ClInclude Include="gui\projecttableview.h">
       <Filter>src\gui</Filter>
+    </ClInclude>
+    <ClInclude Include="models\project.h">
+      <Filter>src\models</Filter>
+    </ClInclude>
+    <ClInclude Include="models\projectcollection.h">
+      <Filter>src\models</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

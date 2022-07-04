@@ -1,13 +1,14 @@
 #include "tasksection.h"
 #include "dialogs/createtaskdlg.h"
-#include "models/projectscollection.h"
+#include "models/project.h"
 #include "models/task.h"
 #include "tasktablemodel.h"
 #include <QSortFilterProxyModel>
 
-TaskSection::TaskSection(QWidget *parent)
+TaskSection::TaskSection(QList<Task>& tasks, ProjectCollection& projectCollection, QWidget *parent)
     : QWidget(parent),
-      m_taskTableModel(new TaskTableModel()),
+      m_projectCollection(projectCollection),
+      m_taskTableModel(new TaskTableModel(tasks, projectCollection)),
       m_proxyModel(new QSortFilterProxyModel())
 {
     m_ui.setupUi(this);
@@ -42,14 +43,8 @@ void TaskSection::initButtons()
 
 void TaskSection::onNewBtnClicked()
 {
-    // Temporary - TODO: remove
-    ProjectsCollection projectsCollection;
-    projectsCollection.addProject("Hi!");
-    projectsCollection.addProject("Hello!");
-    projectsCollection.addProject("Howdy!");
-
     Task task;
-    CreateTaskDlg createTaskDlg(task, projectsCollection, this);
+    CreateTaskDlg createTaskDlg(task, m_projectCollection, this);
     if (createTaskDlg.exec() == QDialog::Accepted) {
         m_taskTableModel->addTask(task);
     }

@@ -7,14 +7,12 @@ INCLUDEPATH = \
     $${SRCPATH} \
 
 SOURCES += \
-    tasktablemodeltest.cpp \
+    projecttablemodeltest.cpp \
 
 HEADERS += \
-    $${SRCPATH}/gui/tasktablemodel.h \
-    $${SRCPATH}/models/priority.h \
+    $${SRCPATH}/gui/projecttablemodel.h \
     $${SRCPATH}/models/projectcollection.h \
 
 SOURCES += \
-    $${SRCPATH}/gui/tasktablemodel.cpp \
-    $${SRCPATH}/models/priority.cpp \
+    $${SRCPATH}/gui/projecttablemodel.cpp \
     $${SRCPATH}/models/projectcollection.cpp \

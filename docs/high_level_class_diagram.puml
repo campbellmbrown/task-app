@@ -20,7 +20,6 @@ class TaskDetailSection
 class TaskSection
 class TaskTableView
 class TaskTableModel
-class ProjectsCollection
 class Task <<Struct>>
 
 QMainWindow <|-- TaskApp
@@ -42,13 +41,5 @@ QSortFilterProxyModel -o TaskTableView
 TaskTableModel -o QSortFilterProxyModel
 
 TaskTableModel *-- Task
-
-CreateTaskDlg *-- ProjectsCollection
-
-note left of ProjectsCollection
-    This class in the future should
-    be composed somewhere else and
-    be aggregated here instead.
-end note
 
 @enduml

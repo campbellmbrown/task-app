@@ -1,12 +1,16 @@
 #include "tasktablemodel.h"
+#include "models/projectcollection.h"
 #include <QBrush>
 #include <QFont>
 
-TaskTableModel::TaskTableModel(QObject *parent)
-    : QAbstractTableModel(parent)
+TaskTableModel::TaskTableModel(QList<Task>& tasks, ProjectCollection& projectCollection, QObject *parent)
+    : QAbstractTableModel(parent),
+      m_tasks(tasks),
+      m_projectCollection(projectCollection)
 {
     m_headerNames.insert(Title, "Title");
     m_headerNames.insert(Priority, "Priority");
+    m_headerNames.insert(ProjectCol, "Project"),
     m_headerNames.insert(TimeCreated, "Time created");
     assert(m_headerNames.count() == Count);
 }
@@ -37,6 +41,9 @@ QVariant TaskTableModel::data(const QModelIndex& index, int role) const
                 case Priority:
                     return PriorityDisplay::text(m_tasks.at(row).priority);
 
+                case ProjectCol:
+                    return m_projectCollection.name(m_tasks.at(row).projectId);
+
                 case TimeCreated:
                     return m_tasks.at(row).timeCreated.toString(Task::DATE_FORMAT);
             }
@@ -48,6 +55,9 @@ QVariant TaskTableModel::data(const QModelIndex& index, int role) const
 
                 case Priority:
                     return m_tasks.at(row).priority;
+
+                case ProjectCol:
+                    return m_projectCollection.name(m_tasks.at(row).projectId);
 
                 case TimeCreated:
                     return m_tasks.at(row).timeCreated;
@@ -111,7 +121,7 @@ void TaskTableModel::removeTaskAt(int row)
     m_tasks.removeAt(row);
 }
 
-Task& TaskTableModel::taskAt(int row)
+Task& TaskTableModel::taskAt(int row) const
 {
     return m_tasks[row];
 }

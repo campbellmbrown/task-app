@@ -19,22 +19,37 @@ TaskApp::TaskApp(QWidget *parent)
 
 void TaskApp::initTasksTab()
 {
-    taskSection = new TaskSection(this);
-    m_ui.taskListLayout->addWidget(taskSection, 0, 0);
+    m_taskSection = new TaskSection(m_tasks, m_projectCollection, this);
+    m_ui.taskListLayout->addWidget(m_taskSection, 0, 0);
 
-    taskDetailSection = new TaskDetailSection(this);
-    m_ui.taskDetailLayout->addWidget(taskDetailSection, 0, 0);
+    m_taskDetailSection = new TaskDetailSection(m_projectCollection, this);
+    m_ui.taskDetailLayout->addWidget(m_taskDetailSection, 0, 0);
 
-    connect(taskSection, &TaskSection::taskSelected, taskDetailSection, &TaskDetailSection::onTaskSelected);
-    connect(taskSection, &TaskSection::nothingSelected, taskDetailSection, &TaskDetailSection::onNothingSelected);
-    connect(taskDetailSection, &TaskDetailSection::taskUpdated, taskSection, &TaskSection::forceTableUpdate);
+    connect(m_taskSection, &TaskSection::taskSelected, m_taskDetailSection, &TaskDetailSection::onTaskSelected);
+    connect(m_taskSection, &TaskSection::nothingSelected, m_taskDetailSection, &TaskDetailSection::onNothingSelected);
+    connect(m_taskDetailSection, &TaskDetailSection::taskUpdated, m_taskSection, &TaskSection::forceTableUpdate);
 }
 
 void TaskApp::initProjectsTab()
 {
-    projectSection = new ProjectSection(this);
-    m_ui.projectListLayout->addWidget(projectSection, 0, 0);
+    m_projectSection = new ProjectSection(m_projectCollection, this);
+    m_ui.projectListLayout->addWidget(m_projectSection, 0, 0);
 
-    projectDetailSection = new ProjectDetailSection(this);
-    m_ui.projectDetailLayout->addWidget(projectDetailSection, 0, 0);
+    m_projectDetailSection = new ProjectDetailSection(m_projectCollection, this);
+    m_ui.projectDetailLayout->addWidget(m_projectDetailSection, 0, 0);
+
+    connect(m_projectSection,
+            &ProjectSection::projectSelected,
+            m_projectDetailSection,
+            &ProjectDetailSection::onProjectSelected);
+    connect(m_projectSection,
+            &ProjectSection::nothingSelected,
+            m_projectDetailSection,
+            &ProjectDetailSection::onNothingSelected);
+    connect(m_projectDetailSection, &ProjectDetailSection::projectUpdated, this, [=]() {
+        m_projectSection->forceTableUpdate();
+        m_projectCollection.setupQuickFind();
+        m_taskDetailSection->refresh();
+    });
+    connect(m_projectSection, &ProjectSection::projectDeleted, m_taskDetailSection, &TaskDetailSection::refresh);
 }

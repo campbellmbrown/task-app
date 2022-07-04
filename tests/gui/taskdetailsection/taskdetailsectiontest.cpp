@@ -1,5 +1,5 @@
 #include "gui/taskdetailsection.h"
-
+#include "models/projectcollection.h"
 #include <QtTest/QtTest>
 
 class TaskDetailSectionTest : public QObject
@@ -14,12 +14,22 @@ private slots:
     void check_onApply();
 
 private:
+    std::shared_ptr<ProjectCollection> m_projectCollection;
     std::unique_ptr<TaskDetailSection> m_detailSection;
 };
 
 void TaskDetailSectionTest::init()
 {
-    m_detailSection.reset(new TaskDetailSection());
+    m_projectCollection.reset(new ProjectCollection());
+    Project proj1;
+    Project proj2;
+    proj1.name = "projectA";
+    proj2.name = "projectB";
+    proj1.uuid = QUuid::createUuid();
+    proj2.uuid = QUuid::createUuid();
+    m_projectCollection->insert(0, proj1);
+    m_projectCollection->insert(0, proj2);
+    m_detailSection.reset(new TaskDetailSection(*m_projectCollection));
 }
 
 void TaskDetailSectionTest::check_initResets()
@@ -27,6 +37,7 @@ void TaskDetailSectionTest::check_initResets()
     // General
     QCOMPARE(m_detailSection->m_ui.titleLineEdit->text(), "");
     QCOMPARE(m_detailSection->m_ui.priorityComboBox->currentText(), "");
+    QCOMPARE(m_detailSection->m_ui.projectComboBox->currentText(), "");
     QCOMPARE(m_detailSection->m_ui.notesPlainTextEdit->toPlainText(), "");
     // Metadata
     QCOMPARE(m_detailSection->m_ui.timeCreatedDisplayLabel->text(), "-");
